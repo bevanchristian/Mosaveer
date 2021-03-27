@@ -1,24 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Wi-CI-z5r">
+                                <rect key="frame" x="20" y="141" width="374" height="721"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t2b-Rs-e4l">
+                                    <size key="itemSize" width="280" height="150"/>
+                                    <size key="estimatedItemSize" width="280" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="celljson" id="Hvb-SG-10J" customClass="jsondata" customModule="cobaapi" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="0.0" width="300" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="halo ini makanan halal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="hJm-lY-vQk">
+                                                    <rect key="frame" x="73" y="-303" width="273" height="721"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kzN-fn-e8R">
+                                                    <rect key="frame" x="-46" y="0.0" width="253" height="150"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="kzN-fn-e8R" secondAttribute="bottom" constant="-8" id="3MV-gU-RgP"/>
+                                            <constraint firstItem="kzN-fn-e8R" firstAttribute="leading" secondItem="Hvb-SG-10J" secondAttribute="leadingMargin" constant="12" id="Okd-6C-gRf"/>
+                                            <constraint firstItem="kzN-fn-e8R" firstAttribute="top" secondItem="Hvb-SG-10J" secondAttribute="topMargin" constant="14" id="kgD-O9-IIj"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="kzN-fn-e8R" secondAttribute="trailing" constant="32" id="ruY-Bp-9ve"/>
+                                        </constraints>
+                                        <size key="customSize" width="300" height="150"/>
+                                        <connections>
+                                            <outlet property="Text" destination="hJm-lY-vQk" id="SPb-eb-K3c"/>
+                                            <outlet property="foto" destination="kzN-fn-e8R" id="epR-h1-eK8"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-fw-SbY">
+                                <rect key="frame" x="78" y="85" width="258" height="31"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Wi-CI-z5r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KAe-su-eOS"/>
+                            <constraint firstItem="4Wi-CI-z5r" firstAttribute="top" secondItem="eMi-fw-SbY" secondAttribute="bottom" constant="26" id="LiD-02-6a1"/>
+                            <constraint firstItem="4Wi-CI-z5r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="MIB-IT-wHq"/>
+                            <constraint firstItem="eMi-fw-SbY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="Q0Y-o8-FLd"/>
+                            <constraint firstItem="eMi-fw-SbY" firstAttribute="centerX" secondItem="4Wi-CI-z5r" secondAttribute="centerX" id="dcR-QO-T2f"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="4Wi-CI-z5r" secondAttribute="bottom" id="dfd-8E-1sK"/>
+                            <constraint firstItem="eMi-fw-SbY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="pNU-Lk-Ulr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Wi-CI-z5r" secondAttribute="trailing" id="usx-UQ-OGq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="4Wi-CI-z5r" id="ElP-Ff-b89"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

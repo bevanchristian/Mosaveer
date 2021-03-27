@@ -12,7 +12,9 @@
 		5026B174260DC83500E41A4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B173260DC83500E41A4B /* ViewController.swift */; };
 		5026B177260DC83500E41A4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5026B175260DC83500E41A4B /* Main.storyboard */; };
 		5026B179260DC83600E41A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5026B178260DC83600E41A4B /* Assets.xcassets */; };
-		5026B17C260DC83600E41A4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5026B17A260DC83600E41A4B /* LaunchScreen.storyboard */; };
+		5026B186260DCB6900E41A4B /* jsondata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B185260DCB6900E41A4B /* jsondata.swift */; };
+		5026B18C260DCE1700E41A4B /* foursquares.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B18B260DCE1700E41A4B /* foursquares.swift */; };
+		5026B19B260F13ED00E41A4B /* foursquareDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B19A260F13ED00E41A4B /* foursquareDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +24,10 @@
 		5026B173260DC83500E41A4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5026B176260DC83500E41A4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5026B178260DC83600E41A4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5026B17B260DC83600E41A4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5026B17D260DC83600E41A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5026B185260DCB6900E41A4B /* jsondata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsondata.swift; sourceTree = "<group>"; };
+		5026B18B260DCE1700E41A4B /* foursquares.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foursquares.swift; sourceTree = "<group>"; };
+		5026B19A260F13ED00E41A4B /* foursquareDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foursquareDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,10 @@
 				5026B173260DC83500E41A4B /* ViewController.swift */,
 				5026B175260DC83500E41A4B /* Main.storyboard */,
 				5026B178260DC83600E41A4B /* Assets.xcassets */,
-				5026B17A260DC83600E41A4B /* LaunchScreen.storyboard */,
 				5026B17D260DC83600E41A4B /* Info.plist */,
+				5026B185260DCB6900E41A4B /* jsondata.swift */,
+				5026B18B260DCE1700E41A4B /* foursquares.swift */,
+				5026B19A260F13ED00E41A4B /* foursquareDetail.swift */,
 			);
 			path = cobaapi;
 			sourceTree = "<group>";
@@ -124,7 +130,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5026B17C260DC83600E41A4B /* LaunchScreen.storyboard in Resources */,
 				5026B179260DC83600E41A4B /* Assets.xcassets in Resources */,
 				5026B177260DC83500E41A4B /* Main.storyboard in Resources */,
 			);
@@ -137,9 +142,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5026B18C260DCE1700E41A4B /* foursquares.swift in Sources */,
 				5026B174260DC83500E41A4B /* ViewController.swift in Sources */,
+				5026B186260DCB6900E41A4B /* jsondata.swift in Sources */,
 				5026B170260DC83500E41A4B /* AppDelegate.swift in Sources */,
 				5026B172260DC83500E41A4B /* SceneDelegate.swift in Sources */,
+				5026B19B260F13ED00E41A4B /* foursquareDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,14 +160,6 @@
 				5026B176260DC83500E41A4B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5026B17A260DC83600E41A4B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5026B17B260DC83600E41A4B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
