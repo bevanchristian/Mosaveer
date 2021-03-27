@@ -10,10 +10,43 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+   /* var window: UIWindow?
+    var firstTabNavigationController : UINavigationController!
+    var secondTabNavigationControoller : UINavigationController!*/
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+       /* window = UIWindow(frame: UIScreen.main.bounds)
+               
+               
+               window?.backgroundColor = UIColor.black
+                   
+               
+               let tabBarController = UITabBarController()
+               
+               firstTabNavigationController = UINavigationController.init(rootViewController: ViewController())
+               secondTabNavigationControoller = UINavigationController.init(rootViewController: MapViewController())
+              
+               
+               tabBarController.viewControllers = [firstTabNavigationController, secondTabNavigationControoller]
+
+               
+               
+               let item1 = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
+                let item2 = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
+        
+        
+              
+               firstTabNavigationController.tabBarItem = item1
+               secondTabNavigationControoller.tabBarItem = item2
+               
+               UITabBar.appearance().tintColor = UIColor(red: 0/255.0, green: 146/255.0, blue: 248/255.0, alpha: 1.0)
+               
+               self.window?.rootViewController = tabBarController
+               
+               window?.makeKeyAndVisible()*/
+
+        
         return true
     }
 

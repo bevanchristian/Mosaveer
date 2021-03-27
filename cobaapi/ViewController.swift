@@ -31,6 +31,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         collectionView.dataSource = self
         collectionView.delegate = self
         title = "Near Me"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
+        //tabBarController?.toolbarItems
+  
+       
         // url nya
         let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=2"
         
@@ -72,15 +76,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
          
         }
         
-       
-        
-        
-       
-      
+    }
+    // batas ahkir viewdidload
     
-        
-           
-       
+    
+    
+    @objc func filterOption(){
+        // ini code untuk filter nampilin modal
+        print("modal")
     }
 
     // data untuk homepage
@@ -214,6 +217,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 
            
        }
+    
+ 
     
   
 
