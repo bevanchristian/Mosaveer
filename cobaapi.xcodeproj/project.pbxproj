@@ -15,6 +15,7 @@
 		5026B186260DCB6900E41A4B /* jsondata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B185260DCB6900E41A4B /* jsondata.swift */; };
 		5026B18C260DCE1700E41A4B /* foursquares.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B18B260DCE1700E41A4B /* foursquares.swift */; };
 		5026B19B260F13ED00E41A4B /* foursquareDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B19A260F13ED00E41A4B /* foursquareDetail.swift */; };
+		5026B1A0260F7A3F00E41A4B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B19F260F7A3F00E41A4B /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5026B185260DCB6900E41A4B /* jsondata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsondata.swift; sourceTree = "<group>"; };
 		5026B18B260DCE1700E41A4B /* foursquares.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foursquares.swift; sourceTree = "<group>"; };
 		5026B19A260F13ED00E41A4B /* foursquareDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foursquareDetail.swift; sourceTree = "<group>"; };
+		5026B19F260F7A3F00E41A4B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				5026B185260DCB6900E41A4B /* jsondata.swift */,
 				5026B18B260DCE1700E41A4B /* foursquares.swift */,
 				5026B19A260F13ED00E41A4B /* foursquareDetail.swift */,
+				5026B19F260F7A3F00E41A4B /* DetailViewController.swift */,
 			);
 			path = cobaapi;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				5026B170260DC83500E41A4B /* AppDelegate.swift in Sources */,
 				5026B172260DC83500E41A4B /* SceneDelegate.swift in Sources */,
 				5026B19B260F13ED00E41A4B /* foursquareDetail.swift in Sources */,
+				5026B1A0260F7A3F00E41A4B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
