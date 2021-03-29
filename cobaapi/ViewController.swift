@@ -31,7 +31,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         // Do any additional setup after loading the view.
         collectionView?.dataSource = self
         collectionView?.delegate = self
-        title = "Near Me"
+        title = "Food"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
   
@@ -139,10 +139,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 let detail = nested.photos.groups[y].items
                 cekfoto = 0
                 for j in 0...detail.count-1{
-                    var prefix = detail[j].prefix
+                    let prefix = detail[j].prefix
                     //print(prefix)
-                    var suffix = detail[j].suffix
-                    var urlGambar = prefix+"120x150"+suffix
+                    let suffix = detail[j].suffix
+                    let urlGambar = prefix+"120x150"+suffix
                     print(urlGambar)
                     gambar.append(urlGambar)
                     if cekfoto < 1 {

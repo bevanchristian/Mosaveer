@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         namaRestoran.text = nama
         print(idresto)
+        title = "Map"
 
         // Do any additional setup after loading the view.
     }

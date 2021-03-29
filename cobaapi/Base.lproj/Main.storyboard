@@ -141,43 +141,45 @@
                     </tabBar>
                     <connections>
                         <segue destination="hme-eH-BAA" kind="relationship" relationship="viewControllers" id="eS6-kW-fI5"/>
+                        <segue destination="b6t-5A-Isu" kind="relationship" relationship="viewControllers" id="PCQ-AV-xVn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lo5-qA-ruB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.38317757009344" y="130.23758099352054"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="Fn7-Wy-Yz0">
             <objects>
-                <viewController storyboardIdentifier="Mapview" id="b6t-5A-Isu" customClass="MapViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Mapview" title="Map" id="b6t-5A-Isu" customClass="MapViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dLP-6f-6uE">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-7a-lu9">
-                                <rect key="frame" x="20" y="44" width="388" height="848"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-7a-lu9">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Q1-Bi-OS0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4mw-7a-lu9" firstAttribute="top" secondItem="dLP-6f-6uE" secondAttribute="topMargin" id="4rE-DX-bWX"/>
-                            <constraint firstItem="4mw-7a-lu9" firstAttribute="leading" secondItem="dLP-6f-6uE" secondAttribute="leadingMargin" id="DTc-WC-4Zh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4mw-7a-lu9" secondAttribute="trailing" id="IEE-4z-oqG"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="4mw-7a-lu9" secondAttribute="bottom" id="eU7-AB-aU2"/>
+                            <constraint firstItem="4mw-7a-lu9" firstAttribute="bottom" secondItem="8Q1-Bi-OS0" secondAttribute="bottom" id="6wS-Vs-4BA"/>
+                            <constraint firstItem="4mw-7a-lu9" firstAttribute="leading" secondItem="8Q1-Bi-OS0" secondAttribute="leading" id="Kse-CH-mnz"/>
+                            <constraint firstItem="4mw-7a-lu9" firstAttribute="centerX" secondItem="dLP-6f-6uE" secondAttribute="centerX" id="eds-ZD-A8P"/>
+                            <constraint firstItem="4mw-7a-lu9" firstAttribute="top" secondItem="dLP-6f-6uE" secondAttribute="topMargin" constant="-44" id="yr0-eM-uqJ"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Maps" image="map" catalog="system" id="dvb-dM-a2C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IO-CA-L5m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037" y="844"/>
+            <point key="canvasLocation" x="1037" y="851"/>
         </scene>
-        <!--Item-->
+        <!--Food-->
         <scene sceneID="MWz-jJ-CFr">
             <objects>
                 <navigationController storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hme-eH-BAA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cI2-zv-fux"/>
+                    <tabBarItem key="tabBarItem" title="Food" image="mappin" catalog="system" id="cI2-zv-fux"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="do2-Dq-HsA">
                         <rect key="frame" x="0.0" y="44" width="428" height="96"/>
@@ -194,6 +196,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="mappin" catalog="system" width="105" height="128"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

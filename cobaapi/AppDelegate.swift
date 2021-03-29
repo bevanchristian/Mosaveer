@@ -46,11 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                
                window?.makeKeyAndVisible()*/
 
-       /* let tabbar = UITabBarController()
-        
-        let food = ui
-        let map = MapViewController()
-        tabbar.setViewControllers([food,map], animated: false)*/
     
         return true
     }
