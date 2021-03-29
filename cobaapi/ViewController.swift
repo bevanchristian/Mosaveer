@@ -12,15 +12,22 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     @IBOutlet var foto: UIImageView!
     // untuk nyimpen data
     var id = [String]()
-    var nama = [String]()
+  
     var idnamaDict = [String:String]()
-    var lat = [Double]()
+    // untuk detail data resto
+    var nama = [String]()
     var address = [String]()
-    var ling = [Double]()
+    var crossStreet = [String]()
+    var lokasiMap = [String]()
+    var rating = [Double]()
+    var deskription = [String]()
+    var statusOpen = [String]()
+    var banner = [String]()
     // untuk keperluan parsing pakek tipe data yang sebelume
     var foursquare:mygroups? = nil
     var veneu:myvenueinfo? = nil
     var mygroupp = [myitems]()
+  
     // untuk loading foto resto
     var gambar = [String]()
     var gambarFinal = [UIImage]()
@@ -100,17 +107,19 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             for x in 0...nested.count-1{
                // print(nested[x].items)
                 for y in 0...nested[x].items.count-1{
-                   // print(nested[x].items[y].venue.id)
-                   // print(nested[x].items[y].venue.name)
+                   // nama resto
                     nama.append(nested[x].items[y].venue.name)
+                    // id resto
                     id.append(nested[x].items[y].venue.id)
                     idnamaDict[nested[x].items[y].venue.id]=nested[x].items[y].venue.name
-                    
-                    
-                   /* let lokasi = nested[x].items[y].venue.location
-                    lat.append(lokasi.lat)
-                    ling.append(lokasi.lng)
-                    address.append(lokasi.address)*/
+                    // addres dulu baru cross street dan dikasih spasi
+                    let addresSementara = nested[x].items[y].venue.location.address + " " + nested[x].items[y].venue.location.crossStreet
+                    // latitude dan longitude dijadin satu
+                    let lat = String(nested[x].items[y].venue.location.lat)
+                    let lng = String(nested[x].items[y].venue.location.lng)
+                    let lokasi = lat + "," + lng
+                    lokasiMap.append(lokasi)
+                    address.append(addresSementara)
                     
                     print("")
                     print("")
@@ -135,6 +144,26 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             veneu = jsonDecoder.response
             let nested = jsonDecoder.response.venue
             // di ambil karena kan hasile nested
+            // ambil rating
+            rating.append(nested.rating)
+            // ambil deskripsi
+            if let descriptionisi = nested.description{
+                deskription.append(descriptionisi)
+            }else{
+                deskription.append("kosong")
+            }
+            // ambil jam
+            if let jam = nested.hours.status {
+                statusOpen.append(jam)
+            }else{
+                statusOpen.append("kosong")
+            }
+            if let bannersementara = nested.page?.pageInfo.banner{
+                banner.append(bannersementara)
+            }else{
+                banner.append("kosong")
+            }
+            print(nested.page?.pageInfo.banner)
             for y in 0...nested.photos.groups.count-1{
                 let detail = nested.photos.groups[y].items
                 cekfoto = 0
@@ -178,7 +207,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         //let isi = foursquare[indexPath.item].groups
         //print(isi)
         cell.Text.text = nama[indexPath.item]
-        cell.Text.sizeThatFits(CGSize(width: 180, height: 100))
+        //cell.Text.adjustsFontSizeToFitWidth = true
+        cell.Text.lineBreakMode = .byWordWrapping
+        cell.Text.numberOfLines = 0;
 
         cell.foto.image = gambarFinal[indexPath.item]
        // print("masuk0")

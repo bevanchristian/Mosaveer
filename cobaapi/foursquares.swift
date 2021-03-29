@@ -23,10 +23,11 @@ struct myvenue : Codable {
 struct venue:Codable {
     var id:String
     var name:String
-    //var location:mylokasi
+    var location:mylokasi
 }
-/*struct mylokasi:Codable {
+struct mylokasi:Codable {
     var address:String
+    var crossStreet:String
     var lat:Double
     var lng:Double
-}*/
+}

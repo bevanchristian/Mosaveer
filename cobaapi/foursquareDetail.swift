@@ -14,7 +14,23 @@ struct myvenueinfo:Codable {
     var venue : photos
 }
 struct photos:Codable {
+    var rating : Double
     var photos : groups
+    var hours : jam
+    var description :String?
+    var page:mypage?
+}
+struct mypage:Codable {
+    var pageInfo : myPageInfo
+}
+
+struct myPageInfo:Codable {
+    var banner : String?
+}
+
+struct jam : Codable {
+    var status : String?
+
 }
 struct groups:Codable {
     var groups : [detailfoto]
