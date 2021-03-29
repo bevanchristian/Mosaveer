@@ -24,12 +24,13 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     // untuk loading foto resto
     var gambar = [String]()
     var gambarFinal = [UIImage]()
+    var cekfoto = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
         title = "Near Me"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
@@ -52,7 +53,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                     print("hello")
                     
                     //untuk ngambil data detail restoran
-                    /*for idIsi in self.id{
+                    for idIsi in self.id{
                         print("ssssdefttgf")
                         let urlDetail = "https://api.foursquare.com/v2/venues/\(idIsi)?&client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210323"
                      
@@ -68,7 +69,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                               
                             }
                         
-                    }*/
+                    }
                }.resume()
               
             }
@@ -99,8 +100,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             for x in 0...nested.count-1{
                // print(nested[x].items)
                 for y in 0...nested[x].items.count-1{
-                    print(nested[x].items[y].venue.id)
-                    print(nested[x].items[y].venue.name)
+                   // print(nested[x].items[y].venue.id)
+                   // print(nested[x].items[y].venue.name)
                     nama.append(nested[x].items[y].venue.name)
                     id.append(nested[x].items[y].venue.id)
                     idnamaDict[nested[x].items[y].venue.id]=nested[x].items[y].venue.name
@@ -118,9 +119,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             }
             
            // print(foursquare)
-            DispatchQueue.main.async { [self] in
-                collectionView.reloadData()
-            }
+         
            
         }
         
@@ -138,16 +137,19 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             // di ambil karena kan hasile nested
             for y in 0...nested.photos.groups.count-1{
                 let detail = nested.photos.groups[y].items
+                cekfoto = 0
                 for j in 0...detail.count-1{
                     var prefix = detail[j].prefix
-                    print(prefix)
+                    //print(prefix)
                     var suffix = detail[j].suffix
-                    var urlGambar = prefix+"960x720"+suffix
+                    var urlGambar = prefix+"120x150"+suffix
                     print(urlGambar)
                     gambar.append(urlGambar)
-                    for u in 0...gambar.count-1{
-                        load(url: URL(string:  gambar[u])!  )
+                    if cekfoto < 1 {
+                        load(url: URL(string:  gambar.last!)!)
                     }
+                    cekfoto += 1
+                
                     //load(url: URL(string: urlGambar)!)
                     
                     
@@ -168,7 +170,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return nama.count
+        return gambarFinal.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -178,8 +180,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         cell.Text.text = nama[indexPath.item]
         cell.Text.sizeThatFits(CGSize(width: 180, height: 100))
 
-        //cell.foto.image = gambarFinal[indexPath.item]
-        print("masuk0")
+        cell.foto.image = gambarFinal[indexPath.item]
+       // print("masuk0")
        
             return cell
             
@@ -198,7 +200,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             }
            
             self.navigationController!.pushViewController(detail, animated: true)
-            print("pindah")
+           // print("pindah")
         }
     }
     
@@ -208,7 +210,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                    if let foto = UIImage(data: data) {
                         //self?.foto = foto
                         self.gambarFinal.append(foto)
-                        print(gambarFinal)
+                       // print(gambarFinal)
                     
                    }
                 

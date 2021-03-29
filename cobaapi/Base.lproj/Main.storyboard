@@ -28,33 +28,32 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="celljson" id="Hvb-SG-10J" customClass="jsondata" customModule="cobaapi" customModuleProvider="target">
-                                        <rect key="frame" x="21.666666666666668" y="0.0" width="345" height="150"/>
+                                        <rect key="frame" x="34" y="0.0" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="345" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="halo ini makanan halal" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="350" id="hJm-lY-vQk">
-                                                    <rect key="frame" x="130" y="0.0" width="210" height="145"/>
+                                                    <rect key="frame" x="160" y="0.0" width="140" height="145"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kzN-fn-e8R">
-                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kzN-fn-e8R">
+                                                    <rect key="frame" x="20" y="22" width="120" height="150"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="kzN-fn-e8R" secondAttribute="bottom" constant="-8" id="3MV-gU-RgP"/>
-                                            <constraint firstItem="kzN-fn-e8R" firstAttribute="leading" secondItem="Hvb-SG-10J" secondAttribute="leadingMargin" constant="12" id="Okd-6C-gRf"/>
-                                            <constraint firstItem="kzN-fn-e8R" firstAttribute="top" secondItem="Hvb-SG-10J" secondAttribute="topMargin" constant="14" id="kgD-O9-IIj"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="kzN-fn-e8R" secondAttribute="trailing" constant="32" id="ruY-Bp-9ve"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="kzN-fn-e8R" secondAttribute="bottom" id="3MV-gU-RgP"/>
+                                            <constraint firstItem="kzN-fn-e8R" firstAttribute="leading" secondItem="Hvb-SG-10J" secondAttribute="leadingMargin" constant="6" id="Okd-6C-gRf"/>
+                                            <constraint firstItem="kzN-fn-e8R" firstAttribute="top" secondItem="Hvb-SG-10J" secondAttribute="topMargin" id="kgD-O9-IIj"/>
                                         </constraints>
-                                        <size key="customSize" width="345" height="150"/>
+                                        <size key="customSize" width="320" height="150"/>
                                         <connections>
                                             <outlet property="Text" destination="hJm-lY-vQk" id="SPb-eb-K3c"/>
                                             <outlet property="foto" destination="kzN-fn-e8R" id="epR-h1-eK8"/>
@@ -136,6 +135,7 @@
                 <tabBarController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="aJr-4G-KcN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Mt-Qo-nVF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
