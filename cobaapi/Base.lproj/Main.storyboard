@@ -42,7 +42,7 @@
                                                     <rect key="frame" x="190" y="18" width="180" height="120"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="halo ini makanan halal" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" preferredMaxLayoutWidth="177" id="hJm-lY-vQk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="99.666666666666671"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="79.333333333333329"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
@@ -50,6 +50,12 @@
                                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHD-HD-0xv">
+                                                            <rect key="frame" x="0.0" y="79.333333333333329" width="180" height="20.333333333333329"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cm-y4-s9g">
                                                             <rect key="frame" x="0.0" y="99.666666666666671" width="180" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -73,6 +79,8 @@
                                         <connections>
                                             <outlet property="Text" destination="hJm-lY-vQk" id="SPb-eb-K3c"/>
                                             <outlet property="foto" destination="kzN-fn-e8R" id="epR-h1-eK8"/>
+                                            <outlet property="openHour" destination="9Cm-y4-s9g" id="yZE-gC-fvc"/>
+                                            <outlet property="rating" destination="AHD-HD-0xv" id="vAM-hk-LdU"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

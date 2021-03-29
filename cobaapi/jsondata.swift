@@ -9,6 +9,7 @@ import UIKit
 
 class jsondata: UICollectionViewCell {
     @IBOutlet var Text: UILabel!
-    
     @IBOutlet var foto: UIImageView!
+    @IBOutlet var rating: UILabel!
+    @IBOutlet var openHour: UILabel!
 }

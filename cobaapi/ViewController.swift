@@ -210,8 +210,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         //cell.Text.adjustsFontSizeToFitWidth = true
         cell.Text.lineBreakMode = .byWordWrapping
         cell.Text.numberOfLines = 0;
-
+        cell.rating.text = String(rating[indexPath.item])
         cell.foto.image = gambarFinal[indexPath.item]
+        cell.openHour.text = statusOpen[indexPath.item]
        // print("masuk0")
        
             return cell
