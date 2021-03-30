@@ -14,9 +14,9 @@ struct myvenueinfo:Codable {
     var venue : photos
 }
 struct photos:Codable {
-    var rating : Double
+    var rating : Double?
     var photos : groups
-    var hours : jam
+    var hours : jam?
     var description :String?
     var page:mypage?
 }

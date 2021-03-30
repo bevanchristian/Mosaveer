@@ -44,11 +44,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
   
        
         // url nya
-        let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=2"
+       
         
        
         // dipindah ke beda thread
         DispatchQueue.global(qos: .userInitiated).async {
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=2"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -105,7 +106,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             foursquare = jsonDecoder.response
             let nested = jsonDecoder.response.groups
             // di ambil karena kan hasile nested
-            //print(nested)
+            print(nested)
             for x in 0...nested.count-1{
                // print(nested[x].items)
                 for y in 0...nested[x].items.count-1{
@@ -147,7 +148,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             let nested = jsonDecoder.response.venue
             // di ambil karena kan hasile nested
             // ambil rating
-            rating.append(nested.rating)
+            if let ratingisi = nested.rating{
+                rating.append(ratingisi)
+            }
+         
             // ambil deskripsi
             if let descriptionisi = nested.description{
                 deskription.append(descriptionisi)
@@ -155,7 +159,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 deskription.append("kosong")
             }
             // ambil jam
-            if let jam = nested.hours.status {
+            if let jam = nested.hours?.status {
                 statusOpen.append(jam)
             }else{
                 statusOpen.append("kosong")
@@ -256,15 +260,115 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     @IBAction func kontrol(_ sender: UISegmentedControl) {
         
-        if sender.selectedSegmentIndex == 0 {
-            
+        if sender.selectedSegmentIndex == 1 {
+            id.removeAll()
+            idnamaDict.removeAll()
+            nama.removeAll()
+            address.removeAll()
+            crossStreet.removeAll()
+            lokasiMap.removeAll()
+            rating.removeAll()
+            deskription.removeAll()
+            statusOpen.removeAll()
+            banner.removeAll()
+            mygroupp.removeAll()
+            gambar.removeAll()
+            gambarFinal.removeAll()
+         
+
             view.backgroundColor = .blue
+            // dipindah ke beda thread
+            DispatchQueue.global(qos: .userInitiated).async {
+                let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=2"
+                // diubah jadi url dari string
+                if let url = URL(string: urlString) {
+                    // diparsing
+                    print("sss")
+                    URLSession.shared.dataTask(with: url) { [self] data, response, error in
+                      if let data = data {
+                         parse(json: data)}
+                        //print(data)
+                        print("hello")
+                        
+                        //untuk ngambil data detail restoran
+                        for idIsi in self.id{
+                            print("ssssdefttgf")
+                            let urlDetail = "https://api.foursquare.com/v2/venues/\(idIsi)?&client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210323"
+                         
+                                // diubah jadi url dari string
+                                if let url2 = URL(string: urlDetail) {
+                                    // diparsing
+                                    print("iddetail")
+                                    URLSession.shared.dataTask(with: url2) { [self] data2, response, error in
+                                      if let data2 = data2 {
+                                         parse2(json: data2)}
+                                        //print(data)
+                                   }.resume()
+                                  
+                                }
+                            
+                        }
+                   }.resume()
+                  
+                }
+                
+             
+            }
             
             
         }
-        else if sender.selectedSegmentIndex == 1{
+        else if sender.selectedSegmentIndex == 0{
+            id.removeAll()
+            idnamaDict.removeAll()
+            nama.removeAll()
+            address.removeAll()
+            crossStreet.removeAll()
+            lokasiMap.removeAll()
+            rating.removeAll()
+            deskription.removeAll()
+            statusOpen.removeAll()
+            banner.removeAll()
+            mygroupp.removeAll()
+            gambar.removeAll()
+            gambarFinal.removeAll()
             view.backgroundColor = .red
-            print("sahahaha")
+            // dipindah ke beda thread
+            DispatchQueue.global(qos: .userInitiated).async {
+                let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=4bf58dd8d48988d138941735&radius=1000&limit=2"
+                // diubah jadi url dari string
+                if let url = URL(string: urlString) {
+                    // diparsing
+                    print("sss")
+                    URLSession.shared.dataTask(with: url) { [self] data, response, error in
+                      if let data = data {
+                         parse(json: data)}
+                        //print(data)
+                        print("hello")
+                        
+                        //untuk ngambil data detail restoran
+                        for idIsi in self.id{
+                            print("ssssdefttgf")
+                            let urlDetail = "https://api.foursquare.com/v2/venues/\(idIsi)?&client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210323"
+                         
+                                // diubah jadi url dari string
+                                if let url2 = URL(string: urlDetail) {
+                                    // diparsing
+                                    print("iddetail")
+                                    URLSession.shared.dataTask(with: url2) { [self] data2, response, error in
+                                      if let data2 = data2 {
+                                         parse2(json: data2)}
+                                        //print(data)
+                                   }.resume()
+                                  
+                                }
+                            
+                        }
+                   }.resume()
+                  
+                }
+                
+             
+            }
             
         }
         
