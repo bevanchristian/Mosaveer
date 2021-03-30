@@ -94,6 +94,9 @@
                                     <segment title="Restaurant"/>
                                     <segment title="Mousque"/>
                                 </segments>
+                                <connections>
+                                    <action selector="kontrol:" destination="BYZ-38-t0r" eventType="valueChanged" id="k2a-6c-m3i"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

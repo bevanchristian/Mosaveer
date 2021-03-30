@@ -88,6 +88,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     // batas ahkir viewdidload
     
     
+  
+    
     
     @objc func filterOption(){
         // ini code untuk filter nampilin modal
@@ -252,9 +254,23 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
            
        }
     
- 
+    @IBAction func kontrol(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            
+            view.backgroundColor = .blue
+            
+            
+        }
+        else if sender.selectedSegmentIndex == 1{
+            view.backgroundColor = .red
+            print("sahahaha")
+            
+        }
+        
+    }
     
   
 
-}
 
+}
