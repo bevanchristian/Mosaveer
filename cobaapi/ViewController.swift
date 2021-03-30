@@ -38,7 +38,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         // Do any additional setup after loading the view.
         collectionView?.dataSource = self
         collectionView?.delegate = self
-        title = "Food"
+        title = "Moosafer"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
   
@@ -49,7 +49,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
        
         // dipindah ke beda thread
         DispatchQueue.global(qos: .userInitiated).async {
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=10"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=3"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -271,6 +271,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     @IBAction func kontrol(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
+            title = "Food"
             id.removeAll()
             idnamaDict.removeAll()
             nama.removeAll()
@@ -289,7 +290,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             view.backgroundColor = .blue
             // dipindah ke beda thread
             DispatchQueue.global(qos: .userInitiated).async {
-                let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=10"
+                let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=3"
                 // diubah jadi url dari string
                 if let url = URL(string: urlString) {
                     // diparsing
@@ -328,6 +329,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             
         }
         else if sender.selectedSegmentIndex == 1{
+            title = "Mosque"
             id.removeAll()
             idnamaDict.removeAll()
             nama.removeAll()
@@ -344,7 +346,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             view.backgroundColor = .red
             // dipindah ke beda thread
             DispatchQueue.global(qos: .userInitiated).async {
-                let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=4bf58dd8d48988d138941735&radius=10000&limit=10"
+                let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=4bf58dd8d48988d138941735&radius=10000&limit=3"
                 // diubah jadi url dari string
                 if let url = URL(string: urlString) {
                     // diparsing
