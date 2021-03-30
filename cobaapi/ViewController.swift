@@ -49,7 +49,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
        
         // dipindah ke beda thread
         DispatchQueue.global(qos: .userInitiated).async {
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=2"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=10"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -158,6 +158,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             // ambil rating
             if let ratingisi = nested.rating{
                 rating.append(ratingisi)
+            }else{
+                rating.append(0.0)
             }
          
             // ambil deskripsi
@@ -170,7 +172,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             if let jam = nested.hours?.status {
                 statusOpen.append(jam)
             }else{
-                statusOpen.append("kosong")
+                statusOpen.append("Open Everyday")
             }
             if let bannersementara = nested.page?.pageInfo.banner{
                 banner.append(bannersementara)
@@ -224,9 +226,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         //cell.Text.adjustsFontSizeToFitWidth = true
         cell.Text.lineBreakMode = .byWordWrapping
         cell.Text.numberOfLines = 0;
-//        cell.rating.text = String(rating[indexPath.item])
+        cell.rating.text = String(rating[indexPath.item])
         cell.foto.image = gambarFinal[indexPath.item]
-      //  cell.openHour.text = statusOpen[indexPath.item]
+        cell.openHour.text = statusOpen[indexPath.item]
        // print("masuk0")
        
             return cell
@@ -287,7 +289,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             view.backgroundColor = .blue
             // dipindah ke beda thread
             DispatchQueue.global(qos: .userInitiated).async {
-                let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=2"
+                let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=10"
                 // diubah jadi url dari string
                 if let url = URL(string: urlString) {
                     // diparsing
@@ -342,7 +344,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             view.backgroundColor = .red
             // dipindah ke beda thread
             DispatchQueue.global(qos: .userInitiated).async {
-                let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=4bf58dd8d48988d138941735&radius=1000&limit=2"
+                let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=4bf58dd8d48988d138941735&radius=10000&limit=10"
                 // diubah jadi url dari string
                 if let url = URL(string: urlString) {
                     // diparsing
