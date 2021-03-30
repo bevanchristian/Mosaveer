@@ -27,7 +27,7 @@ struct venue:Codable {
 }
 struct mylokasi:Codable {
     var address:String
-    var crossStreet:String
+    var crossStreet:String?
     var lat:Double
     var lng:Double
 }

@@ -116,13 +116,21 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                     id.append(nested[x].items[y].venue.id)
                     idnamaDict[nested[x].items[y].venue.id]=nested[x].items[y].venue.name
                     // addres dulu baru cross street dan dikasih spasi
-                    let addresSementara = nested[x].items[y].venue.location.address + " " + nested[x].items[y].venue.location.crossStreet
+                    if let crsstreet = nested[x].items[y].venue.location.crossStreet {
+                        let addresSementara = nested[x].items[y].venue.location.address + " " + nested[x].items[y].venue.location.crossStreet!
+                        address.append(addresSementara)
+                    }else{
+                        // kalo nill
+                        let addresSementara = nested[x].items[y].venue.location.address
+                        address.append(addresSementara)
+                    }
+                    
                     // latitude dan longitude dijadin satu
                     let lat = String(nested[x].items[y].venue.location.lat)
                     let lng = String(nested[x].items[y].venue.location.lng)
                     let lokasi = lat + "," + lng
                     lokasiMap.append(lokasi)
-                    address.append(addresSementara)
+                  
                     
                     print("")
                     print("")
@@ -216,9 +224,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         //cell.Text.adjustsFontSizeToFitWidth = true
         cell.Text.lineBreakMode = .byWordWrapping
         cell.Text.numberOfLines = 0;
-        cell.rating.text = String(rating[indexPath.item])
+//        cell.rating.text = String(rating[indexPath.item])
         cell.foto.image = gambarFinal[indexPath.item]
-        cell.openHour.text = statusOpen[indexPath.item]
+      //  cell.openHour.text = statusOpen[indexPath.item]
        // print("masuk0")
        
             return cell
@@ -288,11 +296,11 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                       if let data = data {
                          parse(json: data)}
                         //print(data)
-                        print("hello")
+                        print("makanan")
                         
                         //untuk ngambil data detail restoran
                         for idIsi in self.id{
-                            print("ssssdefttgf")
+                            print("makanan2")
                             let urlDetail = "https://api.foursquare.com/v2/venues/\(idIsi)?&client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210323"
                          
                                 // diubah jadi url dari string
@@ -343,11 +351,11 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                       if let data = data {
                          parse(json: data)}
                         //print(data)
-                        print("hello")
+                        print("masjid")
                         
                         //untuk ngambil data detail restoran
                         for idIsi in self.id{
-                            print("ssssdefttgf")
+                            print("masjid2")
                             let urlDetail = "https://api.foursquare.com/v2/venues/\(idIsi)?&client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210323"
                          
                                 // diubah jadi url dari string
