@@ -268,7 +268,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     @IBAction func kontrol(_ sender: UISegmentedControl) {
         
-        if sender.selectedSegmentIndex == 1 {
+        if sender.selectedSegmentIndex == 0 {
             id.removeAll()
             idnamaDict.removeAll()
             nama.removeAll()
@@ -325,7 +325,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             
             
         }
-        else if sender.selectedSegmentIndex == 0{
+        else if sender.selectedSegmentIndex == 1{
             id.removeAll()
             idnamaDict.removeAll()
             nama.removeAll()
