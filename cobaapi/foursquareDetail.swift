@@ -18,7 +18,13 @@ struct photos:Codable {
     var photos : groups
     var hours : jam?
     var description :String?
+    var bestPhoto : myBest
     var page:mypage?
+}
+
+struct myBest:Codable{
+    var prefix : String
+    var suffix : String
 }
 struct mypage:Codable {
     var pageInfo : myPageInfo

@@ -31,3 +31,18 @@ struct mylokasi:Codable {
     var lat:Double
     var lng:Double
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
