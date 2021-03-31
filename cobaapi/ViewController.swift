@@ -42,7 +42,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         collectionView?.dataSource = self
         collectionView?.delegate = self
         title = "Moosafer"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
+       navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
         performSelector(inBackground: #selector(manggildata), with: nil)
 
@@ -60,6 +60,11 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     @objc func filterOption(){
         // ini code untuk filter nampilin modal
+        if let filter = storyboard?.instantiateViewController(identifier: "filter") as? FilterViewController{
+            filter.modalPresentationStyle = .formSheet
+   
+            present(filter, animated: true, completion: nil)
+                    }
         print("modal")
     }
     
@@ -120,7 +125,6 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             if let namaFix = try? self.nama[indexPath.row]{
                 detail.nama = namaFix
                 detail.idresto = id[indexPath.item]
-                
             }
            
             self.navigationController!.pushViewController(detail, animated: true)

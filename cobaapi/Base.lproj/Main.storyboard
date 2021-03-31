@@ -242,10 +242,52 @@
             </objects>
             <point key="canvasLocation" x="1037" y="851"/>
         </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="wfl-5t-Gb5">
+            <objects>
+                <viewController storyboardIdentifier="filter" id="IBx-R1-KT3" customClass="FilterViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dc3-xL-RCO">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OC-5c-Zi5">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="RC2-Tp-B0e">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="c8y-v6-Wyd"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="WAM-Zj-dzc">
+                                            <connections>
+                                                <action selector="done:" destination="IBx-R1-KT3" id="HmR-rg-gmo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8m9-mX-mkf"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="6OC-5c-Zi5" firstAttribute="centerX" secondItem="dc3-xL-RCO" secondAttribute="centerX" id="3s6-eJ-4gK"/>
+                            <constraint firstItem="6OC-5c-Zi5" firstAttribute="top" secondItem="8m9-mX-mkf" secondAttribute="top" id="Eb4-iq-H7v"/>
+                            <constraint firstItem="6OC-5c-Zi5" firstAttribute="leading" secondItem="8m9-mX-mkf" secondAttribute="leading" id="R1e-o5-cfb"/>
+                            <constraint firstItem="8m9-mX-mkf" firstAttribute="bottom" secondItem="6OC-5c-Zi5" secondAttribute="bottom" constant="794" id="VC0-lD-t6y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gBX-zN-yoY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="S7y-wD-ucg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="4rT-wg-kTv"/>
+                    </navigationItem>
+                    <value key="contentSizeForViewInPopover" type="size" width="428" height="872"/>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2h-yQ-u9f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2835.9813084112147" y="850.75593952483803"/>
+        </scene>
         <!--Food-->
         <scene sceneID="MWz-jJ-CFr">
             <objects>
-                <navigationController storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hme-eH-BAA" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" hidesBarsOnSwipe="YES" hidesBarsWhenKeyboardAppears="YES" id="hme-eH-BAA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Food" image="mappin" catalog="system" id="cI2-zv-fux"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="do2-Dq-HsA">
@@ -276,6 +318,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
