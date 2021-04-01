@@ -25,11 +25,15 @@ class RestaurantData:Thread {
     var restoranarray = [restaurant]()
     var masjidarray = [restaurant]()
     var count = 0
+    let map = MapViewController()
+    
+    
+    
    
     
     func ubah(myView: ViewController,tipe:Int,sudahAda:Bool){
         if tipe == 0 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=2"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=1000&limit=10"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -43,7 +47,7 @@ class RestaurantData:Thread {
               
             }
         }else if tipe == 1 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=4bf58dd8d48988d138941735&radius=1000&limit=2"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.6938,139.7034&categoryId=4bf58dd8d48988d138941735&radius=1000&limit=10"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -77,6 +81,9 @@ class RestaurantData:Thread {
               
             
     }
+    
+    
+    
     func parse (json:Data, mainView:ViewController,mytipe:Int){
         let decoder = JSONDecoder()
         // di decode
@@ -173,6 +180,13 @@ class RestaurantData:Thread {
                     if mytipe == 0{
                         restoranarray.append(resto)
                         print(restoranarray)
+                        //map.dataresto = restoranarray
+                        
+                        // query array of object
+                        // closure
+                        /*restoranarray.contains { (<#restaurant#>) -> Bool in
+                            <#code#>
+                       }*/
                     }else if mytipe == 1{
                         masjidarray.append(resto)
                         print(restoranarray)
@@ -188,6 +202,7 @@ class RestaurantData:Thread {
 //                print("reload data")
 //                main.collectionView?.reloadData()
                 mainView.collectionView?.reloadData()
+                
                 
             }
             

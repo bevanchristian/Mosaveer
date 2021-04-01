@@ -21,7 +21,7 @@
                                 <rect key="frame" x="20" y="145" width="388" height="698"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t2b-Rs-e4l">
-                                    <size key="itemSize" width="353" height="150"/>
+                                    <size key="itemSize" width="350" height="150"/>
                                     <size key="estimatedItemSize" width="280" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -62,6 +62,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                     <rect key="contentStretch" x="0.20000000000000001" y="0.0" width="1" height="1"/>
                                                 </stackView>
                                             </subviews>
@@ -87,6 +88,7 @@
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-fw-SbY">
                                 <rect key="frame" x="78" y="98" width="272" height="28"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="tHW-DD-XVi"/>
                                 </constraints>
@@ -196,13 +198,14 @@
             </objects>
             <point key="canvasLocation" x="2806.5420560747662" y="129.58963282937367"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tabbar View Controller-->
         <scene sceneID="MyG-Wc-6HH">
             <objects>
-                <tabBarController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="aJr-4G-KcN" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="aJr-4G-KcN" customClass="TabbarViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Mt-Qo-nVF">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="83"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -237,6 +240,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Maps" image="map" catalog="system" id="dvb-dM-a2C"/>
+                    <connections>
+                        <outlet property="map" destination="4mw-7a-lu9" id="fhi-BW-VxW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IO-CA-L5m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -309,6 +315,9 @@
         <image name="mappin" catalog="system" width="105" height="128"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -34,6 +34,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     var cekfoto = 0
     let restaurantData = RestaurantData()
     var milihapa = 0
+  
     //var restoranarray = [restaurant]()
 
     override func viewDidLoad() {
@@ -45,6 +46,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
         performSelector(inBackground: #selector(manggildata), with: nil)
+        
 
         
         
@@ -109,6 +111,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             cell.foto.image = restaurantData.masjidarray[indexPath.item].gambarFinal
             cell.openHour.text = restaurantData.masjidarray[indexPath.item].statusOpen
         }
+        
+        let tab = tabBarController as! TabbarViewController
+        tab.restoran = restaurantData.restoranarray
+       
+        
+        
     
        // print("masuk0")
        
@@ -117,6 +125,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         
        
+    }
+    
+    func getrestaurant() -> [restaurant]{
+        return restaurantData.restoranarray
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -159,6 +171,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         }
         
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        let tab = tabBarController as! TabbarViewController
+        tab.restoran = restaurantData.restoranarray
+    }
+    
+
     
   
 

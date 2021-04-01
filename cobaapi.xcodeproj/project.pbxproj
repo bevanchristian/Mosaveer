@@ -18,6 +18,8 @@
 		5026B1A0260F7A3F00E41A4B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B19F260F7A3F00E41A4B /* DetailViewController.swift */; };
 		5026B1A3260F8E1000E41A4B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B1A2260F8E1000E41A4B /* MapViewController.swift */; };
 		5068C3C62614789800F72EE4 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068C3C52614789800F72EE4 /* FilterViewController.swift */; };
+		5068C3CA2615CAAA00F72EE4 /* anotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068C3C92615CAAA00F72EE4 /* anotate.swift */; };
+		5068C3CD2615FF8E00F72EE4 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068C3CC2615FF8E00F72EE4 /* TabbarViewController.swift */; };
 		5083CFE726133E98003AF518 /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083CFE626133E98003AF518 /* RestaurantData.swift */; };
 		5083CFEA26134670003AF518 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083CFE926134670003AF518 /* restaurant.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,8 @@
 		5026B19F260F7A3F00E41A4B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5026B1A2260F8E1000E41A4B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5068C3C52614789800F72EE4 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		5068C3C92615CAAA00F72EE4 /* anotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anotate.swift; sourceTree = "<group>"; };
+		5068C3CC2615FF8E00F72EE4 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		5083CFE626133E98003AF518 /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
 		5083CFE926134670003AF518 /* restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +88,8 @@
 				5083CFE626133E98003AF518 /* RestaurantData.swift */,
 				5083CFE926134670003AF518 /* restaurant.swift */,
 				5068C3C52614789800F72EE4 /* FilterViewController.swift */,
+				5068C3C92615CAAA00F72EE4 /* anotate.swift */,
+				5068C3CC2615FF8E00F72EE4 /* TabbarViewController.swift */,
 			);
 			path = cobaapi;
 			sourceTree = "<group>";
@@ -160,11 +166,13 @@
 				5083CFEA26134670003AF518 /* restaurant.swift in Sources */,
 				5026B18C260DCE1700E41A4B /* foursquares.swift in Sources */,
 				5026B174260DC83500E41A4B /* ViewController.swift in Sources */,
+				5068C3CD2615FF8E00F72EE4 /* TabbarViewController.swift in Sources */,
 				5026B186260DCB6900E41A4B /* jsondata.swift in Sources */,
 				5026B170260DC83500E41A4B /* AppDelegate.swift in Sources */,
 				5068C3C62614789800F72EE4 /* FilterViewController.swift in Sources */,
 				5026B172260DC83500E41A4B /* SceneDelegate.swift in Sources */,
 				5083CFE726133E98003AF518 /* RestaurantData.swift in Sources */,
+				5068C3CA2615CAAA00F72EE4 /* anotate.swift in Sources */,
 				5026B19B260F13ED00E41A4B /* foursquareDetail.swift in Sources */,
 				5026B1A0260F7A3F00E41A4B /* DetailViewController.swift in Sources */,
 				5026B1A3260F8E1000E41A4B /* MapViewController.swift in Sources */,
