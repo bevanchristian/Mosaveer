@@ -20,17 +20,26 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     var lat:Double!
     var lng:Double!
     var resto = [restaurant]()
-    
+    var nama:String!
+    var bintang:String!
+    var alamat:String!
     var pin = [Anotate]()
+    var gambar:UIImage!
+    var simpan:FloatMapViewController!
+    var lokasifull:String!
+    var lokasiUser:String!
     
+
+    var fpc:FloatingPanelController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fpc = FloatingPanelController()
+         fpc = FloatingPanelController()
         fpc.delegate = self
-        
+        map.delegate = self
         guard let contentVC = storyboard?.instantiateViewController(identifier: "floatingmap") as? FloatMapViewController else{
             return
         }
+        simpan = contentVC
         fpc.set(contentViewController: contentVC)
         let appearance = SurfaceAppearance()
 
@@ -38,34 +47,43 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         let shadow = SurfaceAppearance.Shadow()
         shadow.color = UIColor.black
         shadow.offset = CGSize(width: 0, height: 16)
-        shadow.radius = 40
-        shadow.spread = 15
+        shadow.radius = 12
+        shadow.spread = 8
         appearance.shadows = [shadow]
 
         // Define corner radius and background color
-        appearance.cornerRadius = 8.0
+        appearance.cornerRadius = 12.0
         appearance.backgroundColor = .clear
 
         // Set the new appearance
         fpc.surfaceView.appearance = appearance
-        fpc.panGestureRecognizer.isEnabled = false
-        UIView.animate(withDuration: 0.25) {
-            fpc.move(to: .half, animated: true)
-        }
+
+        fpc.preferredContentSize = CGSize(width: 100, height: 100)
+        fpc.contentMode = .fitToBounds
+      
         fpc.addPanel(toParent: self)
-       let tab = tabBarController as? TabbarViewController
-        resto = tab!.restoran
-        for x in 0...resto.count-1{
-            cordinate.append(contentsOf: resto[x].lokasiMap.components(separatedBy: ","))
-             lat = Double(cordinate[0])
-             lng = Double(cordinate[1])
-            var london = Anotate(namaResto: resto[x].nama, bintang: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng))
-            pin.append(london)
-            print(london)
-            cordinate.removeAll()
-         }
-        map.addAnnotations(pin)
+        fpc.panGestureRecognizer.isEnabled = false
+        UIView.animate(withDuration: 0.25) { [self] in
+            fpc.move(to: .hidden, animated: true)
+        }
+        let tab = tabBarController as? TabbarViewController
+        if let resto = try? tab?.restoran{
+            for x in 0...resto.count-1{
+                cordinate.append(contentsOf: resto[x].lokasiMap.components(separatedBy: ","))
+                 lat = Double(cordinate[0])
+                 lng = Double(cordinate[1])
+                let london = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambar: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap)
+                pin.append(london)
+                print(london)
+                cordinate.removeAll()
+             }
+    
+            map.addAnnotations(pin)
+        }
+
     }
+    
+    
     
   
     
@@ -96,6 +114,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     override func viewDidAppear(_ animated: Bool) {
         determineCurrentLocation()
      
+       
     }
     // ini cuma dipanggil ketika ada lokasi baru
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -108,6 +127,9 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         let region = MKCoordinateRegion(center: center, latitudinalMeters: 100000, longitudinalMeters: 100000)
         map.setRegion(region, animated: true)
         
+        let lat = String(userLocation.coordinate.latitude)
+        let lng = String(userLocation.coordinate.longitude)
+        lokasiUser = lat+","+lng
         
         // masukin pin ke user location
         
@@ -138,6 +160,43 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     
  
 
+    /*func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout {
+            return (newCollection.verticalSizeClass == .compact) ? LandscapePanelLayout() : FloatingPanelBottomLayout()
+        }*/
+    
+    
+    // jadi method ini ngasih tau anotate maan yang ditekan kepada view
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        // di typecast ke customanotate kita supaya kalo anotate bawaan ga kedetect
+        guard let capital = view.annotation as? Anotate else {return}
+        // diambil judul dan simpenann
+         nama = capital.title
+         bintang = capital.subtitle
+        alamat = capital.alamat
+        gambar = capital.gambarFinal
+        lokasifull = capital.lokasifull
+        pindah()
+    
+        
+        print("dipencet anotate")
+        
+    
+    }
+    
+    
+    func pindah() {
+        UIView.animate(withDuration: 0.6) {
+            self.fpc.move(to: .half, animated: true)
+        }
+        simpan.namaResto.text = nama
+        simpan.alamatResto.text = alamat
+        simpan.ratingResto.text = bintang
+        simpan.gambar.image = gambar
+        simpan.lokasi = lokasifull
+        simpan.lokasiuser = lokasiUser
+        //fpc.panGestureRecognizer.isEnabled = false
+    }
+    
     
     
 
@@ -152,3 +211,20 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     */
 
 }
+
+/*class LandscapePanelLayout: FloatingPanelLayout {
+    let position: FloatingPanelPosition = .bottom
+    let initialState: FloatingPanelState = .tip
+    var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
+        return [
+            .full: FloatingPanelLayoutAnchor(absoluteInset: 16.0, edge: .top, referenceGuide: .safeArea),
+            .tip: FloatingPanelLayoutAnchor(absoluteInset: 69.0, edge: .bottom, referenceGuide: .safeArea),
+        ]
+    }
+    func prepareLayout(surfaceView: UIView, in view: UIView) -> [NSLayoutConstraint] {
+        return [
+            surfaceView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 8.0),
+            surfaceView.widthAnchor.constraint(equalToConstant: 291),
+        ]
+    }
+}*/
