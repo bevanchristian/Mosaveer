@@ -134,9 +134,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("atasepindah")
         if let detail = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController{
-            if let namaFix = try? self.nama[indexPath.row]{
+            if let namaFix = try? restaurantData.restoranarray[indexPath.item].nama{
                 detail.nama = namaFix
-                detail.idresto = id[indexPath.item]
+               // detail.idresto = id[indexPath.item]
             }
            
             self.navigationController!.pushViewController(detail, animated: true)
