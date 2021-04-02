@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B689751FCEC2A30329CDE60 /* Pods_cobaapi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA1D9C1845D9930A8A21888 /* Pods_cobaapi.framework */; };
 		5026B170260DC83500E41A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B16F260DC83500E41A4B /* AppDelegate.swift */; };
 		5026B172260DC83500E41A4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B171260DC83500E41A4B /* SceneDelegate.swift */; };
 		5026B174260DC83500E41A4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B173260DC83500E41A4B /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 		5068C3C62614789800F72EE4 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068C3C52614789800F72EE4 /* FilterViewController.swift */; };
 		5068C3CA2615CAAA00F72EE4 /* anotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068C3C92615CAAA00F72EE4 /* anotate.swift */; };
 		5068C3CD2615FF8E00F72EE4 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068C3CC2615FF8E00F72EE4 /* TabbarViewController.swift */; };
+		5068C3DE261722D800F72EE4 /* FloatMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068C3DD261722D800F72EE4 /* FloatMapViewController.swift */; };
 		5083CFE726133E98003AF518 /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083CFE626133E98003AF518 /* RestaurantData.swift */; };
 		5083CFEA26134670003AF518 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083CFE926134670003AF518 /* restaurant.swift */; };
 /* End PBXBuildFile section */
@@ -40,8 +42,12 @@
 		5068C3C52614789800F72EE4 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		5068C3C92615CAAA00F72EE4 /* anotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anotate.swift; sourceTree = "<group>"; };
 		5068C3CC2615FF8E00F72EE4 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		5068C3DD261722D800F72EE4 /* FloatMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatMapViewController.swift; sourceTree = "<group>"; };
 		5083CFE626133E98003AF518 /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
 		5083CFE926134670003AF518 /* restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurant.swift; sourceTree = "<group>"; };
+		6BA1D9C1845D9930A8A21888 /* Pods_cobaapi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cobaapi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AFC62909ECA79C9AE694676 /* Pods-cobaapi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobaapi.release.xcconfig"; path = "Target Support Files/Pods-cobaapi/Pods-cobaapi.release.xcconfig"; sourceTree = "<group>"; };
+		C6880492CCD02958B456A835 /* Pods-cobaapi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobaapi.debug.xcconfig"; path = "Target Support Files/Pods-cobaapi/Pods-cobaapi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B689751FCEC2A30329CDE60 /* Pods_cobaapi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +67,8 @@
 			children = (
 				5026B16E260DC83500E41A4B /* cobaapi */,
 				5026B16D260DC83500E41A4B /* Products */,
+				83D6B1C4F3A13BC9C26DCC84 /* Pods */,
+				C4906B1B982FAF7226FD2875 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,8 +99,26 @@
 				5068C3C52614789800F72EE4 /* FilterViewController.swift */,
 				5068C3C92615CAAA00F72EE4 /* anotate.swift */,
 				5068C3CC2615FF8E00F72EE4 /* TabbarViewController.swift */,
+				5068C3DD261722D800F72EE4 /* FloatMapViewController.swift */,
 			);
 			path = cobaapi;
+			sourceTree = "<group>";
+		};
+		83D6B1C4F3A13BC9C26DCC84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6880492CCD02958B456A835 /* Pods-cobaapi.debug.xcconfig */,
+				7AFC62909ECA79C9AE694676 /* Pods-cobaapi.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C4906B1B982FAF7226FD2875 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BA1D9C1845D9930A8A21888 /* Pods_cobaapi.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5026B180260DC83600E41A4B /* Build configuration list for PBXNativeTarget "cobaapi" */;
 			buildPhases = (
+				1516949DB3B2F29C3BBEE848 /* [CP] Check Pods Manifest.lock */,
 				5026B168260DC83500E41A4B /* Sources */,
 				5026B169260DC83500E41A4B /* Frameworks */,
 				5026B16A260DC83500E41A4B /* Resources */,
+				1218ED63BDC9D306595604A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +187,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1218ED63BDC9D306595604A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cobaapi/Pods-cobaapi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cobaapi/Pods-cobaapi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cobaapi/Pods-cobaapi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1516949DB3B2F29C3BBEE848 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cobaapi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5026B168260DC83500E41A4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -175,6 +246,7 @@
 				5068C3CA2615CAAA00F72EE4 /* anotate.swift in Sources */,
 				5026B19B260F13ED00E41A4B /* foursquareDetail.swift in Sources */,
 				5026B1A0260F7A3F00E41A4B /* DetailViewController.swift in Sources */,
+				5068C3DE261722D800F72EE4 /* FloatMapViewController.swift in Sources */,
 				5026B1A3260F8E1000E41A4B /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +383,7 @@
 		};
 		5026B181260DC83600E41A4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6880492CCD02958B456A835 /* Pods-cobaapi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -330,6 +403,7 @@
 		};
 		5026B182260DC83600E41A4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AFC62909ECA79C9AE694676 /* Pods-cobaapi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

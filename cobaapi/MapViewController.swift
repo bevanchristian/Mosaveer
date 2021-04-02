@@ -8,8 +8,8 @@
 import UIKit
 import MapKit
 import CoreLocation
-
-class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDelegate{
+import FloatingPanel
+class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDelegate,FloatingPanelControllerDelegate{
 
     @IBOutlet var pencet: UITabBarItem!
     @IBOutlet var map: MKMapView!
@@ -25,6 +25,34 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let fpc = FloatingPanelController()
+        fpc.delegate = self
+        
+        guard let contentVC = storyboard?.instantiateViewController(identifier: "floatingmap") as? FloatMapViewController else{
+            return
+        }
+        fpc.set(contentViewController: contentVC)
+        let appearance = SurfaceAppearance()
+
+        // Define shadows
+        let shadow = SurfaceAppearance.Shadow()
+        shadow.color = UIColor.black
+        shadow.offset = CGSize(width: 0, height: 16)
+        shadow.radius = 40
+        shadow.spread = 15
+        appearance.shadows = [shadow]
+
+        // Define corner radius and background color
+        appearance.cornerRadius = 8.0
+        appearance.backgroundColor = .clear
+
+        // Set the new appearance
+        fpc.surfaceView.appearance = appearance
+        fpc.panGestureRecognizer.isEnabled = false
+        UIView.animate(withDuration: 0.25) {
+            fpc.move(to: .half, animated: true)
+        }
+        fpc.addPanel(toParent: self)
        let tab = tabBarController as? TabbarViewController
         resto = tab!.restoran
         for x in 0...resto.count-1{

@@ -112,8 +112,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             cell.openHour.text = restaurantData.masjidarray[indexPath.item].statusOpen
         }
         
-        let tab = tabBarController as! TabbarViewController
-        tab.restoran = restaurantData.restoranarray
+        let tab = tabBarController as? TabbarViewController
+        tab?.restoran = restaurantData.restoranarray
        
         
         
