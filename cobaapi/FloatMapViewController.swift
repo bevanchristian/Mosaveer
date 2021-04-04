@@ -31,10 +31,14 @@ class FloatMapViewController: UIViewController {
         if lokasiuser == nil{
             lokasiuser = "35.702069,139.775327"
         }
-        let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser!),+CA&saddr=\(String(describing: lokasi!))")!
-        if UIApplication.shared.canOpenURL(targetURL as URL) != nil{
-            UIApplication.shared.open(targetURL as URL)
+        DispatchQueue.main.async { [self] in
+             let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser!),+CA&saddr=\(String(describing: lokasi!))")!
+            if UIApplication.shared.canOpenURL(targetURL as URL) != nil{
+
+                UIApplication.shared.openURL(targetURL as URL)
+            }
         }
+       
        // UIApplication.shared.open(targetURL as URL, options: .init(minimumCapacity: 10), completionHandler: nil)
     }
     

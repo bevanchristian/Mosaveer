@@ -11,6 +11,7 @@ class TabbarViewController: UITabBarController {
 
     
     var restoran = [restaurant]()
+    var masjid = [restaurant]()
     override func viewDidLoad() {
         super.viewDidLoad()
 

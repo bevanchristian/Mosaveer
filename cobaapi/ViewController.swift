@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     @IBOutlet var collectionView: UICollectionView?
     @IBOutlet var foto: UIImageView!
@@ -55,6 +56,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     @objc func manggildata() {
         print("mentoring")
         restaurantData.ubah(myView: self,tipe: 0,sudahAda: false)
+        restaurantData.ubah(myView: self,tipe: 1,sudahAda: false)
     }
     
   
@@ -84,7 +86,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return restaurantData.restoranarray.count
+        if milihapa == 0{
+            return restaurantData.restoranarray.count
+        }else if milihapa == 1{
+            return restaurantData.masjidarray.count
+        }else{
+            return 0
+        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -114,6 +123,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         let tab = tabBarController as? TabbarViewController
         tab?.restoran = restaurantData.restoranarray
+        tab?.masjid = restaurantData.masjidarray
        
         
         

@@ -24,6 +24,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     var bintang:String!
     var alamat:String!
     var pin = [Anotate]()
+    var pinmasjid = [Anotate]()
     var gambar:UIImage!
     var simpan:FloatMapViewController!
     var lokasifull:String!
@@ -33,6 +34,10 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     var fpc:FloatingPanelController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        map.register(
+          ArtworkMarkerView.self,
+          forAnnotationViewWithReuseIdentifier:
+            MKMapViewDefaultAnnotationViewReuseIdentifier)
          fpc = FloatingPanelController()
         fpc.delegate = self
         map.delegate = self
@@ -72,13 +77,26 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
                 cordinate.append(contentsOf: resto[x].lokasiMap.components(separatedBy: ","))
                  lat = Double(cordinate[0])
                  lng = Double(cordinate[1])
-                let london = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambar: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap)
+                let london = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambar: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap,identitas: "resto")
                 pin.append(london)
                 print(london)
                 cordinate.removeAll()
              }
-    
+            
             map.addAnnotations(pin)
+        }
+        if let resto = try? tab?.masjid{
+            for x in 0...resto.count-1{
+                cordinate.append(contentsOf: resto[x].lokasiMap.components(separatedBy: ","))
+                 lat = Double(cordinate[0])
+                 lng = Double(cordinate[1])
+                let masjid = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambar: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap,identitas: "masjid")
+                pinmasjid.append(masjid)
+                print(masjid)
+                cordinate.removeAll()
+             }
+    
+            map.addAnnotations(pinmasjid)
         }
 
     }
@@ -108,6 +126,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
             anotationview?.annotation = annotation
         }
         
+        //anotationview?.image = UIImage(named: "HADILAU")
         return anotationview
     }
     
@@ -154,8 +173,13 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         if CLLocationManager.locationServicesEnabled(){
             // method ini untuk mulai nyuruh oke start update location
             locationManager.startUpdatingLocation()
-            
+            Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(selesailacak), userInfo: nil, repeats: false)
+        
         }
+    }
+    
+    @objc func selesailacak(){
+        locationManager.stopUpdatingLocation()
     }
     
  

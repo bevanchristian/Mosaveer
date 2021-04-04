@@ -234,13 +234,21 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-7a-lu9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zr-cE-sKU">
+                                <rect key="frame" x="334" y="110.00000000000023" width="25" height="20"/>
+                                <state key="normal" backgroundImage="paperplane" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Q1-Bi-OS0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4mw-7a-lu9" firstAttribute="bottom" secondItem="8Q1-Bi-OS0" secondAttribute="bottom" id="6wS-Vs-4BA"/>
                             <constraint firstItem="4mw-7a-lu9" firstAttribute="leading" secondItem="8Q1-Bi-OS0" secondAttribute="leading" id="Kse-CH-mnz"/>
+                            <constraint firstItem="8Q1-Bi-OS0" firstAttribute="bottom" secondItem="8Zr-cE-sKU" secondAttribute="bottom" constant="582.33000000000004" id="b3y-gR-Jex"/>
                             <constraint firstItem="4mw-7a-lu9" firstAttribute="centerX" secondItem="dLP-6f-6uE" secondAttribute="centerX" id="eds-ZD-A8P"/>
+                            <constraint firstItem="8Zr-cE-sKU" firstAttribute="leading" secondItem="8Q1-Bi-OS0" secondAttribute="leading" constant="319" id="g2w-yh-guU"/>
+                            <constraint firstItem="8Q1-Bi-OS0" firstAttribute="trailing" secondItem="8Zr-cE-sKU" secondAttribute="trailing" constant="16" id="jb0-C2-ubY"/>
+                            <constraint firstItem="8Zr-cE-sKU" firstAttribute="top" secondItem="8Q1-Bi-OS0" secondAttribute="top" constant="68" id="ynh-bi-AgL"/>
                             <constraint firstItem="4mw-7a-lu9" firstAttribute="top" secondItem="dLP-6f-6uE" secondAttribute="topMargin" constant="-44" id="yr0-eM-uqJ"/>
                         </constraints>
                     </view>
@@ -251,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IO-CA-L5m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="873"/>
+            <point key="canvasLocation" x="1036" y="872.66009852216757"/>
         </scene>
         <!--Float Map View Controller-->
         <scene sceneID="o5R-CY-5BG">
@@ -402,6 +410,7 @@
         <image name="HADILAU" width="235" height="214"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
