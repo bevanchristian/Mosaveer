@@ -25,12 +25,18 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     var alamat:String!
     var pin = [Anotate]()
     var pinmasjid = [Anotate]()
-    var gambar:UIImage!
+    var gambarfinal:UIImage!
     var simpan:FloatMapViewController!
     var lokasifull:String!
     var lokasiUser:String!
+    var status:String!
+    var deskripsi:String!
+    var gambar:[String]!
     var region:MKCoordinateRegion!
     var center : CLLocationCoordinate2D!
+    var dataresto = [restaurant]()
+    var datamasjid = [restaurant]()
+    
     
     
  
@@ -39,7 +45,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // inisiasi floating panel
-        
+        title = "Map"
         fpc = FloatingPanelController()
         fpc2 = FloatingPanelController()
         // delegate
@@ -81,11 +87,12 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         
         let tab = tabBarController as? TabbarViewController
         if let resto = try? tab?.restoran{
+            dataresto = resto
             for x in 0...resto.count-1{
                 cordinate.append(contentsOf: resto[x].lokasiMap.components(separatedBy: ","))
                  lat = Double(cordinate[0])
                  lng = Double(cordinate[1])
-                let london = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambar: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap,identitas: "resto")
+                let london = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambarfinal: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap,identitas: "resto",statusopen: resto[x].statusOpen,deskripsi: resto[x].deskription,gambar: resto[x].gambar)
                 pin.append(london)
                 print(london)
                 cordinate.removeAll()
@@ -94,11 +101,12 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
             map.addAnnotations(pin)
         }
         if let resto = try? tab?.masjid{
+            datamasjid = resto
             for x in 0...resto.count-1{
                 cordinate.append(contentsOf: resto[x].lokasiMap.components(separatedBy: ","))
                  lat = Double(cordinate[0])
                  lng = Double(cordinate[1])
-                let masjid = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambar: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap,identitas: "masjid")
+                let masjid = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambarfinal: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap,identitas: "masjid",statusopen: resto[x].statusOpen,deskripsi: resto[x].deskription,gambar: resto[x].gambar)
                 pinmasjid.append(masjid)
                 print(masjid)
                 cordinate.removeAll()
@@ -106,7 +114,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     
             map.addAnnotations(pinmasjid)
         }
-
+        
     }
     
     @IBAction func settingAction(_ sender: Any) {
@@ -259,8 +267,11 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
          nama = capital.title
          bintang = capital.subtitle
         alamat = capital.alamat
-        gambar = capital.gambarFinal
+        gambarfinal = capital.gambarFinal
         lokasifull = capital.lokasifull
+        status = capital.statusopen
+        deskripsi = capital.deskripsi
+        gambar = capital.gambar
         pindah()
     
         
@@ -274,12 +285,17 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         UIView.animate(withDuration: 0.6) {
             self.fpc.move(to: .half, animated: true)
         }
+        // simpan itu floating map
         simpan.namaResto.text = nama
         simpan.alamatResto.text = alamat
         simpan.ratingResto.text = bintang
-        simpan.gambar.image = gambar
+        simpan.gambar.image = gambarfinal
         simpan.lokasi = lokasifull
         simpan.lokasiuser = lokasiUser
+        simpan.status = status
+        simpan.deskripsi = deskripsi
+        simpan.gambarkoleksi = gambar
+        simpan.ngisi(view: self)
         //fpc.panGestureRecognizer.isEnabled = false
     }
     
