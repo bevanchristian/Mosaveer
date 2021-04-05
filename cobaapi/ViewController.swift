@@ -134,8 +134,16 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("atasepindah")
         if let detail = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController{
-            if let namaFix = try? restaurantData.restoranarray[indexPath.item].nama{
-                detail.nama = namaFix
+            if let namaFix = try? restaurantData.restoranarray[indexPath.item]{
+                detail.nama = namaFix.nama
+                detail.alamat1 = namaFix.address
+                detail.bukajam1 = namaFix.statusOpen
+                detail.rating1 = namaFix.rating
+                detail.fotodetail = namaFix.gambarFinal
+                detail.deskripsi1 = namaFix.deskription
+                
+                
+                
                // detail.idresto = id[indexPath.item]
             }
            
