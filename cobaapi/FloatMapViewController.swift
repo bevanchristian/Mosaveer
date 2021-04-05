@@ -33,9 +33,15 @@ class FloatMapViewController: UIViewController {
         }
         DispatchQueue.main.async { [self] in
              let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser!),+CA&saddr=\(String(describing: lokasi!))")!
-            if UIApplication.shared.canOpenURL(targetURL as URL) != nil{
+           /* if UIApplication.shared.canOpenURL(targetURL as URL) != nil{
 
                 UIApplication.shared.openURL(targetURL as URL)
+            }*/
+            
+            
+            if let pindah = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController{
+                
+                
             }
         }
        

@@ -44,7 +44,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         collectionView?.dataSource = self
         collectionView?.delegate = self
         title = "Moosafer"
-       navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
         performSelector(inBackground: #selector(manggildata), with: nil)
         

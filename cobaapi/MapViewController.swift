@@ -39,6 +39,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // inisiasi floating panel
+        
         fpc = FloatingPanelController()
         fpc2 = FloatingPanelController()
         // delegate
@@ -124,6 +125,9 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         guard let mapSetting = storyboard?.instantiateViewController(identifier: "setting") as? MapSettingViewController else{
             return
         }
+        mapSetting.masjidarray = pinmasjid
+        mapSetting.restoarray = pin
+        mapSetting.dapetinview(myview:self)
         fpc2.set(contentViewController: mapSetting)
         fpc2.contentMode = .fitToBounds
         fpc2.addPanel(toParent: self)
@@ -164,8 +168,22 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     
     override func viewDidAppear(_ animated: Bool) {
         determineCurrentLocation()
+
      
        
+    }
+    
+    
+    func masukin(){
+        map.addAnnotations(pin)
+        map.addAnnotations(pinmasjid)
+    }
+    func masukinmasjid(){
+        map.addAnnotations(pinmasjid)
+    }
+    func masukinresto(){
+        map.addAnnotations(pin)
+
     }
     // ini cuma dipanggil ketika ada lokasi baru
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -265,7 +283,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         //fpc.panGestureRecognizer.isEnabled = false
     }
     
-    
+   
     
 
     /*
