@@ -41,7 +41,10 @@ class MapSettingViewController: UIViewController {
            
            // resto
         }else if sender.selectedSegmentIndex == 1{
-            if countresto > 1{
+            if countmasjid == 1 {
+                mapview.masukinresto()
+            }
+            if countresto >= 1{
                 mapview.masukinresto()
             }
             
@@ -51,7 +54,10 @@ class MapSettingViewController: UIViewController {
            
         // masjid
         }else if sender.selectedSegmentIndex == 2{
-            if countmasjid > 1{
+            if countresto == 1 {
+                mapview.masukinmasjid()
+            }
+            if countmasjid >= 1{
                 mapview.masukinmasjid()
             }
             mapview.map.removeAnnotations(restoarray)
