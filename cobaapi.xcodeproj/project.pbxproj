@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B689751FCEC2A30329CDE60 /* Pods_cobaapi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA1D9C1845D9930A8A21888 /* Pods_cobaapi.framework */; };
 		5004F0092619F2EF001239F3 /* anotateview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004F0082619F2EF001239F3 /* anotateview.swift */; };
+		5004F00C261AC3CC001239F3 /* MapSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004F00B261AC3CC001239F3 /* MapSettingViewController.swift */; };
 		5026B170260DC83500E41A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B16F260DC83500E41A4B /* AppDelegate.swift */; };
 		5026B172260DC83500E41A4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B171260DC83500E41A4B /* SceneDelegate.swift */; };
 		5026B174260DC83500E41A4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B173260DC83500E41A4B /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		5004F0082619F2EF001239F3 /* anotateview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anotateview.swift; sourceTree = "<group>"; };
+		5004F00B261AC3CC001239F3 /* MapSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSettingViewController.swift; sourceTree = "<group>"; };
 		5026B16C260DC83500E41A4B /* cobaapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cobaapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5026B16F260DC83500E41A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5026B171260DC83500E41A4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				5068C3CC2615FF8E00F72EE4 /* TabbarViewController.swift */,
 				5068C3DD261722D800F72EE4 /* FloatMapViewController.swift */,
 				5004F0082619F2EF001239F3 /* anotateview.swift */,
+				5004F00B261AC3CC001239F3 /* MapSettingViewController.swift */,
 			);
 			path = cobaapi;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				5026B18C260DCE1700E41A4B /* foursquares.swift in Sources */,
 				5004F0092619F2EF001239F3 /* anotateview.swift in Sources */,
 				5026B174260DC83500E41A4B /* ViewController.swift in Sources */,
+				5004F00C261AC3CC001239F3 /* MapSettingViewController.swift in Sources */,
 				5068C3CD2615FF8E00F72EE4 /* TabbarViewController.swift in Sources */,
 				5026B186260DCB6900E41A4B /* jsondata.swift in Sources */,
 				5026B170260DC83500E41A4B /* AppDelegate.swift in Sources */,

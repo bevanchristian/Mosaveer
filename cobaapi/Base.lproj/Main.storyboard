@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aJr-4G-KcN">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController interfaceStyle="light" id="BYZ-38-t0r" customClass="ViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Wi-CI-z5r">
-                                <rect key="frame" x="16" y="145" width="343" height="584"/>
+                                <rect key="frame" x="16" y="145" width="358" height="616"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t2b-Rs-e4l">
                                     <size key="itemSize" width="350" height="150"/>
@@ -30,7 +30,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="celljson" id="Hvb-SG-10J" customClass="jsondata" customModule="cobaapi" customModuleProvider="target">
-                                        <rect key="frame" x="-22.666666666666668" y="0.0" width="388" height="150"/>
+                                        <rect key="frame" x="-15" y="0.0" width="388" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="nD0-Ah-UTq">
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="150"/>
@@ -88,7 +88,7 @@
                                 </cells>
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-fw-SbY">
-                                <rect key="frame" x="78" y="98" width="219" height="28"/>
+                                <rect key="frame" x="78" y="98" width="234" height="28"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="tHW-DD-XVi"/>
@@ -128,7 +128,7 @@
             <objects>
                 <viewController storyboardIdentifier="Detail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Aws-eC-GLV" customClass="DetailViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="daR-ha-6o8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nama" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP1-3k-K5b">
@@ -173,12 +173,12 @@
                                 <state key="normal" title="Get Direction"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-vF-fDU">
-                                <rect key="frame" x="285" y="410" width="44" height="33"/>
+                                <rect key="frame" x="300" y="410" width="44" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Share"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u2y-0X-Q50">
-                                <rect key="frame" x="16" y="43.999999999999986" width="343" height="226.66666666666663"/>
+                                <rect key="frame" x="16" y="43.999999999999986" width="358" height="226.66666666666663"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="396" id="OIf-0s-QsJ"/>
@@ -228,27 +228,54 @@
             <objects>
                 <viewController storyboardIdentifier="Mapview" title="Map" id="b6t-5A-Isu" customClass="MapViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dLP-6f-6uE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-7a-lu9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zr-cE-sKU">
-                                <rect key="frame" x="334" y="110.00000000000023" width="25" height="20"/>
-                                <state key="normal" backgroundImage="paperplane" catalog="system"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zr-cE-sKU">
+                                <rect key="frame" x="356" y="99" width="21" height="38"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8Zr-cE-sKU" secondAttribute="height" multiplier="21:38" id="TKV-cU-B2s"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" image="paperplane" catalog="system">
+                                    <color key="titleShadowColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="recenterAction:" destination="b6t-5A-Isu" eventType="touchUpInside" id="edK-vS-XWL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QI-I2-2en">
+                                <rect key="frame" x="356" y="62" width="21" height="38"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6QI-I2-2en" secondAttribute="height" multiplier="29:38" id="dxq-TQ-2DN"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="info.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="settingAction:" destination="b6t-5A-Isu" eventType="touchUpInside" id="eDm-xY-IsN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Q1-Bi-OS0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8Zr-cE-sKU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8Q1-Bi-OS0" secondAttribute="top" constant="55" id="395-vp-lLH"/>
                             <constraint firstItem="4mw-7a-lu9" firstAttribute="bottom" secondItem="8Q1-Bi-OS0" secondAttribute="bottom" id="6wS-Vs-4BA"/>
                             <constraint firstItem="4mw-7a-lu9" firstAttribute="leading" secondItem="8Q1-Bi-OS0" secondAttribute="leading" id="Kse-CH-mnz"/>
-                            <constraint firstItem="8Q1-Bi-OS0" firstAttribute="bottom" secondItem="8Zr-cE-sKU" secondAttribute="bottom" constant="582.33000000000004" id="b3y-gR-Jex"/>
+                            <constraint firstItem="8Zr-cE-sKU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Q1-Bi-OS0" secondAttribute="leading" constant="348" id="Mqj-Ak-uEc"/>
+                            <constraint firstItem="8Zr-cE-sKU" firstAttribute="trailing" secondItem="6QI-I2-2en" secondAttribute="trailing" id="Nho-PK-Rby"/>
+                            <constraint firstItem="8Q1-Bi-OS0" firstAttribute="trailing" secondItem="8Zr-cE-sKU" secondAttribute="trailing" constant="13" id="Rsp-E5-wCg"/>
                             <constraint firstItem="4mw-7a-lu9" firstAttribute="centerX" secondItem="dLP-6f-6uE" secondAttribute="centerX" id="eds-ZD-A8P"/>
-                            <constraint firstItem="8Zr-cE-sKU" firstAttribute="leading" secondItem="8Q1-Bi-OS0" secondAttribute="leading" constant="319" id="g2w-yh-guU"/>
-                            <constraint firstItem="8Q1-Bi-OS0" firstAttribute="trailing" secondItem="8Zr-cE-sKU" secondAttribute="trailing" constant="16" id="jb0-C2-ubY"/>
-                            <constraint firstItem="8Zr-cE-sKU" firstAttribute="top" secondItem="8Q1-Bi-OS0" secondAttribute="top" constant="68" id="ynh-bi-AgL"/>
+                            <constraint firstItem="6QI-I2-2en" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8Q1-Bi-OS0" secondAttribute="top" constant="17" id="iA0-gd-YCK"/>
+                            <constraint firstItem="8Q1-Bi-OS0" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="6QI-I2-2en" secondAttribute="bottom" constant="661" id="jNX-qy-7SQ"/>
+                            <constraint firstItem="8Q1-Bi-OS0" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="8Zr-cE-sKU" secondAttribute="bottom" constant="623" id="m9L-cy-X4x"/>
+                            <constraint firstItem="8Zr-cE-sKU" firstAttribute="leading" secondItem="6QI-I2-2en" secondAttribute="leading" id="vSr-kS-OrQ"/>
                             <constraint firstItem="4mw-7a-lu9" firstAttribute="top" secondItem="dLP-6f-6uE" secondAttribute="topMargin" constant="-44" id="yr0-eM-uqJ"/>
                         </constraints>
                     </view>
@@ -266,7 +293,7 @@
             <objects>
                 <viewController storyboardIdentifier="floatingmap" id="OAv-hy-L8e" customClass="FloatMapViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gq5-UA-WrC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="600" image="HADILAU" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ExQ-5h-jo5">
@@ -300,7 +327,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="400" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPg-CY-t4K">
-                                <rect key="frame" x="50" y="246" width="275" height="30"/>
+                                <rect key="frame" x="50" y="246" width="290" height="30"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Get Dirrection">
@@ -308,12 +335,6 @@
                                 </state>
                                 <connections>
                                     <action selector="getdirection:" destination="OAv-hy-L8e" eventType="touchUpInside" id="kdi-eM-PYn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykz-gO-td4">
-                                <rect key="frame" x="329" y="56" width="30" height="30"/>
-                                <connections>
-                                    <action selector="close:" destination="OAv-hy-L8e" eventType="touchUpInside" id="Kn9-rj-SeA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -324,17 +345,14 @@
                             <constraint firstItem="ExQ-5h-jo5" firstAttribute="top" secondItem="n1k-Cb-6XG" secondAttribute="top" id="2WM-rl-AV9"/>
                             <constraint firstItem="SM9-Vx-wO2" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="ExQ-5h-jo5" secondAttribute="bottom" priority="250" constant="523" id="3D3-sL-cGe"/>
                             <constraint firstItem="yPg-CY-t4K" firstAttribute="top" secondItem="n1k-Cb-6XG" secondAttribute="bottom" constant="20" id="A7K-x0-gBh"/>
-                            <constraint firstItem="ykz-gO-td4" firstAttribute="top" secondItem="SM9-Vx-wO2" secondAttribute="top" constant="12" id="Q0q-LR-aGm"/>
                             <constraint firstItem="ExQ-5h-jo5" firstAttribute="top" secondItem="SM9-Vx-wO2" secondAttribute="top" constant="50" id="TLX-26-Sc9"/>
                             <constraint firstItem="yPg-CY-t4K" firstAttribute="leading" secondItem="SM9-Vx-wO2" secondAttribute="leading" constant="50" id="UGy-V8-ikA"/>
                             <constraint firstItem="n1k-Cb-6XG" firstAttribute="leading" secondItem="ExQ-5h-jo5" secondAttribute="trailing" constant="10" id="a6s-39-oeg"/>
-                            <constraint firstItem="ykz-gO-td4" firstAttribute="trailing" secondItem="gq5-UA-WrC" secondAttribute="trailingMargin" id="d0k-lV-ZLr"/>
                             <constraint firstItem="ExQ-5h-jo5" firstAttribute="leading" secondItem="gq5-UA-WrC" secondAttribute="leadingMargin" id="d0w-YA-vdO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="alamatResto" destination="chy-SD-B5u" id="mm7-Yd-Mue"/>
-                        <outlet property="closeOutlet" destination="ykz-gO-td4" id="k8F-rD-7VT"/>
                         <outlet property="gambar" destination="ExQ-5h-jo5" id="DaP-s9-5XV"/>
                         <outlet property="namaResto" destination="9AA-VC-rR9" id="wrv-sR-oWC"/>
                         <outlet property="ratingResto" destination="GvB-VB-nnW" id="Kyf-JR-RvG"/>
@@ -344,16 +362,54 @@
             </objects>
             <point key="canvasLocation" x="1034.4000000000001" y="1536.2068965517242"/>
         </scene>
+        <!--Map Setting View Controller-->
+        <scene sceneID="pRS-Uw-Oke">
+            <objects>
+                <viewController storyboardIdentifier="setting" id="lTp-GS-A9V" customClass="MapSettingViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Fq-LF-UuH">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CCu-Qx-20T">
+                                <rect key="frame" x="20" y="136" width="343" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Restaurant"/>
+                                    <segment title="Mousque"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZW-x6-Bh7">
+                                <rect key="frame" x="16" y="86.333333333333329" width="135.33333333333334" height="28.666666666666671"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4hk-Dn-O8p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CCu-Qx-20T" firstAttribute="leading" secondItem="4hk-Dn-O8p" secondAttribute="leading" constant="20" id="2T7-Xz-XN6"/>
+                            <constraint firstItem="4hk-Dn-O8p" firstAttribute="trailing" secondItem="CCu-Qx-20T" secondAttribute="trailing" constant="27" id="B3c-Ky-HdY"/>
+                            <constraint firstItem="CCu-Qx-20T" firstAttribute="top" secondItem="LZW-x6-Bh7" secondAttribute="bottom" constant="21.000000000000014" id="Wdg-1F-Dq4"/>
+                            <constraint firstItem="LZW-x6-Bh7" firstAttribute="leading" secondItem="5Fq-LF-UuH" secondAttribute="leadingMargin" id="syF-1h-DJQ"/>
+                            <constraint firstItem="LZW-x6-Bh7" firstAttribute="top" secondItem="4hk-Dn-O8p" secondAttribute="top" constant="42.333333333333329" id="zh9-P5-JHJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYt-YC-y8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824.6153846153845" y="1535.5450236966824"/>
+        </scene>
         <!--Filter View Controller-->
         <scene sceneID="wfl-5t-Gb5">
             <objects>
                 <viewController storyboardIdentifier="filter" id="IBx-R1-KT3" customClass="FilterViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" ambiguous="YES" id="dc3-xL-RCO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OC-5c-Zi5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                                 <items>
                                     <navigationItem title="Title" id="RC2-Tp-B0e">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="c8y-v6-Wyd"/>
@@ -393,7 +449,7 @@
                     <tabBarItem key="tabBarItem" title="Food" image="mappin" catalog="system" id="cI2-zv-fux"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="do2-Dq-HsA">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -408,12 +464,16 @@
     </scenes>
     <resources>
         <image name="HADILAU" width="235" height="214"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

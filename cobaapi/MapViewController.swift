@@ -29,25 +29,31 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     var simpan:FloatMapViewController!
     var lokasifull:String!
     var lokasiUser:String!
+    var region:MKCoordinateRegion!
+    var center : CLLocationCoordinate2D!
     
-
+    
+ 
     var fpc:FloatingPanelController!
+    var fpc2:FloatingPanelController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        map.register(
-          ArtworkMarkerView.self,
-          forAnnotationViewWithReuseIdentifier:
-            MKMapViewDefaultAnnotationViewReuseIdentifier)
-         fpc = FloatingPanelController()
+        // inisiasi floating panel
+        fpc = FloatingPanelController()
+        fpc2 = FloatingPanelController()
+        // delegate
         fpc.delegate = self
         map.delegate = self
+        // ambil floating panel detail resto
         guard let contentVC = storyboard?.instantiateViewController(identifier: "floatingmap") as? FloatMapViewController else{
             return
         }
         simpan = contentVC
+        // di set sebeagai konten nya floating panel
         fpc.set(contentViewController: contentVC)
+        
+        // untuk desain tampilan floating panel
         let appearance = SurfaceAppearance()
-
         // Define shadows
         let shadow = SurfaceAppearance.Shadow()
         shadow.color = UIColor.black
@@ -55,22 +61,23 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         shadow.radius = 12
         shadow.spread = 8
         appearance.shadows = [shadow]
-
         // Define corner radius and background color
         appearance.cornerRadius = 12.0
         appearance.backgroundColor = .clear
-
         // Set the new appearance
         fpc.surfaceView.appearance = appearance
-
         fpc.preferredContentSize = CGSize(width: 100, height: 100)
         fpc.contentMode = .fitToBounds
-      
+        // tampilin ke layar
         fpc.addPanel(toParent: self)
         fpc.panGestureRecognizer.isEnabled = false
         UIView.animate(withDuration: 0.25) { [self] in
             fpc.move(to: .hidden, animated: true)
         }
+
+        
+        
+        
         let tab = tabBarController as? TabbarViewController
         if let resto = try? tab?.restoran{
             for x in 0...resto.count-1{
@@ -101,8 +108,33 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
 
     }
     
+    @IBAction func settingAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.25) { [self] in
+            fpc.move(to: .hidden, animated: true)
+        }
+        if fpc2 != nil{
+            UIView.animate(withDuration: 0.25) { [self] in
+                fpc2.move(to: .half, animated: true)
+            }
+        }
+      
+
+        
+        fpc2.delegate = self
+        guard let mapSetting = storyboard?.instantiateViewController(identifier: "setting") as? MapSettingViewController else{
+            return
+        }
+        fpc2.set(contentViewController: mapSetting)
+        fpc2.contentMode = .fitToBounds
+        fpc2.addPanel(toParent: self)
+      //  fpc2.panGestureRecognizer.isEnabled = false
+    }
     
     
+    @IBAction func recenterAction(_ sender: Any) {
+        guard let a = center else {return}
+        map.setCenter(center, animated: true)
+    }
   
     
 
@@ -140,10 +172,10 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         // ini dapetin lokasi user
         let userLocation = locations[0] as CLLocation
         // ini untuk nge center kamera
-        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         print(userLocation.coordinate.latitude)
         // ini kotake
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 100000, longitudinalMeters: 100000)
+        region = MKCoordinateRegion(center: center, latitudinalMeters: 100000, longitudinalMeters: 100000)
         map.setRegion(region, animated: true)
         
         let lat = String(userLocation.coordinate.latitude)
@@ -192,6 +224,18 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     // jadi method ini ngasih tau anotate maan yang ditekan kepada view
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         // di typecast ke customanotate kita supaya kalo anotate bawaan ga kedetect
+        UIView.animate(withDuration: 0.25) { [self] in
+            fpc.move(to: .half, animated: true)
+        }
+        
+        if fpc2 != nil {
+            UIView.animate(withDuration: 0.25) { [self] in
+                fpc2!.move(to: .hidden, animated: true)
+            }
+        
+        }
+       // fpc.panGestureRecognizer.isEnabled = false
+      
         guard let capital = view.annotation as? Anotate else {return}
         // diambil judul dan simpenann
          nama = capital.title
