@@ -1,24 +1,24 @@
 //
-//  TabbarViewController.swift
+//  MapSettingViewController.swift
 //  cobaapi
 //
-//  Created by bevan christian on 01/04/21.
+//  Created by bevan christian on 05/04/21.
 //
 
 import UIKit
 
-class TabbarViewController: UITabBarController {
+class MapSettingViewController: UIViewController {
 
-    
-    var restoran = [restaurant]()
-    var masjid = [restaurant]()
+    @IBOutlet var setting: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func settingAction(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
