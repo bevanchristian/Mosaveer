@@ -455,14 +455,89 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLT-1C-gFW">
+                                <rect key="frame" x="36.000000000000007" y="96" width="67.666666666666686" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tvv-Ar-7FV">
+                                <rect key="frame" x="34" y="136.33333333333334" width="322" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11x-nK-Wd6">
+                                <rect key="frame" x="23.999999999999996" y="204.66666666666666" width="48.666666666666657" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="2tb-6q-6GU">
+                                <rect key="frame" x="39" y="245" width="298" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdZ-PE-ony">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEc-Aj-YVn">
+                                        <rect key="frame" x="63" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OS-KT-x9W">
+                                        <rect key="frame" x="126" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-BZ-6Zh">
+                                        <rect key="frame" x="189" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45y-dq-B3K">
+                                        <rect key="frame" x="252" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mo-lG-49O">
+                                <rect key="frame" x="24.000000000000007" y="302" width="91.666666666666686" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Kq-aO-fad">
+                                <rect key="frame" x="36" y="342.33333333333331" width="318" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-1Z-iLT">
+                                <rect key="frame" x="172" y="413.33333333333331" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8m9-mX-mkf"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
+                            <constraint firstItem="2tb-6q-6GU" firstAttribute="top" secondItem="11x-nK-Wd6" secondAttribute="bottom" constant="20" id="0we-jR-ygy"/>
                             <constraint firstItem="6OC-5c-Zi5" firstAttribute="centerX" secondItem="dc3-xL-RCO" secondAttribute="centerX" id="3s6-eJ-4gK"/>
+                            <constraint firstItem="0mo-lG-49O" firstAttribute="top" secondItem="dc3-xL-RCO" secondAttribute="top" constant="302" id="7uq-OK-vNQ"/>
+                            <constraint firstItem="0mo-lG-49O" firstAttribute="leading" secondItem="11x-nK-Wd6" secondAttribute="leading" id="CEg-S8-sqv"/>
+                            <constraint firstAttribute="bottom" secondItem="2tb-6q-6GU" secondAttribute="bottom" constant="515" id="EGX-uo-pAy"/>
                             <constraint firstItem="6OC-5c-Zi5" firstAttribute="top" secondItem="8m9-mX-mkf" secondAttribute="top" id="Eb4-iq-H7v"/>
+                            <constraint firstItem="tvv-Ar-7FV" firstAttribute="top" secondItem="BLT-1C-gFW" secondAttribute="bottom" constant="20" id="Fgy-ax-cPT"/>
+                            <constraint firstItem="tvv-Ar-7FV" firstAttribute="leading" secondItem="dc3-xL-RCO" secondAttribute="leadingMargin" constant="20" id="GXX-js-GxF"/>
+                            <constraint firstItem="2tb-6q-6GU" firstAttribute="leading" secondItem="8m9-mX-mkf" secondAttribute="leading" constant="39" id="LoZ-Fk-Pnr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tvv-Ar-7FV" secondAttribute="trailing" constant="20" id="Q92-yb-X7S"/>
                             <constraint firstItem="6OC-5c-Zi5" firstAttribute="leading" secondItem="8m9-mX-mkf" secondAttribute="leading" id="R1e-o5-cfb"/>
+                            <constraint firstItem="7Kq-aO-fad" firstAttribute="leading" secondItem="dc3-xL-RCO" secondAttribute="leadingMargin" constant="20" id="UnN-H9-cev"/>
                             <constraint firstItem="8m9-mX-mkf" firstAttribute="bottom" secondItem="6OC-5c-Zi5" secondAttribute="bottom" constant="794" id="VC0-lD-t6y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Kq-aO-fad" secondAttribute="trailing" constant="20" id="WZT-6g-F5c"/>
+                            <constraint firstItem="HhB-1Z-iLT" firstAttribute="top" secondItem="7Kq-aO-fad" secondAttribute="bottom" constant="40" id="ZUa-xv-pKz"/>
+                            <constraint firstItem="HhB-1Z-iLT" firstAttribute="centerX" secondItem="dc3-xL-RCO" secondAttribute="centerX" id="bzm-yx-Zkv"/>
+                            <constraint firstItem="0mo-lG-49O" firstAttribute="leading" secondItem="8m9-mX-mkf" secondAttribute="leading" constant="24" id="gHt-np-6Y1"/>
+                            <constraint firstItem="BLT-1C-gFW" firstAttribute="leading" secondItem="dc3-xL-RCO" secondAttribute="leadingMargin" constant="20" id="gS5-LT-u3Z"/>
+                            <constraint firstItem="BLT-1C-gFW" firstAttribute="top" secondItem="6OC-5c-Zi5" secondAttribute="bottom" constant="40" id="h6b-IB-DDW"/>
+                            <constraint firstItem="0mo-lG-49O" firstAttribute="centerX" secondItem="BLT-1C-gFW" secondAttribute="centerX" id="hFj-Yq-KM8"/>
+                            <constraint firstItem="7Kq-aO-fad" firstAttribute="top" secondItem="0mo-lG-49O" secondAttribute="bottom" constant="20" id="mP4-kA-cFu"/>
+                            <constraint firstItem="0mo-lG-49O" firstAttribute="top" secondItem="2tb-6q-6GU" secondAttribute="bottom" constant="27" id="qLq-JI-dja"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gBX-zN-yoY">
