@@ -216,7 +216,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="322.32999999999998" id="AR6-a4-jv1"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qwx-17-ZAK">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qwx-17-ZAK">
                                     <size key="itemSize" width="366" height="286"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -224,7 +224,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="gambarReview" id="hXW-Lk-r4a" customClass="imagedetailCollectionViewCell" customModule="cobaapi" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="0.0" width="366" height="286"/>
+                                        <rect key="frame" x="0.0" y="18" width="366" height="286"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KyN-rA-1eT">
                                             <rect key="frame" x="0.0" y="0.0" width="366" height="286"/>
