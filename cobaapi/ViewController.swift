@@ -156,7 +156,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                     detail.rating1 = namaFix.rating
                     detail.fotodetail = namaFix.gambarFinal
                     detail.deskripsi1 = namaFix.deskription
-                    
+                    detail.gambarslide = namaFix.gambar
+                    print(namaFix.gambar)
+                    print("INI FOTO APIK")
                     
                     
                    // detail.idresto = id[indexPath.item]
@@ -174,8 +176,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                     detail.rating1 = namaFix.rating
                     detail.fotodetail = namaFix.gambarFinal
                     detail.deskripsi1 = namaFix.deskription
-                    
-                    
+                    detail.gambarslide = namaFix.gambar
+                    print(namaFix.gambar)
+                    print("INI FOTO APIK")
                     
                    // detail.idresto = id[indexPath.item]
                 }

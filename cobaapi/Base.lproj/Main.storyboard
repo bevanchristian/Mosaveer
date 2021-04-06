@@ -248,6 +248,9 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <size key="customSize" width="366" height="286"/>
+                                        <connections>
+                                            <outlet property="imagedetail" destination="jFx-Ef-reG" id="MDc-Og-FXh"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

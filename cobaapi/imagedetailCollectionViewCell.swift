@@ -10,4 +10,5 @@ import UIKit
 class imagedetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imagedetail: UIImageView!
     
+    
 }
