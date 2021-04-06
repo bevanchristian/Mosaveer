@@ -64,6 +64,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         
         gambar.delegate = self
+        gambar.dataSource = self
       
         
 
@@ -72,11 +73,13 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 2
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gambarReview", for: indexPath) as! imagedetailCollectionViewCell
+        
+    
         return cell
     }
     /*
