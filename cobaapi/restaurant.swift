@@ -23,5 +23,6 @@ struct restaurant {
     var foursquare:mygroups? = nil
     var cekfoto = 0
     var count = 0
-    var id :String = "" 
+    var id :String = ""
+    var review = [String]()
 }

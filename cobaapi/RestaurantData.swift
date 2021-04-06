@@ -206,6 +206,19 @@ class RestaurantData:Thread {
                             }else{
                                 resto.banner = "Kosong"
                             }
+                            if nested.tips.groups.count == 0{
+                                resto.review.append("Zero review")
+                            }else{
+                                for t in 0...nested.tips.groups.count-1{
+                                    for x in 0...nested.tips.groups[t].items.count-1{
+                                        resto.review.append(nested.tips.groups[t].items[x].text)
+                                        print("ini review")
+                                        print(nested.tips.groups[t].items[x].text)
+                                    }
+                                }
+                            }
+                          
+                            
                             if let fotoprofil = try? nested.bestPhoto.prefix+"80x80"+nested.bestPhoto.suffix{
                                 if let datafoto = try? Data(contentsOf: URL(string: fotoprofil)! ) {
                                     if let foto = UIImage(data: datafoto) {

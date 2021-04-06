@@ -16,12 +16,24 @@ struct myvenueinfo:Codable {
 struct photos:Codable {
     var rating : Double?
     var photos : groups
+    var tips : mytips
     var hours : jam?
     var description :String?
     var bestPhoto : myBest
     var page:mypage?
 }
 
+struct mytips:Codable {
+    var groups: [tipsdalam]
+}
+
+struct tipsdalam :Codable {
+    var items:[textdalam]
+}
+
+struct textdalam:Codable {
+    var text:String
+}
 struct myBest:Codable{
     var prefix : String
     var suffix : String

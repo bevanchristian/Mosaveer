@@ -49,6 +49,7 @@ class FloatMapViewController: UIViewController {
             detail.rating1 = Double(ratingResto.text!)
                 detail.fotodetail = gambar.image
                 detail.deskripsi1 = deskripsi
+            detail.gambarslide = gambarkoleksi
             self.navigationController!.pushViewController(detail, animated: true)
             
 
