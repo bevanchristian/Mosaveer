@@ -84,7 +84,7 @@ class RestaurantData:Thread {
     
     func ubahfilter(myView: ViewController,tipe:Int,sudahAda:Bool,distance:Int,bukak:Int,rating:Int){
         if tipe == 0 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=\(distance)&limit=2&openNow=\(bukak)&price=\(rating)"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=\(distance)&limit=5&openNow=\(bukak)&price=\(rating)"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -206,7 +206,7 @@ class RestaurantData:Thread {
                             }else{
                                 resto.banner = "Kosong"
                             }
-                            if let fotoprofil = try? nested.bestPhoto.prefix+"120x150"+nested.bestPhoto.suffix{
+                            if let fotoprofil = try? nested.bestPhoto.prefix+"80x80"+nested.bestPhoto.suffix{
                                 if let datafoto = try? Data(contentsOf: URL(string: fotoprofil)! ) {
                                     if let foto = UIImage(data: datafoto) {
                                          //self?.foto = foto
@@ -221,7 +221,7 @@ class RestaurantData:Thread {
                                     let prefix = detail[j].prefix
                                     print(prefix)
                                     let suffix = detail[j].suffix
-                                    let urlGambar = prefix+"120x150"+suffix
+                                    let urlGambar = prefix+"80x80"+suffix
                                     print(urlGambar)
                                     resto.gambar.append(urlGambar)
                                     //load(url: URL(string: urlGambar)!)

@@ -13,24 +13,26 @@ class FilterViewController: UIViewController {
 
     @IBOutlet var apply: UIButton!
     @IBOutlet var openhours: UISegmentedControl!
-    @IBOutlet var rating: CosmosView!
+   
+    @IBOutlet var price: UISegmentedControl!
     @IBOutlet var distance: UISlider!
     var myview:ViewController!
-    var distanceapi = 10000
-    var open = 1
-    var harga = 1
+    var distanceapi = 120000
+    var open = Int.random(in: 0...1)
+    var harga = Int.random(in: 0...3)
     //let restaurantData = RestaurantData()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Filter"
-        rating.didFinishTouchingCosmos = { [self] rating in
-            self.harga = Int(rating)
-            print(harga)
-        }
+       
         // Do any additional setup after loading the view.
     
     }
     
+    @IBAction func priceAction2(_ sender: UISegmentedControl) {
+        harga = sender.selectedSegmentIndex
+    }
+  
     func isi(vie:ViewController){
         myview = vie
     }
