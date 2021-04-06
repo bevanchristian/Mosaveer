@@ -6,5 +6,5 @@ target 'cobaapi' do
   use_frameworks!
 
 pod 'FloatingPanel'
-
+pod 'Cosmos', '~> 23.0'
 end

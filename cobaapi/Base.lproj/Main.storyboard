@@ -440,7 +440,7 @@
         <scene sceneID="wfl-5t-Gb5">
             <objects>
                 <viewController storyboardIdentifier="filter" id="IBx-R1-KT3" customClass="FilterViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dc3-xL-RCO">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="dc3-xL-RCO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -472,61 +472,66 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="2tb-6q-6GU">
-                                <rect key="frame" x="39" y="256.66666666666669" width="298" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdZ-PE-ony">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEc-Aj-YVn">
-                                        <rect key="frame" x="63" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OS-KT-x9W">
-                                        <rect key="frame" x="126" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-BZ-6Zh">
-                                        <rect key="frame" x="189" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45y-dq-B3K">
-                                        <rect key="frame" x="252" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mo-lG-49O">
-                                <rect key="frame" x="24.000000000000007" y="313.66666666666669" width="91.666666666666686" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Open Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mo-lG-49O">
+                                <rect key="frame" x="24.000000000000007" y="313.66666666666674" width="91.666666666666686" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Kq-aO-fad">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Kq-aO-fad">
                                 <rect key="frame" x="36" y="354" width="318" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-1Z-iLT">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-1Z-iLT">
                                 <rect key="frame" x="172" y="425" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <view contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXt-JU-cIh" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="36" y="255" width="318" height="25"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" systemColor="systemYellowColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                        <color key="value" systemColor="systemYellowColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                        <color key="value" systemColor="systemYellowColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                        <color key="value" systemColor="secondarySystemBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8m9-mX-mkf"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstItem="2tb-6q-6GU" firstAttribute="top" secondItem="11x-nK-Wd6" secondAttribute="bottom" constant="20" id="0we-jR-ygy"/>
                             <constraint firstItem="11x-nK-Wd6" firstAttribute="top" secondItem="tvv-Ar-7FV" secondAttribute="bottom" constant="20" id="3Tj-5x-Tbc"/>
                             <constraint firstItem="6OC-5c-Zi5" firstAttribute="centerX" secondItem="dc3-xL-RCO" secondAttribute="centerX" id="3s6-eJ-4gK"/>
                             <constraint firstItem="0mo-lG-49O" firstAttribute="leading" secondItem="11x-nK-Wd6" secondAttribute="leading" id="CEg-S8-sqv"/>
-                            <constraint firstAttribute="bottom" secondItem="2tb-6q-6GU" secondAttribute="bottom" constant="515" id="EGX-uo-pAy"/>
                             <constraint firstItem="6OC-5c-Zi5" firstAttribute="top" secondItem="8m9-mX-mkf" secondAttribute="top" id="Eb4-iq-H7v"/>
                             <constraint firstItem="tvv-Ar-7FV" firstAttribute="top" secondItem="BLT-1C-gFW" secondAttribute="bottom" constant="20" id="Fgy-ax-cPT"/>
                             <constraint firstItem="tvv-Ar-7FV" firstAttribute="leading" secondItem="dc3-xL-RCO" secondAttribute="leadingMargin" constant="20" id="GXX-js-GxF"/>
-                            <constraint firstItem="2tb-6q-6GU" firstAttribute="leading" secondItem="8m9-mX-mkf" secondAttribute="leading" constant="39" id="LoZ-Fk-Pnr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tvv-Ar-7FV" secondAttribute="trailing" constant="20" id="Q92-yb-X7S"/>
                             <constraint firstItem="6OC-5c-Zi5" firstAttribute="leading" secondItem="8m9-mX-mkf" secondAttribute="leading" id="R1e-o5-cfb"/>
                             <constraint firstItem="7Kq-aO-fad" firstAttribute="leading" secondItem="dc3-xL-RCO" secondAttribute="leadingMargin" constant="20" id="UnN-H9-cev"/>
@@ -534,12 +539,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="7Kq-aO-fad" secondAttribute="trailing" constant="20" id="WZT-6g-F5c"/>
                             <constraint firstItem="HhB-1Z-iLT" firstAttribute="top" secondItem="7Kq-aO-fad" secondAttribute="bottom" constant="40" id="ZUa-xv-pKz"/>
                             <constraint firstItem="HhB-1Z-iLT" firstAttribute="centerX" secondItem="dc3-xL-RCO" secondAttribute="centerX" id="bzm-yx-Zkv"/>
+                            <constraint firstItem="RXt-JU-cIh" firstAttribute="top" secondItem="11x-nK-Wd6" secondAttribute="bottom" constant="10" id="fhN-GT-oZg"/>
+                            <constraint firstItem="0mo-lG-49O" firstAttribute="top" secondItem="RXt-JU-cIh" secondAttribute="bottom" constant="10" id="g5h-kM-5W8"/>
                             <constraint firstItem="0mo-lG-49O" firstAttribute="leading" secondItem="8m9-mX-mkf" secondAttribute="leading" constant="24" id="gHt-np-6Y1"/>
                             <constraint firstItem="BLT-1C-gFW" firstAttribute="leading" secondItem="dc3-xL-RCO" secondAttribute="leadingMargin" constant="20" id="gS5-LT-u3Z"/>
                             <constraint firstItem="BLT-1C-gFW" firstAttribute="top" secondItem="6OC-5c-Zi5" secondAttribute="bottom" constant="70" id="h6b-IB-DDW"/>
                             <constraint firstItem="0mo-lG-49O" firstAttribute="centerX" secondItem="BLT-1C-gFW" secondAttribute="centerX" id="hFj-Yq-KM8"/>
+                            <constraint firstItem="RXt-JU-cIh" firstAttribute="centerX" secondItem="dc3-xL-RCO" secondAttribute="centerX" id="joo-o2-jmF"/>
                             <constraint firstItem="7Kq-aO-fad" firstAttribute="top" secondItem="0mo-lG-49O" secondAttribute="bottom" constant="20" id="mP4-kA-cFu"/>
-                            <constraint firstItem="0mo-lG-49O" firstAttribute="top" secondItem="2tb-6q-6GU" secondAttribute="bottom" constant="27" id="qLq-JI-dja"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gBX-zN-yoY">
@@ -606,6 +613,9 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -620,6 +630,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
