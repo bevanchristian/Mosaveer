@@ -193,7 +193,7 @@ class RestaurantData:Thread {
                             if let descriptionisi = nested.description{
                                 resto.deskription = descriptionisi
                             }else{
-                                resto.deskription = "Kosong"
+                                resto.deskription = "Sorry there is no description"
                             }
                             // ambil jam
                             if let jam = nested.hours?.status {

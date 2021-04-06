@@ -8,6 +8,9 @@
 import UIKit
 class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    
+   
+    
    
     @IBOutlet weak var gambar: UICollectionView!
     
@@ -18,10 +21,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     var bukajam1:String?
     var rating1:Double?
     var deskripsi1:String?
+    var gambarslide:[String]?
+    var gambarslide1:[UIImage]?
     @IBOutlet var namaRestoran: UILabel!
     
-    @IBOutlet weak var fotofoto: UICollectionView!
-    @IBOutlet weak var fotoDetail: UIImageView!
     
     @IBOutlet weak var alamat: UILabel!
     
@@ -37,7 +40,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var deskripsi: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        gambar.delegate = self
+        gambar.dataSource = self
         title = "Detail Pages"
         namaRestoran.text = nama
         print(idresto)
@@ -56,6 +62,20 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         }else if rating1 ??  8 <= 10 {
             bintang.text = "⭐️⭐️⭐️⭐️⭐️"
     }
+        if gambarslide != nil{
+            for x in 0...gambarslide!.count-1 {
+                if let datafoto = try? gambarslide![x]{
+                    if let fotoURL = try? Data(contentsOf: URL(string: datafoto)! ) {
+                        if let foto = UIImage(data: fotoURL) {
+                             //self?.foto = foto
+                            gambarslide1?.append(foto)
+                            // print(gambarFinal)
+                        }
+                    }}
+        }
+        
+                
+        
         
         
         
@@ -63,25 +83,15 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       //  fotoDetail.image = fotodetail
         
         
-        gambar.delegate = self
-        gambar.dataSource = self
+       
       
         
 
         // Do any additional setup after loading the view.
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
         
-        return 4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gambarReview", for: indexPath) as! imagedetailCollectionViewCell
-        
-    
-        return cell
-    }
     /*
     // MARK: - Navigation
 
@@ -91,5 +101,26 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if gambarslide1 != nil {
+            return gambarslide1!.count
+        }else{
+            return 0
+        }
+        
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GambarReview", for: indexPath) as! imagedetailCollectionViewCell
+            cell.imagedetail.image = gambarslide1?[indexPath.item]
+            
+            return cell
+        
+       
+    }
+    
 
 }
