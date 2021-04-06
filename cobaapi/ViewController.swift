@@ -9,11 +9,13 @@ import UIKit
 import FloatingPanel
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,FloatingPanelControllerDelegate{
+
     @IBOutlet var collectionView: UICollectionView?
 
     // untuk nyimpen data
     var id = [String]()
-  
+
+    
     var idnamaDict = [String:String]()
     // untuk detail data resto
     var nama = [String]()
@@ -43,7 +45,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         // Do any additional setup after loading the view.
         collectionView?.dataSource = self
         collectionView?.delegate = self
-        title = "Mosafer"
+       
+        title = "Nearby"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
         performSelector(inBackground: #selector(manggildata), with: nil)
@@ -103,6 +106,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
          let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "celljson", for: indexPath) as! jsondata
         //let isi = foursquare[indexPath.item].groups
         //print(isi)
+        
+        addTopAndBottomBorders(cell: cell)
         if milihapa == 0 {
             
             cell.Text.text = restaurantData.restoranarray[indexPath.item].nama
@@ -138,6 +143,18 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         
        
+    }
+    
+    func addTopAndBottomBorders(cell:jsondata) {
+        let thickness: CGFloat = 0.5
+       let topBorder = CALayer()
+       let bottomBorder = CALayer()
+        topBorder.frame = CGRect(x: 15.0, y: 0.0, width: cell.frame.size.width-40, height: thickness)
+        topBorder.backgroundColor = UIColor.gray.cgColor
+       bottomBorder.frame = CGRect(x:0, y: cell.frame.size.height, width: cell.frame.size.width, height:thickness)
+       bottomBorder.backgroundColor = UIColor.red.cgColor
+       cell.layer.addSublayer(topBorder)
+       cell.layer.addSublayer(bottomBorder)
     }
     
     func getrestaurant() -> [restaurant]{
