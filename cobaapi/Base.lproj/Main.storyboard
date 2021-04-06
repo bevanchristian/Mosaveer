@@ -465,6 +465,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="0.0" maxValue="20000" translatesAutoresizingMaskIntoConstraints="NO" id="tvv-Ar-7FV">
                                 <rect key="frame" x="38" y="124.33333333333331" width="338" height="31"/>
+                                <connections>
+                                    <action selector="distanceAction:" destination="IBx-R1-KT3" eventType="valueChanged" id="YDo-pf-cZ8"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11x-nK-Wd6">
                                 <rect key="frame" x="19.999999999999996" y="174.33333333333334" width="48.666666666666657" height="20.333333333333343"/>
@@ -484,6 +487,9 @@
                                     <segment title="All"/>
                                     <segment title="Open"/>
                                 </segments>
+                                <connections>
+                                    <action selector="openAction:" destination="IBx-R1-KT3" eventType="valueChanged" id="ULA-9D-6fB"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-1Z-iLT">
                                 <rect key="frame" x="20" y="376" width="374" height="40"/>

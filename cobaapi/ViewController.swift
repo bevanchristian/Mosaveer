@@ -68,6 +68,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         guard let contentVC = storyboard?.instantiateViewController(identifier: "filter") as? FilterViewController else{
             return
         }
+        contentVC.isi(vie: self)
         fpc.delegate = self
         fpc.set(contentViewController: contentVC)
         fpc.isRemovalInteractionEnabled = true // Optional: Let it removable by a swipe-down        
