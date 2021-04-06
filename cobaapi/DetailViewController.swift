@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     var deskripsi1:String?
     @IBOutlet var namaRestoran: UILabel!
     
+    @IBOutlet weak var fotofoto: UICollectionView!
     @IBOutlet weak var fotoDetail: UIImageView!
     
     @IBOutlet weak var alamat: UILabel!
@@ -28,6 +29,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var bintang: UILabel!
     
     
+    @IBOutlet weak var foto: UICollectionViewCell!
     @IBOutlet weak var deskripsi: UILabel!
     
     override func viewDidLoad() {
@@ -50,6 +52,10 @@ class DetailViewController: UIViewController {
         }else if rating1 ??  8 <= 10 {
             bintang.text = "⭐️⭐️⭐️⭐️⭐️"
     }
+        
+        
+        
+        
       //  fotoDetail.image = fotodetail
         
         
