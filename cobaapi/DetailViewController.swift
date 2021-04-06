@@ -6,7 +6,19 @@
 //
 
 import UIKit
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gambarReview", for: indexPath)
+        return cell
+    }
+    @IBOutlet weak var gambar: UICollectionView!
+    
     var nama:String?
     var idresto:String?
     var alamat1:String?
@@ -29,7 +41,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var bintang: UILabel!
     
     
-    @IBOutlet weak var foto: UICollectionViewCell!
+  
     @IBOutlet weak var deskripsi: UILabel!
     
     override func viewDidLoad() {
