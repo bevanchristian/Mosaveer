@@ -9,6 +9,7 @@ import UIKit
 
 class MapSettingViewController: UIViewController {
 
+    @IBOutlet var settingOutlet: UISegmentedControl!
     @IBOutlet var setting: UISegmentedControl!
     var masjidarray=[Anotate]()
     var restoarray=[Anotate]()
@@ -19,7 +20,10 @@ class MapSettingViewController: UIViewController {
     var countmasjid = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // untuk ganti warna text yang selected
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.white], for: .selected)
+    
         // Do any additional setup after loading the view.
     }
     
@@ -32,6 +36,8 @@ class MapSettingViewController: UIViewController {
     @IBAction func settingAction2(_ sender: UISegmentedControl) {
         
       // all
+        
+        
         if sender.selectedSegmentIndex == 0 {
             
             mapview.masukin()

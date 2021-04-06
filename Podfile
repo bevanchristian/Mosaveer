@@ -7,4 +7,5 @@ target 'cobaapi' do
 
 pod 'FloatingPanel'
 pod 'Cosmos', '~> 23.0'
+pod 'SkeletonView'
 end

@@ -24,6 +24,7 @@ class FilterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Filter"
+        apply.layer.cornerRadius = 10.0
        
         // Do any additional setup after loading the view.
     
@@ -37,16 +38,17 @@ class FilterViewController: UIViewController {
         myview = vie
     }
     
-    @IBAction func done(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-     
-    }
     @IBAction func distanceAction(_ sender: UISlider) {
         distanceapi = Int(sender.value)
     }
     
     @IBAction func openAction(_ sender: UISegmentedControl) {
         open = sender.selectedSegmentIndex
+    }
+    @IBAction func doneButton(_ sender: Any) {
+        performSelector(inBackground: #selector(manggilData), with: nil)
+        dismiss(animated: true)
+        print("donefilter")
     }
     
      @IBAction func applyAction(_ sender: Any) {

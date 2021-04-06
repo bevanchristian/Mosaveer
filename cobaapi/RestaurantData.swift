@@ -267,6 +267,10 @@ class RestaurantData:Thread {
 //                print("reload data")
 //                main.collectionView?.reloadData()
                 mainView.collectionView?.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+                    mainView.collectionView?.stopSkeletonAnimation()
+                    mainView.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+                }
                 
                 
             }
@@ -275,7 +279,7 @@ class RestaurantData:Thread {
         
         
     }//class
-
+    
 
     
     

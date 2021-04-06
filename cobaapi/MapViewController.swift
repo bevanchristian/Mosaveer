@@ -9,7 +9,11 @@ import UIKit
 import MapKit
 import CoreLocation
 import FloatingPanel
+
 class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDelegate,FloatingPanelControllerDelegate{
+
+    @IBOutlet var buttonAtas: UIButton!
+    @IBOutlet var CenterButton2: UIButton!
 
     @IBOutlet var pencet: UITabBarItem!
     @IBOutlet var map: MKMapView!
@@ -45,7 +49,10 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // inisiasi floating panel
+       
         title = "Map"
+       // addTopAndBottomBorders(cell: CenterButton2)
+        addTopAndBottomBorders(cell: buttonAtas)
         fpc = FloatingPanelController()
         fpc2 = FloatingPanelController()
         // delegate
@@ -115,6 +122,15 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
             map.addAnnotations(pinmasjid)
         }
         
+    }
+    
+    func addTopAndBottomBorders(cell:UIButton) {
+        let thickness: CGFloat = 1
+     
+       let bottomBorder = CALayer()
+       bottomBorder.frame = CGRect(x:0, y: cell.frame.size.height, width: cell.frame.size.width, height:thickness)
+        bottomBorder.backgroundColor = UIColor.brown.cgColor
+       cell.layer.addSublayer(bottomBorder)
     }
     
     @IBAction func settingAction(_ sender: Any) {

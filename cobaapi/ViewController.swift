@@ -7,8 +7,14 @@
 
 import UIKit
 import FloatingPanel
-
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,FloatingPanelControllerDelegate{
+import SkeletonView
+class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollectionViewDataSource,FloatingPanelControllerDelegate{
+    
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "celljson"
+    }
+    
 
     @IBOutlet var collectionView: UICollectionView?
 
@@ -47,15 +53,24 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         collectionView?.delegate = self
        
         title = "Nearby"
+        
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.white], for: .selected)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
         performSelector(inBackground: #selector(manggildata), with: nil)
-        
+        collectionView?.isSkeletonable = true
+        collectionView?.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .greenSea), animation: nil, transition: .crossDissolve(0.4))
 
         
         
     }
     // batas ahkir viewdidload
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       
+    }
+    
+    
     @objc func manggildata() {
         print("mentoring")
         restaurantData.ubah(myView: self,tipe: 0,sudahAda: false)
@@ -74,8 +89,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         contentVC.isi(vie: self)
         fpc.delegate = self
         fpc.set(contentViewController: contentVC)
-        fpc.isRemovalInteractionEnabled = true // Optional: Let it removable by a swipe-down        
+        //fpc.isRemovalInteractionEnabled = true // Optional: Let it removable by a swipe-down
+        UIView.animate(withDuration: 0.45) {
+            self.fpc.move(to: .half, animated: true)
+        }
         fpc.addPanel(toParent: self)
+        UIView.animate(withDuration: 0.45) {
+            self.fpc.move(to: .half, animated: true)
+        }
     }
     
      @objc func loaddata(){
