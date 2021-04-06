@@ -15,6 +15,8 @@ class FilterViewController: UIViewController {
     @IBOutlet var openhours: UISegmentedControl!
     @IBOutlet var rating: CosmosView!
     @IBOutlet var distance: UISlider!
+    var distanceapi = 0
+    var open = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Filter"
@@ -29,6 +31,11 @@ class FilterViewController: UIViewController {
   
     
      @IBAction func applyAction(_ sender: Any) {
+        
+        
+        
+        
+        dismiss(animated: true)
      }
    
 
