@@ -22,7 +22,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     var rating1:Double?
     var deskripsi1:String?
     var gambarslide:[String]?
-    var gambarslide1:[UIImage]?
+    var gambarslide1 = [UIImage]()
     @IBOutlet var namaRestoran: UILabel!
     
     
@@ -68,7 +68,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
                     if let fotoURL = try? Data(contentsOf: URL(string: datafoto)! ) {
                         if let foto = UIImage(data: fotoURL) {
                              //self?.foto = foto
-                            gambarslide1?.append(foto)
+                            gambarslide1.append(foto)
                             // print(gambarFinal)
                         }
                     }}
@@ -105,7 +105,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
 }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if gambarslide1 != nil {
-            return gambarslide1!.count
+            return gambarslide1.count
         }else{
             return 0
         }
@@ -114,8 +114,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GambarReview", for: indexPath) as! imagedetailCollectionViewCell
-            cell.imagedetail.image = gambarslide1?[indexPath.item]
+         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gambarReview", for: indexPath) as! imagedetailCollectionViewCell
+        cell.imagedetail.image = gambarslide1[indexPath.item]
             
             return cell
         
