@@ -6,9 +6,9 @@
 //
 
 import UIKit
+import FloatingPanel
 
-
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
+class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,FloatingPanelControllerDelegate{
     @IBOutlet var collectionView: UICollectionView?
     @IBOutlet var foto: UIImageView!
     // untuk nyimpen data
@@ -35,7 +35,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     var cekfoto = 0
     let restaurantData = RestaurantData()
     var milihapa = 0
-  
+    var fpc:FloatingPanelController!
     //var restoranarray = [restaurant]()
 
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         // Do any additional setup after loading the view.
         collectionView?.dataSource = self
         collectionView?.delegate = self
-        title = "Moosafer"
+        title = "Mosafer"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
         performSelector(inBackground: #selector(manggildata), with: nil)
@@ -64,12 +64,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     @objc func filterOption(){
         // ini code untuk filter nampilin modal
-        if let filter = storyboard?.instantiateViewController(identifier: "filter") as? FilterViewController{
-            filter.modalPresentationStyle = .formSheet
-   
-            present(filter, animated: true, completion: nil)
-                    }
-        print("modal")
+        fpc = FloatingPanelController()
+        guard let contentVC = storyboard?.instantiateViewController(identifier: "filter") as? FilterViewController else{
+            return
+        }
+        fpc.delegate = self
+        fpc.set(contentViewController: contentVC)
+        fpc.isRemovalInteractionEnabled = true // Optional: Let it removable by a swipe-down        
+        fpc.addPanel(toParent: self)
     }
     
      @objc func loaddata(){

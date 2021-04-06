@@ -1,16 +1,20 @@
 PODS:
+  - Cosmos (23.0.0)
   - FloatingPanel (2.3.0)
 
 DEPENDENCIES:
+  - Cosmos (~> 23.0)
   - FloatingPanel
 
 SPEC REPOS:
   trunk:
+    - Cosmos
     - FloatingPanel
 
 SPEC CHECKSUMS:
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   FloatingPanel: 373478513a197cf140abd219ca9a9c049967332b
 
-PODFILE CHECKSUM: 6597eca0e3d4e93664f3b2e9febe31591216e287
+PODFILE CHECKSUM: 165503dc49c671d9902ac67e664d685f45a1c22f
 
 COCOAPODS: 1.10.1

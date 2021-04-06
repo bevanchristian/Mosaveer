@@ -13,6 +13,7 @@ class Anotate: NSObject,MKAnnotation {
     let title: String?
     // bintang
     let subtitle: String?
+    // lokasi
     let coordinate: CLLocationCoordinate2D
     // gambar
     var gambarFinal:UIImage!
@@ -20,6 +21,10 @@ class Anotate: NSObject,MKAnnotation {
     var alamat:String
     var lokasifull:String
     var identitas:String
+    var statusopen:String
+    var deskripsi:String
+    var gambar = [String]()
+
     var markerTintColor: UIColor  {
       switch identitas {
       case "resto":
@@ -30,14 +35,20 @@ class Anotate: NSObject,MKAnnotation {
         return .green
       }
     }
-    init(title:String,subtitle:String,coordinate:CLLocationCoordinate2D,gambar:UIImage,alamat:String,lokasifull:String,identitas:String) {
+    
+    
+
+    init(title:String,subtitle:String,coordinate:CLLocationCoordinate2D,gambarfinal:UIImage,alamat:String,lokasifull:String,identitas:String,statusopen:String,deskripsi:String,gambar:[String]) {
         self.title = title
         self.subtitle = subtitle
         self.coordinate = coordinate
-        self.gambarFinal = gambar
+        self.gambarFinal = gambarfinal
         self.alamat = alamat
         self.lokasifull = lokasifull
         self.identitas = identitas
+        self.statusopen = statusopen
+        self.deskripsi = deskripsi
+        self.gambar = gambar
     }
     // method view for ini dipakai ketika tiap ada anotation
    

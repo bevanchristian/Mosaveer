@@ -6,9 +6,17 @@
 //
 
 import UIKit
+import Cosmos
+
 
 class FilterViewController: UIViewController {
 
+    @IBOutlet var apply: UIButton!
+    @IBOutlet var openhours: UISegmentedControl!
+    @IBOutlet var rating: CosmosView!
+    @IBOutlet var distance: UISlider!
+    var distanceapi = 0
+    var open = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Filter"
@@ -21,14 +29,14 @@ class FilterViewController: UIViewController {
      
     }
   
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+     @IBAction func applyAction(_ sender: Any) {
+        
+        
+        
+        
+        dismiss(animated: true)
+     }
+   
 
 }
