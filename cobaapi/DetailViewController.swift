@@ -8,15 +8,7 @@
 import UIKit
 class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gambarReview", for: indexPath)
-        return cell
-    }
+   
     @IBOutlet weak var gambar: UICollectionView!
     
     var nama:String?
@@ -71,14 +63,22 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       //  fotoDetail.image = fotodetail
         
         
-        
+        gambar.delegate = self
       
         
 
         // Do any additional setup after loading the view.
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gambarReview", for: indexPath) as! imagedetailCollectionViewCell
+        return cell
+    }
     /*
     // MARK: - Navigation
 

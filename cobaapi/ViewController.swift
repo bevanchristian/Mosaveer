@@ -10,7 +10,7 @@ import FloatingPanel
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,FloatingPanelControllerDelegate{
     @IBOutlet var collectionView: UICollectionView?
-    @IBOutlet var foto: UIImageView!
+
     // untuk nyimpen data
     var id = [String]()
   
