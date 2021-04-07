@@ -28,6 +28,7 @@
 		5068C3DE261722D800F72EE4 /* FloatMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5068C3DD261722D800F72EE4 /* FloatMapViewController.swift */; };
 		5083CFE726133E98003AF518 /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083CFE626133E98003AF518 /* RestaurantData.swift */; };
 		5083CFEA26134670003AF518 /* restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083CFE926134670003AF518 /* restaurant.swift */; };
+		DF8EB49A261DB3FC00D567DB /* reviewDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EB499261DB3FC00D567DB /* reviewDetailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		6BA1D9C1845D9930A8A21888 /* Pods_cobaapi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cobaapi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC62909ECA79C9AE694676 /* Pods-cobaapi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobaapi.release.xcconfig"; path = "Target Support Files/Pods-cobaapi/Pods-cobaapi.release.xcconfig"; sourceTree = "<group>"; };
 		C6880492CCD02958B456A835 /* Pods-cobaapi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobaapi.debug.xcconfig"; path = "Target Support Files/Pods-cobaapi/Pods-cobaapi.debug.xcconfig"; sourceTree = "<group>"; };
+		DF8EB499261DB3FC00D567DB /* reviewDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				5004F00B261AC3CC001239F3 /* MapSettingViewController.swift */,
 				5004F016261C1788001239F3 /* imagedetailCollectionViewCell.swift */,
 				5004F03F261D9312001239F3 /* OnboardingViewController.swift */,
+				DF8EB499261DB3FC00D567DB /* reviewDetailCollectionViewCell.swift */,
 			);
 			path = cobaapi;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				5026B18C260DCE1700E41A4B /* foursquares.swift in Sources */,
 				5004F0092619F2EF001239F3 /* anotateview.swift in Sources */,
 				5026B174260DC83500E41A4B /* ViewController.swift in Sources */,
+				DF8EB49A261DB3FC00D567DB /* reviewDetailCollectionViewCell.swift in Sources */,
 				5004F00C261AC3CC001239F3 /* MapSettingViewController.swift in Sources */,
 				5068C3CD2615FF8E00F72EE4 /* TabbarViewController.swift in Sources */,
 				5026B186260DCB6900E41A4B /* jsondata.swift in Sources */,
