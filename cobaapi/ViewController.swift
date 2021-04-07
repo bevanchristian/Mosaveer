@@ -52,7 +52,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
         collectionView?.dataSource = self
         collectionView?.delegate = self
        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
+        title = "Browse"
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.white], for: .selected)
         //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems

@@ -13,12 +13,13 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getstart.layer.cornerRadius = 10.0
         firsttime = UserDefaults.standard.bool(forKey: "firsttime")
         // Do any additional setup after loading the view.
         if (firsttime)
         {
             UserDefaults.standard.set(true, forKey: "firsttime")
-            let pindah = storyboard?.instantiateViewController(identifier: "utama") as! ViewController
+            let pindah = storyboard?.instantiateViewController(identifier: "Main") as! TabbarViewController
             navigationController?.pushViewController(pindah, animated: true)
         }
         
@@ -29,7 +30,7 @@ class OnboardingViewController: UIViewController {
 
         //check first launched
         UserDefaults.standard.set(true, forKey: "firsttime")
-        let pindah = storyboard?.instantiateViewController(identifier: "utama") as! ViewController
+        let pindah = storyboard?.instantiateViewController(identifier: "Main") as! TabbarViewController
         navigationController?.pushViewController(pindah, animated: true)
         
     }

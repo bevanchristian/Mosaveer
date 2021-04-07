@@ -125,8 +125,8 @@
                                     <action selector="kontrol:" destination="BYZ-38-t0r" eventType="valueChanged" id="k2a-6c-m3i"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpr-Em-vSh">
-                                <rect key="frame" x="20.000000000000007" y="74" width="114.66666666666669" height="40.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpr-Em-vSh">
+                                <rect key="frame" x="19.999999999999993" y="74" width="118.33333333333331" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -339,7 +339,6 @@
             <objects>
                 <tabBarController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="aJr-4G-KcN" customClass="TabbarViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Mt-Qo-nVF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="83"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -704,7 +703,7 @@
             </objects>
             <point key="canvasLocation" x="1037.3831775700935" y="130.23758099352054"/>
         </scene>
-        <!--Onboarding View Controller-->
+        <!--Item-->
         <scene sceneID="Xkb-Fe-FVq">
             <objects>
                 <viewController id="dqM-sh-M7S" customClass="OnboardingViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
@@ -717,7 +716,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWF-U5-Z9P">
-                                <rect key="frame" x="20" y="703" width="335" height="35"/>
+                                <rect key="frame" x="30" y="664" width="315" height="35"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="gAj-X6-V0N"/>
@@ -732,11 +731,12 @@
                         <viewLayoutGuide key="safeArea" id="gkQ-2r-Alt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eWF-U5-Z9P" firstAttribute="leading" secondItem="gkQ-2r-Alt" secondAttribute="leading" constant="20" id="H3k-Ok-Lee"/>
-                            <constraint firstItem="gkQ-2r-Alt" firstAttribute="bottom" secondItem="eWF-U5-Z9P" secondAttribute="bottom" constant="40" id="HsM-k1-8VD"/>
-                            <constraint firstItem="gkQ-2r-Alt" firstAttribute="trailing" secondItem="eWF-U5-Z9P" secondAttribute="trailing" constant="20" id="SdS-WW-rp0"/>
+                            <constraint firstItem="eWF-U5-Z9P" firstAttribute="leading" secondItem="gkQ-2r-Alt" secondAttribute="leading" constant="30" id="H3k-Ok-Lee"/>
+                            <constraint firstItem="gkQ-2r-Alt" firstAttribute="bottom" secondItem="eWF-U5-Z9P" secondAttribute="bottom" constant="30" id="HsM-k1-8VD"/>
+                            <constraint firstItem="gkQ-2r-Alt" firstAttribute="trailing" secondItem="eWF-U5-Z9P" secondAttribute="trailing" constant="30" id="SdS-WW-rp0"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="lc1-Gy-e1I"/>
                     <navigationItem key="navigationItem" id="hAQ-DN-ETb"/>
                     <connections>
                         <outlet property="getstart" destination="eWF-U5-Z9P" id="UOu-2S-0pM"/>
@@ -744,7 +744,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T15-X7-ouS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935.2" y="-623.64532019704438"/>
+            <point key="canvasLocation" x="2877.5999999999999" y="-623.64532019704438"/>
         </scene>
         <!--Map-->
         <scene sceneID="Qqm-nY-Les">
@@ -782,12 +782,30 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="dqM-sh-M7S" kind="relationship" relationship="rootViewController" id="bv3-3i-NGe"/>
+                        <segue destination="U9a-KV-vpd" kind="relationship" relationship="rootViewController" id="bv3-3i-NGe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyj-Mo-aWf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="-623.64532019704438"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="vwR-oJ-jBk">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="U9a-KV-vpd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bBw-hk-q9u"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X7k-ha-3Ws">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dqM-sh-M7S" kind="relationship" relationship="viewControllers" id="MDr-3g-BHI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3h-YK-idG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1935.2" y="-623.64532019704438"/>
         </scene>
     </scenes>
     <resources>
