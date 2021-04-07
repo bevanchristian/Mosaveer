@@ -10,6 +10,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
    
+  
     
    
     @IBOutlet weak var gambar: UICollectionView!
@@ -23,6 +24,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     var deskripsi1:String?
     var gambarslide:[String]?
     var gambarslide1 = [UIImage]()
+    var lokasiuser:String!
+    var lokasi:String!
+    
     @IBOutlet var namaRestoran: UILabel!
     
     
@@ -114,6 +118,24 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    @IBAction func direction(_ sender: Any) {
+        // lokasi user kalo default tidak ada
+        if lokasiuser == nil{
+            lokasiuser = "35.702069,139.775327"
+        }
+        
+        DispatchQueue.main.async { [self] in
+             let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser!),+CA&saddr=\(String(describing: lokasi!))")!
+             if UIApplication.shared.canOpenURL(targetURL as URL) != nil{
+
+                 UIApplication.shared.openURL(targetURL as URL)
+             }
+            
+        }
+       
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

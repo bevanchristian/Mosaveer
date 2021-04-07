@@ -16,6 +16,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
     }
     
 
+    
     @IBOutlet var collectionView: UICollectionView?
 
     // untuk nyimpen data
@@ -72,22 +73,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    
-    
-    
-    
-    
-    @objc func manggildata() {
-        print("mentoring")
-        restaurantData.ubah(myView: self,tipe: 0,sudahAda: false)
-        restaurantData.ubah(myView: self,tipe: 1,sudahAda: false)
-    }
-    
-  
-    
-    
-    @objc func filterOption(){
-        // ini code untuk filter nampilin modal
+    @IBAction func filterarea(_ sender: Any) {
         fpc = FloatingPanelController()
         guard let contentVC = storyboard?.instantiateViewController(identifier: "filter") as? FilterViewController else{
             return
@@ -103,6 +89,24 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
         UIView.animate(withDuration: 0.45) {
             self.fpc.move(to: .half, animated: true)
         }
+        
+    }
+    
+    
+    
+    
+    @objc func manggildata() {
+        print("mentoring")
+        restaurantData.ubah(myView: self,tipe: 0,sudahAda: false)
+        restaurantData.ubah(myView: self,tipe: 1,sudahAda: false)
+    }
+    
+  
+    
+    
+    @objc func filterOption(){
+        // ini code untuk filter nampilin modal
+      
     }
     
      @objc func loaddata(){
@@ -201,6 +205,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
                     detail.fotodetail = namaFix.gambarFinal
                     detail.deskripsi1 = namaFix.deskription
                     detail.gambarslide = namaFix.gambar
+                    detail.lokasi = namaFix.lokasiMap
                     print(namaFix.gambar)
                     print("INI FOTO APIK")
                     
@@ -223,6 +228,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
                     detail.fotodetail = namaFix.gambarFinal
                     detail.deskripsi1 = namaFix.deskription
                     detail.gambarslide = namaFix.gambar
+                    detail.lokasi = namaFix.lokasiMap
                     print(namaFix.gambar)
                     print("INI FOTO APIK")
                     

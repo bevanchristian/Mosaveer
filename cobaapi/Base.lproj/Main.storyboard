@@ -145,6 +145,9 @@
                                 </constraints>
                                 <color key="tintColor" red="0.29518827800000003" green="0.48748463390000002" blue="0.41175681349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button" image="slider.horizontal.3" catalog="system"/>
+                                <connections>
+                                    <action selector="filterarea:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zQM-n2-0rc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -241,6 +244,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="101" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Get Direction"/>
+                                        <connections>
+                                            <action selector="direction:" destination="Aws-eC-GLV" eventType="touchUpInside" id="bpQ-PG-e8o"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-vF-fDU">
                                         <rect key="frame" x="116" y="0.0" width="44" height="33"/>
@@ -623,7 +629,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fth-Y5-xDw">
-                                        <rect key="frame" x="166.66666666666666" y="21.666666666666671" width="42" height="21"/>
+                                        <rect key="frame" x="166.66666666666666" y="21.666666666666664" width="43" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
