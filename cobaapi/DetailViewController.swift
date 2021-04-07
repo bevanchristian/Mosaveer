@@ -10,11 +10,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
    
+  
     
    
     @IBOutlet weak var gambar: UICollectionView!
-    
-    @IBOutlet weak var revieww: UICollectionView!
     
     var nama:String?
     var idresto:String?
@@ -25,7 +24,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     var deskripsi1:String?
     var gambarslide:[String]?
     var gambarslide1 = [UIImage]()
-    var review1 = [String]()
+    var lokasiuser:String!
+    var lokasi:String!
+    
     @IBOutlet var namaRestoran: UILabel!
     
     
@@ -119,6 +120,24 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
+    @IBAction func direction(_ sender: Any) {
+        // lokasi user kalo default tidak ada
+        if lokasiuser == nil{
+            lokasiuser = "35.702069,139.775327"
+        }
+        
+        DispatchQueue.main.async { [self] in
+             let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser!),+CA&saddr=\(String(describing: lokasi!))")!
+             if UIApplication.shared.canOpenURL(targetURL as URL) != nil{
+
+                 UIApplication.shared.openURL(targetURL as URL)
+             }
+            
+        }
+       
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gambarReview", for: indexPath) as! imagedetailCollectionViewCell
         cell.imagedetail.image = gambarslide1[indexPath.item]
@@ -127,21 +146,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         
        
     }
-    func collectionView1(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if review1 != nil {
-            return review1.count
-        }
-        return 0
-    }
     
-    func collectionView1(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "review", for: indexPath) as! reviewDetailCollectionViewCell
-        
-        cell.reviewDetail.text = review1[indexPath.item]
-            return cell
-        
-       
-    }
-   
 
 }

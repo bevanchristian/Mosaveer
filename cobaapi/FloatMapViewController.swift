@@ -50,6 +50,8 @@ class FloatMapViewController: UIViewController {
                 detail.fotodetail = gambar.image
                 detail.deskripsi1 = deskripsi
             detail.gambarslide = gambarkoleksi
+            detail.lokasiuser = lokasiuser
+            detail.lokasi = lokasi
             self.navigationController!.pushViewController(detail, animated: true)
             
 
