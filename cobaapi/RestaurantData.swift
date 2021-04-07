@@ -26,14 +26,15 @@ class RestaurantData:Thread {
     var masjidarray = [restaurant]()
     var count = 0
     let map = MapViewController()
+    var restofix = ["Sushiken Asakusa","Tendon Ituki","Gyumon","Soleil","Luxe Burgers","Soup Stock Tokyo Hiroo","Soup Stock Tokyo Shibuya Mark City","Yildiz Turkish Restaurant","Ninja Cafe Asakusa","Habibi Halal Restaurant","Shiibei-Ramen","Samrat-Jiyugaoka","Samrat-Shirokane Takanawa","Samrat Minami Aoyama","Kaenzan Lanzhou Ramen","Nirvanam","Nirvanam Kamiyacho","Indian Restaurant Tandoor","Masala","Sudo","Cafeteria Spice Jaya","Pizzeria Santa FE","Thai Restaurant Siam Orchid Supreme","Indian&Palisha Restaurant Nawab","Annam Indian Restaurant, Ginza","Gonpachi Asakusa Azumabahi","Asian Yakiniku Halal Restaurant","Mazulu Halal Beef Noodle","Halal Sakura","Gyu-kaku Akasaka","Sana Awaji","Masudaen Sohonten","Kebab Stand","The Kebab Factory Asakusa","Maharani South Indian Restaurant","Maharani Indian Restaurant","Maharani Minamisuna Branch","Ayam-YA Shin-Okachimachi","Yoshiya Shinjukuten","Priya","Tsukino Sabaku","Uosho","Oskar Kebab","Jumbo Doner Kebab","Mosess Kebab","Chicken Man","Veg Kitchen","Sultan Akihabara","Asukusa Umegen","Yakiniku Panga","Sojibou DiverCity Tokyo Plaza","Mrs Istanbul","Ko-so Cafe Biorise","Al Mina","Morocco Tajinya","Uskudar Restaurant","Japanese Restaurant Sakura","Himalaya Curry Shiroganedai Store","Lukla Village Kitasando","Lukla Himalaya Sangu-bashi","Marhaba","Halal Mentai Naritaya Asakusa","Himalaya Curry Sangu-Bashi Store","Himalaya Curry Kitasando Store","Tokyo Muslim Hanten","Harima Kebab Biryani","SilkRoad Tarim Uyghur Restaurant","Restaurant&Bar BolBol","Siddique Shinjyukunishiguc","Siddique Akebonobashiten","Siddique Shinjyukuhyakuninnchoten","Siddique nihonbashihamamatuchou","Siddique Jinbochou","Siddique","Siddique Hanzomon","Siddique Suitengumae","Konya","Palmyra","Torukoazu","Pamukkale","Vege Herb Saga","Samrat Shinjuku","Khana","Malaychan satu","Nasco Food Court","Kaenzan (蘭州拉麺 火焔山)","Halal Wagyu Yakiniku PANGA (ハラール和牛焼肉ぱんが)"]
     
     
     
-   
+   // 35.7348° N, 139.7077° E
     
     func ubah(myView: ViewController,tipe:Int,sudahAda:Bool){
         if tipe == 0 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=100000&limit=4"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=120000&limit=10"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -47,7 +48,7 @@ class RestaurantData:Thread {
               
             }
         }else if tipe == 1 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.6938,139.7034&categoryId=4bf58dd8d48988d138941735&radius=100000&limit=3"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=4bf58dd8d48988d138941735&radius=100000&limit=3"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -84,7 +85,7 @@ class RestaurantData:Thread {
     
     func ubahfilter(myView: ViewController,tipe:Int,sudahAda:Bool,distance:Int,bukak:Int,rating:Int){
         if tipe == 0 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.6938,139.7034&categoryId=52e81612bcbc57f1066b79ff&radius=\(distance)&limit=5&openNow=\(bukak)&price=\(rating)"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=\(distance)&limit=3&openNow=\(bukak)&price=\(rating)"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -99,7 +100,7 @@ class RestaurantData:Thread {
             }
             
         }else if tipe == 1 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.6938,139.7034&categoryId=4bf58dd8d48988d138941735&radius=\(distance)&limit=2&openNow=\(bukak)"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=4bf58dd8d48988d138941735&radius=\(distance)&limit=2&openNow=\(bukak)"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -133,6 +134,17 @@ class RestaurantData:Thread {
               
             
     }
+    func find(value searchValue: String, in array: [String]) -> Int?
+    {
+        for (index, value) in array.enumerated()
+        {
+            if value == searchValue {
+                return index
+            }
+        }
+
+        return nil
+    }
     
     
     
@@ -145,7 +157,7 @@ class RestaurantData:Thread {
             let nested = jsonDecoder.response.groups
             // di ambil karena kan hasile nested
             print("ini data luar")
-            print(nested)
+            //print(nested)
             for x in 0...nested.count-1{
                // print(nested[x].items)
                 for y in 0...nested[x].items.count-1{
@@ -172,7 +184,7 @@ class RestaurantData:Thread {
                     resto.lokasiMap = lokasi
                     print("")
                     print("")
-                    print(resto.statusOpen)
+                   // print(resto.statusOpen)
                     // setiap sudah selesai ambil id dan nama maka load data detailnya dan dimasukan kedalam objek yang sama
                     let urlcoba = "https://api.foursquare.com/v2/venues/\(resto.id)?&client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210325"
                     let url = URL(string: urlcoba)
@@ -183,7 +195,7 @@ class RestaurantData:Thread {
                             let nested = jsonDecoder.response.venue
                             // di ambil karena kan hasile nested
                             print("ini detail dalemeee")
-                            print(nested)
+                           // print(nested)
                             if let ratingisi = nested.rating{
                                 resto.rating = ratingisi
                             }else{
@@ -212,8 +224,8 @@ class RestaurantData:Thread {
                                 for t in 0...nested.tips.groups.count-1{
                                     for x in 0...nested.tips.groups[t].items.count-1{
                                         resto.review.append(nested.tips.groups[t].items[x].text)
-                                        print("ini review")
-                                        print(nested.tips.groups[t].items[x].text)
+                                      //  print("ini review")
+                                       // print(nested.tips.groups[t].items[x].text)
                                     }
                                 }
                             }
@@ -225,17 +237,17 @@ class RestaurantData:Thread {
                                          //self?.foto = foto
                                      resto.gambarFinal = foto
                                         // print(gambarFinal)
-                                     print(gambarFinal)
+                                     //print(gambarFinal)
                                     }
                                 }}
                             for y in 0...nested.photos.groups.count-1{
                                 let detail = nested.photos.groups[y].items
                                 for j in 0...detail.count-1{
                                     let prefix = detail[j].prefix
-                                    print(prefix)
+                                    //print(prefix)
                                     let suffix = detail[j].suffix
                                     let urlGambar = prefix+"80x80"+suffix
-                                    print(urlGambar)
+                                   // print(urlGambar)
                                     resto.gambar.append(urlGambar)
                                     //load(url: URL(string: urlGambar)!)
                     }}}
@@ -245,16 +257,29 @@ class RestaurantData:Thread {
                     if mytipe == 0{
                         restoranarray.append(resto)
                         print(restoranarray)
+                        
+                        // ini untuk filter
+                        let arraylow = restofix.map { $0.lowercased()}
+                        print("arraylow ini ngecek filter")
+                        print(arraylow)
+                        for x in 0...restoranarray.count-1{
+                            let index = find(value:  restoranarray[x].nama.lowercased(), in: arraylow)
+                                print(restoranarray[x].nama.lowercased())
+                                print(index)
+                                print("menemukan filter cokkk")
+                            
+                           
+                        }
+                      
+                        // filtered is ["hello", "world", "this", "list", "strings"]
                         //map.dataresto = restoranarray
                         
                         // query array of object
                         // closure
-                        /*restoranarray.contains { (<#restaurant#>) -> Bool in
-                            <#code#>
-                       }*/
+                    
                     }else if mytipe == 1{
                         masjidarray.append(resto)
-                        print(restoranarray)
+                        //print(restoranarray)
                     }
                   
             

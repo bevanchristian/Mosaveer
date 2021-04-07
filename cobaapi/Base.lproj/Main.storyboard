@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Wi-CI-z5r">
-                                <rect key="frame" x="0.0" y="195" width="375" height="534"/>
+                                <rect key="frame" x="0.0" y="255" width="375" height="474"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t2b-Rs-e4l">
                                     <size key="itemSize" width="354" height="92"/>
@@ -114,7 +114,7 @@
                                 </cells>
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-fw-SbY">
-                                <rect key="frame" x="20" y="144" width="335" height="32"/>
+                                <rect key="frame" x="20" y="204" width="335" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Restaurant"/>
@@ -149,14 +149,21 @@
                                     <action selector="filterarea:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zQM-n2-0rc"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="9Nt-Lm-eU8">
+                                <rect key="frame" x="10" y="138" width="355" height="61"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4Wi-CI-z5r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1r4-P7-OSR"/>
                             <constraint firstItem="eMi-fw-SbY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2Pe-fj-CG0"/>
-                            <constraint firstItem="eMi-fw-SbY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="5Lo-jo-H7F"/>
+                            <constraint firstItem="eMi-fw-SbY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="5Lo-jo-H7F"/>
+                            <constraint firstItem="9Nt-Lm-eU8" firstAttribute="top" secondItem="h0w-Af-xlX" secondAttribute="bottom" constant="5" id="5bs-h9-DwL"/>
                             <constraint firstItem="4Wi-CI-z5r" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9HE-4C-e8r"/>
+                            <constraint firstItem="9Nt-Lm-eU8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="CXh-gC-VMi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Nt-Lm-eU8" secondAttribute="trailing" constant="10" id="HXX-rx-oeE"/>
                             <constraint firstItem="h0w-Af-xlX" firstAttribute="top" secondItem="gpr-Em-vSh" secondAttribute="bottom" constant="0.20000000000000001" id="Kdn-sv-dxh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DXP-cE-sRc" secondAttribute="trailing" constant="20" id="NB8-e9-Tpp"/>
                             <constraint firstItem="gpr-Em-vSh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="P6H-Nt-Bvu"/>
@@ -166,11 +173,13 @@
                             <constraint firstItem="4Wi-CI-z5r" firstAttribute="top" secondItem="eMi-fw-SbY" secondAttribute="bottom" constant="20" id="pII-Fr-4oC"/>
                             <constraint firstItem="DXP-cE-sRc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="tb0-At-pKE"/>
                             <constraint firstItem="h0w-Af-xlX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="u3h-Q8-d5T"/>
+                            <constraint firstItem="eMi-fw-SbY" firstAttribute="top" secondItem="9Nt-Lm-eU8" secondAttribute="bottom" constant="5" id="xqd-IV-8cC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="7l4-6l-Lf9"/>
                     <connections>
                         <outlet property="collectionView" destination="4Wi-CI-z5r" id="ElP-Ff-b89"/>
+                        <outlet property="searcbar" destination="9Nt-Lm-eU8" id="056-QN-wLu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
