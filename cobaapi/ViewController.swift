@@ -51,11 +51,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
         // Do any additional setup after loading the view.
         collectionView?.dataSource = self
         collectionView?.delegate = self
-       
-        title = "Nearby"
-        
+       self.navigationController?.setNavigationBarHidden(true, animated: false)
+        title = "Browse"
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.white], for: .selected)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
         performSelector(inBackground: #selector(manggildata), with: nil)
         collectionView?.isSkeletonable = true
@@ -65,10 +64,17 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
         
     }
     // batas ahkir viewdidload
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-       
+   
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //navigationController?.hidesBarsWhenVerticallyCompact = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
+    
+    
+    
     
     
     @objc func manggildata() {
@@ -202,7 +208,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
                    // detail.idresto = id[indexPath.item]
                 }
                
+                //self.navigationController!.pushViewController(detail, animated: true)
                 self.navigationController!.pushViewController(detail, animated: true)
+                print("pindah halaman detail")
                // print("pindah")
             }
         } else if   milihapa == 1{
@@ -221,7 +229,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
                    // detail.idresto = id[indexPath.item]
                 }
                
-                self.navigationController!.pushViewController(detail, animated: true)
+                self.navigationController?.pushViewController(detail, animated: true)
                // print("pindah")
             }
         }
@@ -256,8 +264,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
         
     }
     override func viewWillDisappear(_ animated: Bool) {
-        let tab = tabBarController as! TabbarViewController
-        tab.restoran = restaurantData.restoranarray
+        if let tab = try tabBarController as? TabbarViewController{
+            tab.restoran = restaurantData.restoranarray
+        }
+      
     }
     
 
