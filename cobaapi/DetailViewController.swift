@@ -14,6 +14,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
    
     @IBOutlet weak var gambar: UICollectionView!
     
+    @IBOutlet weak var revieww: UICollectionView!
+    
     var nama:String?
     var idresto:String?
     var alamat1:String?
@@ -23,6 +25,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     var deskripsi1:String?
     var gambarslide:[String]?
     var gambarslide1 = [UIImage]()
+    var review1 = [String]()
     @IBOutlet var namaRestoran: UILabel!
     
     
@@ -124,6 +127,21 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         
        
     }
+    func collectionView1(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if review1 != nil {
+            return review1.count
+        }
+        return 0
+    }
     
+    func collectionView1(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "review", for: indexPath) as! reviewDetailCollectionViewCell
+        
+        cell.reviewDetail.text = review1[indexPath.item]
+            return cell
+        
+       
+    }
+   
 
 }
