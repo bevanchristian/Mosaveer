@@ -78,8 +78,8 @@
             filePath = "cobaapi/RestaurantData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "parse(json:mainView:mytipe:)"
             landmarkType = "7">
          </BreakpointContent>
