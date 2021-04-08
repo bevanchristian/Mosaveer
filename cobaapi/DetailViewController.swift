@@ -11,6 +11,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
    
   
+    @IBOutlet var review: UICollectionView!
     
    
     @IBOutlet weak var gambar: UICollectionView!
@@ -42,12 +43,18 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
   
     @IBOutlet weak var deskripsi: UILabel!
-    
+ 
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
         gambar.delegate = self
         gambar.dataSource = self
+        review.delegate = self
+        review.dataSource = self
+        
+        self.view.addSubview(gambar)
+        self.view.addSubview(review)
         title = "Detail Pages"
         namaRestoran.text = nama
         print(idresto)
@@ -110,10 +117,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if gambarslide1 != nil {
             return gambarslide1.count
-        }else{
-            return 0
         }
-        
+        return 2 // diisi review count
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -139,13 +144,21 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == self.gambar {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gambarReview", for: indexPath) as! imagedetailCollectionViewCell
         cell.imagedetail.image = gambarslide1[indexPath.item]
             
-            return cell
+        return cell
         
        
-    }
+        }else {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "review", for: indexPath) as! reviewDetailCollectionViewCell
+         
+            cell.reviewplace.text = "collectionView.dequeueReusableCell(withReuseIdentifier: , for: indexPath) as! reviewDetailCollectionViewCell" // diisi review
+           return cell
+        }
     
-
+        
+    }
 }

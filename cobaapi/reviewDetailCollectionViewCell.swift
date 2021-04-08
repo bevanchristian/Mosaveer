@@ -9,6 +9,8 @@ import UIKit
 class reviewDetailCollectionViewCell: UICollectionViewCell {
    
     
-    @IBOutlet weak var reviewDetail: UILabel!
+    @IBOutlet var userreview: UILabel!
+    
+    @IBOutlet var reviewplace: UILabel!
     
 }
