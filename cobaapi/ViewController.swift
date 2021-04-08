@@ -216,6 +216,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
                     detail.deskripsi1 = namaFix.deskription
                     detail.gambarslide = namaFix.gambar
                     detail.lokasi = namaFix.lokasiMap
+                    detail.review1 = namaFix.review
                     print(namaFix.gambar)
                     print("INI FOTO APIK")
                     
