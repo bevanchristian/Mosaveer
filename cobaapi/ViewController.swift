@@ -134,6 +134,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if milihapa == 0{
             return restaurantData.restoranarray.count
+
         }else if milihapa == 1{
             return restaurantData.masjidarray.count
         }else{

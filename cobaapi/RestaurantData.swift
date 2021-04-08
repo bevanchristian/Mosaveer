@@ -23,10 +23,13 @@ class RestaurantData:Thread {
     var gambarFinal:UIImage!
     var foursquare:mygroups? = nil
     var restoranarray = [restaurant]()
+    var restoranarraykotor = [restaurant]()
+
     var masjidarray = [restaurant]()
     var count = 0
     let map = MapViewController()
-    var restofix = ["Sushiken Asakusa","Tendon Ituki","Gyumon","Soleil","Luxe Burgers","Soup Stock Tokyo Hiroo","Soup Stock Tokyo Shibuya Mark City","Yildiz Turkish Restaurant","Ninja Cafe Asakusa","Habibi Halal Restaurant","Shiibei-Ramen","Samrat-Jiyugaoka","Samrat-Shirokane Takanawa","Samrat Minami Aoyama","Kaenzan Lanzhou Ramen","Nirvanam","Nirvanam Kamiyacho","Indian Restaurant Tandoor","Masala","Sudo","Cafeteria Spice Jaya","Pizzeria Santa FE","Thai Restaurant Siam Orchid Supreme","Indian&Palisha Restaurant Nawab","Annam Indian Restaurant, Ginza","Gonpachi Asakusa Azumabahi","Asian Yakiniku Halal Restaurant","Mazulu Halal Beef Noodle","Halal Sakura","Gyu-kaku Akasaka","Sana Awaji","Masudaen Sohonten","Kebab Stand","The Kebab Factory Asakusa","Maharani South Indian Restaurant","Maharani Indian Restaurant","Maharani Minamisuna Branch","Ayam-YA Shin-Okachimachi","Yoshiya Shinjukuten","Priya","Tsukino Sabaku","Uosho","Oskar Kebab","Jumbo Doner Kebab","Mosess Kebab","Chicken Man","Veg Kitchen","Sultan Akihabara","Asukusa Umegen","Yakiniku Panga","Sojibou DiverCity Tokyo Plaza","Mrs Istanbul","Ko-so Cafe Biorise","Al Mina","Morocco Tajinya","Uskudar Restaurant","Japanese Restaurant Sakura","Himalaya Curry Shiroganedai Store","Lukla Village Kitasando","Lukla Himalaya Sangu-bashi","Marhaba","Halal Mentai Naritaya Asakusa","Himalaya Curry Sangu-Bashi Store","Himalaya Curry Kitasando Store","Tokyo Muslim Hanten","Harima Kebab Biryani","SilkRoad Tarim Uyghur Restaurant","Restaurant&Bar BolBol","Siddique Shinjyukunishiguc","Siddique Akebonobashiten","Siddique Shinjyukuhyakuninnchoten","Siddique nihonbashihamamatuchou","Siddique Jinbochou","Siddique","Siddique Hanzomon","Siddique Suitengumae","Konya","Palmyra","Torukoazu","Pamukkale","Vege Herb Saga","Samrat Shinjuku","Khana","Malaychan satu","Nasco Food Court","Kaenzan (蘭州拉麺 火焔山)","Halal Wagyu Yakiniku PANGA (ハラール和牛焼肉ぱんが)","halal wagyu yakiniku panga (ハラール和牛焼肉ぱんが)","kaenzan (蘭州拉麺 火焔山)","halima kebab biryani (ハリマ ケバブ ビリヤニ)","nasco food court","palmyra (パルミラ)","chicken man (チキンマン)","khazana (カザーナ)","üsküdar (ウスキュダル)","restaurant aladdin (イランアラブ料理 アラジン)","delhi dining (デリー ダイニング)","marhaba (マルハバ)","bharati (バーラティ)","annam indian restaurant (アナム)","karachi restaurant (カラチの空)","siam orchid supreme (サイアムオーキッド supreme)","falafel brothers","star kebab (スターケバブ アキバテラス)","gyumon (牛門)","sultan (スルターン 秋葉原店)","the kebab factory","malaychan (マレーチャン)","kineya mugimaru (杵屋麦丸)","アラブ地中海料理 神田 al mina","MALAY ASIAN CUISINE 横浜元町店","LUNA HALA (ルナハラ 築地)","Habibi Restaurant (ハビビ レストラン)"]
+  
+    var restofix = ["Sushiken Asakusa","Tendon Ituki","Gyumon","Soleil","Luxe Burgers","Soup Stock Tokyo Hiroo","Soup Stock Tokyo Shibuya Mark City","Yildiz Turkish Restaurant","Ninja Cafe Asakusa","Habibi Halal Restaurant","Shiibei-Ramen","Samrat-Jiyugaoka","Samrat-Shirokane Takanawa","Samrat Minami Aoyama","Kaenzan Lanzhou Ramen","Nirvanam","Nirvanam Kamiyacho","Indian Restaurant Tandoor","Masala","Sudo","Cafeteria Spice Jaya","Pizzeria Santa FE","Thai Restaurant Siam Orchid Supreme","Indian&Palisha Restaurant Nawab","Annam Indian Restaurant, Ginza","Gonpachi Asakusa Azumabahi","Asian Yakiniku Halal Restaurant","Mazulu Halal Beef Noodle","Halal Sakura","Gyu-kaku Akasaka","Sana Awaji","Masudaen Sohonten","Kebab Stand","The Kebab Factory Asakusa","Maharani South Indian Restaurant","Maharani Indian Restaurant","Maharani Minamisuna Branch","Ayam-YA Shin-Okachimachi","Yoshiya Shinjukuten","Priya","Tsukino Sabaku","Uosho","Oskar Kebab","Jumbo Doner Kebab","Moses’s Kebab","Chicken Man","Veg Kitchen","Sultan Akihabara","Asukusa Umegen","Yakiniku Panga","Sojibou DiverCity Tokyo Plaza","Mrs Istanbul","Ko-so Cafe Biorise","Al Mina","Morocco Tajinya","Uskudar Restaurant","Japanese Restaurant Sakura","Himalaya Curry Shiroganedai Store","Lukla Village Kitasando","Lukla Himalaya Sangu-bashi","Marhaba","Halal Mentai Naritaya Asakusa","Himalaya Curry Sangu-Bashi Store","Himalaya Curry Kitasando Store","Tokyo Muslim Hanten","Harima Kebab Biryani","SilkRoad Tarim Uyghur Restaurant","Restaurant&Bar BolBol","Siddique Shinjyukunishiguc","Siddique Akebonobashiten","Siddique Shinjyukuhyakuninnchoten","Siddique nihonbashihamamatuchou","Siddique Jinbochou","Siddique","Siddique Hanzomon","Siddique Suitengumae","Konya","Palmyra","Torukoazu","Pamukkale","Vege Herb Saga","Samrat Shinjuku","Khana","Malaychan satu","Nasco Food Court","Kaenzan (蘭州拉麺 火焔山)","Halal Wagyu Yakiniku PANGA (ハラール和牛焼肉ぱんが)","halal wagyu yakiniku panga (ハラール和牛焼肉ぱんが)","kaenzan (蘭州拉麺 火焔山)","halima kebab biryani (ハリマ ケバブ ビリヤニ)","nasco food court","palmyra (パルミラ)","chicken man (チキンマン)","khazana (カザーナ)","üsküdar (ウスキュダル)","restaurant aladdin (イランアラブ料理 アラジン)","delhi dining (デリー ダイニング)","marhaba (マルハバ)","bharati (バーラティ)","annam indian restaurant (アナム)","karachi restaurant (カラチの空)","siam orchid supreme (サイアムオーキッド supreme)","falafel brothers","star kebab (スターケバブ アキバテラス)","gyumon (牛門)","sultan (スルターン 秋葉原店)","the kebab factory","malaychan (マレーチャン)","kineya mugimaru (杵屋麦丸)","アラブ地中海料理 神田 al mina","MALAY ASIAN CUISINE 横浜元町店","LUNA HALA (ルナハラ 築地)","Habibi Restaurant (ハビビ レストラン)"]
     
 
     
@@ -36,7 +39,7 @@ class RestaurantData:Thread {
     
     func ubah(myView: ViewController,tipe:Int,sudahAda:Bool){
         if tipe == 0 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=120000&limit=2"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=120000&limit=30"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -87,7 +90,7 @@ class RestaurantData:Thread {
     
     func ubahfilter(myView: ViewController,tipe:Int,sudahAda:Bool,distance:Int,bukak:Int,rating:Int){
         if tipe == 0 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=\(distance)&limit=3&openNow=\(bukak)&price=\(rating)"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=\(distance)&limit=30&openNow=\(bukak)&price=\(rating)"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -169,6 +172,17 @@ class RestaurantData:Thread {
                     resto.id = nested[x].items[y].venue.id
                     let idIsi = resto.id
                     resto.nama = nested[x].items[y].venue.name
+                    
+                    let arraylow = restofix.map { $0.lowercased()}
+                    if mytipe == 0{
+                        let index = find(value:  resto.nama.lowercased(), in: arraylow)
+                        if index == nil{
+                            continue
+                        }
+                    }
+                   
+
+                    
                     //idnamaDict[nested[x].items[y].venue.id]=nested[x].items[y].venue.name
                     // addres dulu baru cross street dan dikasih spasi
                     if let crsstreet = nested[x].items[y].venue.location.crossStreet {
@@ -257,21 +271,23 @@ class RestaurantData:Thread {
                     
                     // kalo sudah maka objeknya dimasukan dalam array suapya referensi
                     if mytipe == 0{
+                      
                         restoranarray.append(resto)
-                        print(restoranarray)
-                        
                         // ini untuk filter
-                        let arraylow = restofix.map { $0.lowercased()}
-                        print("arraylow ini ngecek filter")
-                        print(arraylow)
-                        for x in 0...restoranarray.count-1{
-                            let index = find(value:  restoranarray[x].nama.lowercased(), in: arraylow)
-                                print(restoranarray[x].nama.lowercased())
-                                print(index)
-                                print("menemukan filter cokkk")
-                            
-                           
-                        }
+                      /*  if restoranarraykotor.count == 2{
+                            let arraylow = restofix.map { $0.lowercased()}
+                            for x in 0...restoranarraykotor.count-1{
+                                if let index = find(value:  restoranarraykotor[x].nama.lowercased(), in: arraylow){
+                                    restoranarray.append(restoranarraykotor[x])
+                                    print(restoranarraykotor[x].nama)
+                                    print("masuk 1 kli cok")
+                                    DispatchQueue.main.async {
+                                        mainView.collectionView?.reloadData()
+                                    }
+                                  
+                                }}
+                        }*/
+                       
                       
                         // filtered is ["hello", "world", "this", "list", "strings"]
                         //map.dataresto = restoranarray
@@ -289,15 +305,19 @@ class RestaurantData:Thread {
                 
             }//nested count
             // setiap sudah selesai load maka manggil function loaddata untuk reload collectionview
+   
+                
+                }
+         
             DispatchQueue.main.async {
 //                let main = ViewController()
 //                print("reload data")
 //                main.collectionView?.reloadData()
                 mainView.collectionView?.reloadData()
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+                print("reload")
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3) {
                     mainView.collectionView?.stopSkeletonAnimation()
                     mainView.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
-                }
                 
                 
             }
