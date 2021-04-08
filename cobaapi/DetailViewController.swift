@@ -27,6 +27,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     var gambarslide1 = [UIImage]()
     var lokasiuser:String!
     var lokasi:String!
+    var review1:[String] = []
     
     @IBOutlet var namaRestoran: UILabel!
     
@@ -155,7 +156,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "review", for: indexPath) as! reviewDetailCollectionViewCell
          
-            cell.reviewplace.text = "collectionView.dequeueReusableCell(withReuseIdentifier: , for: indexPath) as! reviewDetailCollectionViewCell" // diisi review
+            cell.reviewplace.text = review1[indexPath.item] // diisi review
            return cell
         }
     
