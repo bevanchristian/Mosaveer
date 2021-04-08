@@ -16,6 +16,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
     }
     
 
+    @IBOutlet var searcbar: UISearchBar!
     
     @IBOutlet var collectionView: UICollectionView?
 
@@ -61,11 +62,19 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
         collectionView?.isSkeletonable = true
         collectionView?.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .greenSea), animation: nil, transition: .crossDissolve(0.4))
 
+        if self.collectionView?.contentInset.top == CGFloat(2) {
+            searcbar.isHidden = true
+        }
         
+    
         
     }
     // batas ahkir viewdidload
-   
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+            if scrollView == self.collectionView {
+                navigationItem.hidesSearchBarWhenScrolling = false
+            }
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -137,7 +146,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
          let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "celljson", for: indexPath) as! jsondata
         //let isi = foursquare[indexPath.item].groups
         //print(isi)
-        
+        navigationItem.hidesSearchBarWhenScrolling = true
         addTopAndBottomBorders(cell: cell)
         if milihapa == 0 {
             
