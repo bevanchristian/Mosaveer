@@ -44,7 +44,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
   
     @IBOutlet weak var deskripsi: UILabel!
- 
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -74,6 +74,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         }else if rating1 ??  8 <= 10 {
             bintang.text = "⭐️⭐️⭐️⭐️⭐️"
     }
+        
         if gambarslide != nil{
             for x in 0...gambarslide!.count-1 {
                 if let datafoto = try? gambarslide![x]{
@@ -145,11 +146,20 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
        
         
     }
+  
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.gambar {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gambarReview", for: indexPath) as! imagedetailCollectionViewCell
-        cell.imagedetail.image = gambarslide1[indexPath.item]
+            
+            cell.imagedetail.layer.borderWidth = 0
+            cell.imagedetail.layer.masksToBounds = true
+          //  imagedetail.layer.borderColor = UIColor.ba
+            cell.imagedetail.layer.cornerRadius = 10.0
+            //This will change with corners of image and height/2 will make this circle shape
+            cell.imagedetail.clipsToBounds = true
+            cell.imagedetail.image = gambarslide1[indexPath.item]
+            
             
         return cell
         

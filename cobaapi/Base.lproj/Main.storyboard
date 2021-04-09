@@ -301,7 +301,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="jFx-Ef-reG" secondAttribute="bottom" id="uyf-eM-YaX"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <size key="customSize" width="258" height="162"/>
                                         <connections>
                                             <outlet property="imagedetail" destination="jFx-Ef-reG" id="MDc-Og-FXh"/>
