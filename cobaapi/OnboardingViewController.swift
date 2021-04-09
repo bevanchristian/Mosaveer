@@ -13,6 +13,7 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         getstart.layer.cornerRadius = 10.0
         firsttime = UserDefaults.standard.bool(forKey: "firsttime")
         // Do any additional setup after loading the view.

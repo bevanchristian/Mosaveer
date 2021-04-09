@@ -23,6 +23,8 @@ class ArtworkMarkerView: MKMarkerAnnotationView {
       // 2
       markerTintColor = artwork.markerTintColor
       glyphImage = artwork.imageanotate
+        
+        
     }
   }
 }
@@ -36,8 +38,8 @@ class ArtworkView: MKAnnotationView {
 
       canShowCallout = true
       calloutOffset = CGPoint(x: -5, y: 5)
-      let mapsButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 48, height: 48)))
-      mapsButton.setBackgroundImage(#imageLiteral(resourceName: "food"), for: .normal)
+        let mapsButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 48, height: 48)))
+     // mapsButton.setBackgroundImage(#imageLiteral(resourceName: "food"), for: .normal)
       rightCalloutAccessoryView = mapsButton
 
       image = artwork.imageanotate
