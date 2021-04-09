@@ -161,6 +161,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
             cell.Text.numberOfLines = 0;
             cell.rating.text = String( restaurantData.restoranarray[indexPath.item].rating)
             cell.foto.image = restaurantData.restoranarray[indexPath.item].gambarFinal
+            cell.foto.layer.borderWidth = 0
+            cell.foto.layer.masksToBounds = true
+          //  imagedetail.layer.borderColor = UIColor.ba
+            cell.foto.layer.cornerRadius = 10.0
+            //This will change with corners of image and height/2 will make this circle shape
+            cell.foto.clipsToBounds = true
             cell.openHour.text = restaurantData.restoranarray[indexPath.item].statusOpen
         }else if milihapa == 1{
             cell.Text.text = restaurantData.masjidarray[indexPath.item].nama
@@ -170,6 +176,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
             cell.Text.numberOfLines = 0;
             cell.rating.text = ""
             cell.foto.image = restaurantData.masjidarray[indexPath.item].gambarFinal
+            cell.foto.layer.borderWidth = 0
+            cell.foto.layer.masksToBounds = true
+          //  imagedetail.layer.borderColor = UIColor.ba
+            cell.foto.layer.cornerRadius = 10.0
+            //This will change with corners of image and height/2 will make this circle shape
+            cell.foto.clipsToBounds = true
             cell.openHour.text = restaurantData.masjidarray[indexPath.item].statusOpen
         }
         

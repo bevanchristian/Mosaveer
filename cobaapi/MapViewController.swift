@@ -93,8 +93,13 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         
         
         let tab = tabBarController as? TabbarViewController
+       
         if let resto = try? tab?.restoran{
             dataresto = resto
+            if resto.count > 0{
+            if let a =  try? resto[0].gambarFinal {
+                
+       
             for x in 0...resto.count-1{
                 cordinate.append(contentsOf: resto[x].lokasiMap.components(separatedBy: ","))
                  lat = Double(cordinate[0])
@@ -106,9 +111,16 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
              }
             
             map.addAnnotations(pin)
+                
+            }
+            }
         }
         if let resto = try? tab?.masjid{
             datamasjid = resto
+            if resto.count > 0{
+                
+        
+            if let a =  try? resto[0].gambarFinal {
             for x in 0...resto.count-1{
                 cordinate.append(contentsOf: resto[x].lokasiMap.components(separatedBy: ","))
                  lat = Double(cordinate[0])
@@ -120,6 +132,8 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
              }
     
             map.addAnnotations(pinmasjid)
+            }
+            }
         }
         map.register(
           ArtworkView.self,

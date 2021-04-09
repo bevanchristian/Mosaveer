@@ -864,6 +864,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="urR-hz-A00" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vyK-Xo-69E">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

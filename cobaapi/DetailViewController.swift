@@ -75,7 +75,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
             bintang.text = "⭐️⭐️⭐️⭐️⭐️"
     }
         
-        if gambarslide != nil{
+        if gambarslide!.count > 0{
             for x in 0...gambarslide!.count-1 {
                 if let datafoto = try? gambarslide![x]{
                     if let fotoURL = try? Data(contentsOf: URL(string: datafoto)! ) {
