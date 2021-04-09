@@ -16,6 +16,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
     }
     
 
+    @IBOutlet var segmentoutlet: UISegmentedControl!
     @IBOutlet var searcbar: UISearchBar!
     
     @IBOutlet var collectionView: UICollectionView?
@@ -56,6 +57,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
        self.navigationController?.setNavigationBarHidden(true, animated: false)
         title = "Browse"
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.white], for: .selected)
+        self.tabBarController?.tabBar.isHidden = false
         //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOption))
         //tabBarController?.toolbarItems
         performSelector(inBackground: #selector(manggildata), with: nil)
@@ -65,11 +67,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
         if self.collectionView?.contentInset.top == CGFloat(2) {
             searcbar.isHidden = true
         }
-        
+            
     
         
     }
     // batas ahkir viewdidload
+
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
             if scrollView == self.collectionView {
                 navigationItem.hidesSearchBarWhenScrolling = false
@@ -280,6 +283,18 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
         }
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let isScrolling: Bool? = collectionView?.isDragging
+        
+        if (isScrolling!){
+            navigationItem.hidesSearchBarWhenScrolling = false
+            searcbar.isHidden = true
+        }else{
+            navigationItem.hidesSearchBarWhenScrolling = true
+        }
+    }
     override func viewWillDisappear(_ animated: Bool) {
         if let tab = try tabBarController as? TabbarViewController{
             tab.restoran = restaurantData.restoranarray
@@ -289,7 +304,68 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
     
 
     
-  
+   
 
 
+    
+}
+extension ViewController: UIScrollViewDelegate {
+  /*func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    if scrollView == collectionView {
+      print("tableview")
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searcbar.isHidden = true
+    }
+  }*/
+    
+    
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        if scrollView == collectionView {
+          print("tableview")
+            navigationItem.hidesSearchBarWhenScrolling = false
+            searcbar.isHidden = false
+        }
+    }
+
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == collectionView{
+            
+        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+            //reach bottom
+            searcbar.isHidden = true
+            for constraint in self.view.constraints {
+                if constraint.identifier == "topatas" {
+                   constraint.constant = -45
+                }
+            }
+            segmentoutlet.layoutIfNeeded()
+        }
+
+        if (scrollView.contentOffset.y < 0){
+            //reach top
+        
+            searcbar.isHidden = false
+            for constraint in self.view.constraints {
+                if constraint.identifier == "topatas" {
+                   constraint.constant = 0
+                }
+            }
+            segmentoutlet.layoutIfNeeded()
+        }
+
+        if (scrollView.contentOffset.y >= 90 && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height)){
+            //not top and not bottom
+            searcbar.isHidden = true
+            for constraint in self.view.constraints {
+                if constraint.identifier == "topatas" {
+                   constraint.constant = -45
+                }
+            }
+            segmentoutlet.layoutIfNeeded()
+        }
+        }
+    }
+    
+   
 }

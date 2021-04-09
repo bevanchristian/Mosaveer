@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Wi-CI-z5r">
-                                <rect key="frame" x="0.0" y="211" width="375" height="407"/>
+                                <rect key="frame" x="0.0" y="206" width="375" height="412"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t2b-Rs-e4l">
                                     <size key="itemSize" width="354" height="92"/>
@@ -115,7 +116,7 @@
                                 </cells>
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-fw-SbY">
-                                <rect key="frame" x="20" y="160" width="335" height="32"/>
+                                <rect key="frame" x="20" y="155" width="335" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Restaurant"/>
@@ -139,19 +140,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXP-cE-sRc">
-                                <rect key="frame" x="325" y="39" width="30" height="22"/>
+                                <rect key="frame" x="320" y="39" width="35" height="27"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Pz1-vV-NqD"/>
-                                    <constraint firstAttribute="width" constant="30" id="hLS-GC-GFn"/>
+                                    <constraint firstAttribute="height" constant="27" id="Pz1-vV-NqD"/>
+                                    <constraint firstAttribute="width" constant="35" id="hLS-GC-GFn"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" red="0.29518827800000003" green="0.48748463390000002" blue="0.41175681349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button" image="slider.horizontal.3" catalog="system"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="slider.horizontal.3" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
                                     <action selector="filterarea:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zQM-n2-0rc"/>
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="9Nt-Lm-eU8">
-                                <rect key="frame" x="10" y="94" width="355" height="61"/>
+                                <rect key="frame" x="10" y="94" width="355" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -160,7 +164,6 @@
                         <constraints>
                             <constraint firstItem="4Wi-CI-z5r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1r4-P7-OSR"/>
                             <constraint firstItem="eMi-fw-SbY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2Pe-fj-CG0"/>
-                            <constraint firstItem="eMi-fw-SbY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="5Lo-jo-H7F"/>
                             <constraint firstItem="9Nt-Lm-eU8" firstAttribute="top" secondItem="h0w-Af-xlX" secondAttribute="bottom" constant="5" id="5bs-h9-DwL"/>
                             <constraint firstItem="4Wi-CI-z5r" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9HE-4C-e8r"/>
                             <constraint firstItem="9Nt-Lm-eU8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="CXh-gC-VMi"/>
@@ -174,13 +177,14 @@
                             <constraint firstItem="4Wi-CI-z5r" firstAttribute="top" secondItem="eMi-fw-SbY" secondAttribute="bottom" constant="20" id="pII-Fr-4oC"/>
                             <constraint firstItem="DXP-cE-sRc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="tb0-At-pKE"/>
                             <constraint firstItem="h0w-Af-xlX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="u3h-Q8-d5T"/>
-                            <constraint firstItem="eMi-fw-SbY" firstAttribute="top" secondItem="9Nt-Lm-eU8" secondAttribute="bottom" constant="5" id="xqd-IV-8cC"/>
+                            <constraint firstItem="eMi-fw-SbY" firstAttribute="top" secondItem="9Nt-Lm-eU8" secondAttribute="bottom" constant="5" identifier="topatas" id="xqd-IV-8cC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="7l4-6l-Lf9"/>
                     <connections>
                         <outlet property="collectionView" destination="4Wi-CI-z5r" id="ElP-Ff-b89"/>
                         <outlet property="searcbar" destination="9Nt-Lm-eU8" id="056-QN-wLu"/>
+                        <outlet property="segmentoutlet" destination="eMi-fw-SbY" id="lvc-PU-YKo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -788,7 +792,7 @@
         <!--Item-->
         <scene sceneID="Xkb-Fe-FVq">
             <objects>
-                <viewController id="dqM-sh-M7S" customClass="OnboardingViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="dqM-sh-M7S" customClass="OnboardingViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Egi-ZS-ID0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -798,8 +802,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWF-U5-Z9P">
-                                <rect key="frame" x="30" y="553" width="315" height="35"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <rect key="frame" x="30" y="602" width="315" height="35"/>
+                                <color key="backgroundColor" red="0.3379122913" green="0.47947007419999998" blue="0.415679574" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="gAj-X6-V0N"/>
                                 </constraints>
@@ -818,8 +822,10 @@
                             <constraint firstItem="gkQ-2r-Alt" firstAttribute="trailing" secondItem="eWF-U5-Z9P" secondAttribute="trailing" constant="30" id="SdS-WW-rp0"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="lc1-Gy-e1I"/>
                     <navigationItem key="navigationItem" id="hAQ-DN-ETb"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="getstart" destination="eWF-U5-Z9P" id="UOu-2S-0pM"/>
                     </connections>
@@ -873,13 +879,17 @@
         <!--Tab Bar Controller-->
         <scene sceneID="vwR-oJ-jBk">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="U9a-KV-vpd" sceneMemberID="viewController">
+                <tabBarController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="U9a-KV-vpd" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bBw-hk-q9u"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X7k-ha-3Ws">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="dqM-sh-M7S" kind="relationship" relationship="viewControllers" id="MDr-3g-BHI"/>

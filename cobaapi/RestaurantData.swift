@@ -39,7 +39,7 @@ class RestaurantData:Thread {
     
     func ubah(myView: ViewController,tipe:Int,sudahAda:Bool){
         if tipe == 0 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=120000&limit=10"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=120000&limit=20"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
