@@ -165,7 +165,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
             //cell.Text.adjustsFontSizeToFitWidth = true
             cell.Text.lineBreakMode = .byWordWrapping
             cell.Text.numberOfLines = 0;
-            cell.rating.text = String( restaurantData.masjidarray[indexPath.item].rating)
+            cell.rating.text = ""
             cell.foto.image = restaurantData.masjidarray[indexPath.item].gambarFinal
             cell.openHour.text = restaurantData.masjidarray[indexPath.item].statusOpen
         }

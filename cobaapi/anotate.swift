@@ -24,6 +24,7 @@ class Anotate: NSObject,MKAnnotation {
     var statusopen:String
     var deskripsi:String
     var gambar = [String]()
+    var imageanotate:UIImage!
 
     var markerTintColor: UIColor  {
       switch identitas {
@@ -38,7 +39,7 @@ class Anotate: NSObject,MKAnnotation {
     
     
 
-    init(title:String,subtitle:String,coordinate:CLLocationCoordinate2D,gambarfinal:UIImage,alamat:String,lokasifull:String,identitas:String,statusopen:String,deskripsi:String,gambar:[String]) {
+    init(title:String,subtitle:String,coordinate:CLLocationCoordinate2D,gambarfinal:UIImage,alamat:String,lokasifull:String,identitas:String,statusopen:String,deskripsi:String,gambar:[String],imageanotate:UIImage) {
         self.title = title
         self.subtitle = subtitle
         self.coordinate = coordinate
@@ -49,6 +50,7 @@ class Anotate: NSObject,MKAnnotation {
         self.statusopen = statusopen
         self.deskripsi = deskripsi
         self.gambar = gambar
+        self.imageanotate = imageanotate
     }
     // method view for ini dipakai ketika tiap ada anotation
    

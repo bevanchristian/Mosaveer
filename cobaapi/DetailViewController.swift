@@ -118,8 +118,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if gambarslide1 != nil {
             return gambarslide1.count
+        }else{
+            return review1.count// diisi review count
         }
-        return 2 // diisi review count
+      
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -155,8 +157,12 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         }else {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "review", for: indexPath) as! reviewDetailCollectionViewCell
-         
-            cell.reviewplace.text = review1[indexPath.item] // diisi review
+            if review1.count != 0{
+                cell.reviewplace.text = review1[indexPath.item]
+            }else{
+                cell.reviewplace.text = "Kosong"
+            }
+           // diisi review
            return cell
         }
     

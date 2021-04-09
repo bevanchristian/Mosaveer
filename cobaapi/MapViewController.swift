@@ -99,7 +99,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
                 cordinate.append(contentsOf: resto[x].lokasiMap.components(separatedBy: ","))
                  lat = Double(cordinate[0])
                  lng = Double(cordinate[1])
-                let london = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambarfinal: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap,identitas: "resto",statusopen: resto[x].statusOpen,deskripsi: resto[x].deskription,gambar: resto[x].gambar)
+                let london = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambarfinal: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap,identitas: "resto",statusopen: resto[x].statusOpen,deskripsi: resto[x].deskription,gambar: resto[x].gambar,imageanotate: UIImage(named: "food")!)
                 pin.append(london)
                 print(london)
                 cordinate.removeAll()
@@ -113,7 +113,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
                 cordinate.append(contentsOf: resto[x].lokasiMap.components(separatedBy: ","))
                  lat = Double(cordinate[0])
                  lng = Double(cordinate[1])
-                let masjid = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambarfinal: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap,identitas: "masjid",statusopen: resto[x].statusOpen,deskripsi: resto[x].deskription,gambar: resto[x].gambar)
+                let masjid = Anotate(title: resto[x].nama, subtitle: String(resto[x].rating), coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng),gambarfinal: resto[x].gambarFinal,alamat: resto[x].address,lokasifull: resto[x].lokasiMap,identitas: "masjid",statusopen: resto[x].statusOpen,deskripsi: resto[x].deskription,gambar: resto[x].gambar,imageanotate: UIImage(named: "masjid")!)
                 pinmasjid.append(masjid)
                 print(masjid)
                 cordinate.removeAll()
@@ -121,7 +121,10 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     
             map.addAnnotations(pinmasjid)
         }
-        
+        map.register(
+          ArtworkView.self,
+          forAnnotationViewWithReuseIdentifier:
+            MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
     func addTopAndBottomBorders(cell:UIButton) {
@@ -166,7 +169,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
   
     
 
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+   /* func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is Anotate else {return nil}
         let identifier = "capital"
         
@@ -181,14 +184,17 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
             // dan setelah callout ditampilin dikasih button aja dengan tipe detaildisclosure
             anotationview?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             // untuk button e gausa dikasih target kayak method untuk jalanin kalo setelah dipencet soale yang dipanggil itu calloutaccesorycontrolTapped
+        
         }else{
             // kalo sudah ada ya anotate nya tinggal di update dengan yang baru
             anotationview?.annotation = annotation
         }
         
+    
         //anotationview?.image = UIImage(named: "HADILAU")
         return anotationview
-    }
+    }*/
+    
     
     override func viewDidAppear(_ animated: Bool) {
         determineCurrentLocation()
@@ -255,6 +261,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     @objc func selesailacak(){
         locationManager.stopUpdatingLocation()
     }
+
     
  
 
