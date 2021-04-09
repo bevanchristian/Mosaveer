@@ -320,7 +320,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ifr-aM-8iS">
-                                <rect key="frame" x="20" y="524" width="335" height="120"/>
+                                <rect key="frame" x="15" y="524" width="340" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Dab-5h-bLs"/>
@@ -385,11 +385,11 @@
                             <constraint firstItem="vFk-Im-mmm" firstAttribute="top" secondItem="kKL-cK-Mns" secondAttribute="bottom" constant="15" id="3RB-sy-fUd"/>
                             <constraint firstItem="XQS-YK-cQX" firstAttribute="leading" secondItem="y5t-80-WdC" secondAttribute="leading" constant="20" id="449-Y2-WmM"/>
                             <constraint firstItem="TZw-yg-3gg" firstAttribute="leading" secondItem="y5t-80-WdC" secondAttribute="leading" constant="20" id="4HU-RN-Zx3"/>
-                            <constraint firstItem="ifr-aM-8iS" firstAttribute="leading" secondItem="y5t-80-WdC" secondAttribute="leading" constant="20" id="AQB-gB-jpN"/>
+                            <constraint firstItem="ifr-aM-8iS" firstAttribute="leading" secondItem="y5t-80-WdC" secondAttribute="leading" constant="15" id="AQB-gB-jpN"/>
                             <constraint firstItem="y5t-80-WdC" firstAttribute="trailing" secondItem="vFk-Im-mmm" secondAttribute="trailing" constant="40" id="E6Q-Cj-GMg"/>
                             <constraint firstItem="y5t-80-WdC" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="TZw-yg-3gg" secondAttribute="trailing" constant="50" id="Fvy-zQ-msO"/>
                             <constraint firstItem="57R-mE-TKF" firstAttribute="leading" secondItem="y5t-80-WdC" secondAttribute="leading" constant="20" id="GNq-SC-bX6"/>
-                            <constraint firstItem="ifr-aM-8iS" firstAttribute="top" relation="lessThanOrEqual" secondItem="XQS-YK-cQX" secondAttribute="bottom" constant="20" id="NLW-5i-LP0"/>
+                            <constraint firstItem="ifr-aM-8iS" firstAttribute="top" relation="lessThanOrEqual" secondItem="XQS-YK-cQX" secondAttribute="bottom" constant="10" id="NLW-5i-LP0"/>
                             <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="ifr-aM-8iS" secondAttribute="bottom" constant="23" id="ShA-Ja-5oM"/>
                             <constraint firstItem="y5t-80-WdC" firstAttribute="trailing" secondItem="kKL-cK-Mns" secondAttribute="trailing" constant="29" id="XMq-VJ-QB1"/>
                             <constraint firstItem="1Vq-WM-evy" firstAttribute="leading" secondItem="y5t-80-WdC" secondAttribute="leading" constant="20" id="d2n-cY-jKb"/>
