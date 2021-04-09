@@ -11,6 +11,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
    
   
+    @IBOutlet var shareOutlet: UIButton!
+    
     @IBOutlet var review: UICollectionView!
     
    
@@ -25,9 +27,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     var deskripsi1:String?
     var gambarslide:[String]?
     var gambarslide1 = [UIImage]()
-    var lokasiuser:String!
+    var lokasiuser = "35.702069,139.775327"
     var lokasi:String!
     var review1:[String] = []
+    var yangDiShare = ""
     
     @IBOutlet var namaRestoran: UILabel!
     
@@ -86,8 +89,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
                         }
                     }}
         }
+            yangDiShare = String("Mosaveer want to share you halal place you can click the link to get direction to \(nama) url=   http://maps.apple.com/?daddr=\(lokasiuser),+CA&saddr=\(String(describing: lokasi!))")
         
-                
+          
         
         
         
@@ -136,7 +140,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         
         DispatchQueue.main.async { [self] in
-             let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser!),+CA&saddr=\(String(describing: lokasi!))")!
+            let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser),+CA&saddr=\(String(describing: lokasi!))")!
+               
              if UIApplication.shared.canOpenURL(targetURL as URL) != nil{
 
                  UIApplication.shared.openURL(targetURL as URL)
@@ -145,6 +150,11 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
        
         
+    }
+    
+    @IBAction func shareAction(_ sender: UIButton) {
+        let share = UIActivityViewController(activityItems: [yangDiShare], applicationActivities: [])
+        present(share, animated: true)
     }
   
     
