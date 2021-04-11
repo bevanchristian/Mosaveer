@@ -9,6 +9,7 @@ import Foundation
 
 import MapKit
 
+// pakek salah satu aja
 class ArtworkMarkerView: MKMarkerAnnotationView {
   override var annotation: MKAnnotation? {
     willSet {
@@ -28,7 +29,7 @@ class ArtworkMarkerView: MKMarkerAnnotationView {
     }
   }
 }
-
+// kalo mau marker e bisa ganti gambar pakek yang ini class diatas delete aja
 class ArtworkView: MKAnnotationView {
   override var annotation: MKAnnotation? {
     willSet {
