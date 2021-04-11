@@ -14,6 +14,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet var shareOutlet: UIButton!
     
     @IBOutlet var review: UICollectionView!
+    @IBOutlet var getDirection: UIButton!
     
    
     @IBOutlet weak var gambar: UICollectionView!
@@ -56,6 +57,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         gambar.dataSource = self
         review.delegate = self
         review.dataSource = self
+        getDirection.layer.cornerRadius = 10
         
         self.view.addSubview(gambar)
         self.view.addSubview(review)
@@ -89,7 +91,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
                         }
                     }}
         }
-            yangDiShare = String("Mosaveer want to share you halal place you can click the link to get direction to \(nama) url=   http://maps.apple.com/?daddr=\(lokasiuser),+CA&saddr=\(String(describing: lokasi!))")
+            yangDiShare = String("Mosaveer want to share you halal place you can click the link to get direction to \(nama)    http://maps.apple.com/?daddr=\(lokasiuser),+CA&saddr=\(String(describing: lokasi!))")
         
           
         

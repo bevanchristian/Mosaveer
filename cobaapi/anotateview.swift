@@ -38,9 +38,9 @@ class ArtworkView: MKAnnotationView {
 
       canShowCallout = true
       calloutOffset = CGPoint(x: -5, y: 5)
-        let mapsButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 48, height: 48)))
-     // mapsButton.setBackgroundImage(#imageLiteral(resourceName: "food"), for: .normal)
-      rightCalloutAccessoryView = mapsButton
+    let mapsButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 48, height: 48)))
+        mapsButton.setImage(.actions, for: .normal)
+     rightCalloutAccessoryView = mapsButton
 
       image = artwork.imageanotate
       

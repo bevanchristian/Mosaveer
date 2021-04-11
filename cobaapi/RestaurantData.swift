@@ -39,7 +39,7 @@ class RestaurantData:Thread {
     
     func ubah(myView: ViewController,tipe:Int,sudahAda:Bool){
         if tipe == 0 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=120000&limit=20"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=120000&limit=10"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -89,6 +89,8 @@ class RestaurantData:Thread {
     }
     
     func ubahfilter(myView: ViewController,tipe:Int,sudahAda:Bool,distance:Int,bukak:Int,rating:Int){
+    
+      
         if tipe == 0 && sudahAda == false{
             let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=\(distance)&limit=30&openNow=\(bukak)&price=\(rating)"
             // diubah jadi url dari string
@@ -163,8 +165,13 @@ class RestaurantData:Thread {
             // di ambil karena kan hasile nested
             print("ini data luar")
             //print(nested)
+            
+      
+                 
+            
             for x in 0...nested.count-1{
                // print(nested[x].items)
+                if nested[x].items.count != 0 {
                 for y in 0...nested[x].items.count-1{
                    // nama resto
                    // bentuk objek
@@ -302,10 +309,14 @@ class RestaurantData:Thread {
                   
             
                 }// items count
-                
+                }else{
+                    print("kosong")
+                   mainView.kosong.text = "No Data Found...."
+                }
             }//nested count
             // setiap sudah selesai load maka manggil function loaddata untuk reload collectionview
-   
+           
+           
                 
                 }
          
@@ -313,11 +324,33 @@ class RestaurantData:Thread {
 //                let main = ViewController()
 //                print("reload data")
 //                main.collectionView?.reloadData()
+            
                 mainView.collectionView?.reloadData()
                 print("reload")
+               
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3) {
                     mainView.collectionView?.stopSkeletonAnimation()
                     mainView.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+                    
+                    
+                    switch mainView.restaurantData.restoranarray.count {
+                    case 0:
+                        mainView.kosong.text = "No Data Found...."
+                    case nil:
+                        mainView.kosong.text = "No Data Found...."
+                    default:
+                        mainView.kosong.text = ""
+                    }
+                    
+                    
+                    /*if mainView.restaurantData.restoranarray.count == nil {
+                        mainView.kosong.text = "No Data Found...."
+                    }else if mainView.restaurantData.restoranarray.count == 0{
+                        mainView.kosong.text = "No Data Found...."
+                    }else{
+                        mainView.kosong.text = ""
+                    }*/
+                    
                 
                 
             }

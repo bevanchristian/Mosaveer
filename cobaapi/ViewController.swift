@@ -15,7 +15,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
         return "celljson"
     }
     
-
+    @IBOutlet var kosong: UILabel!
+    
     @IBOutlet var segmentoutlet: UISegmentedControl!
     @IBOutlet var searcbar: UISearchBar!
     
@@ -137,6 +138,11 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if milihapa == 0{
             return restaurantData.restoranarray.count
+            if restaurantData.restoranarray.count == 0{
+                kosong.text = "No Data Found..."
+            }else{
+                kosong.text = ""
+            }
 
         }else if milihapa == 1{
             return restaurantData.masjidarray.count
@@ -273,7 +279,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
    @IBAction func kontrol(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
-      
+            kosong.text = ""
             if restaurantData.restoranarray.isEmpty{
                 milihapa = 0
                 restaurantData.ubah(myView: self, tipe: 0,sudahAda: false)
@@ -284,6 +290,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
             
         }
         else if sender.selectedSegmentIndex == 1{
+            kosong.text = ""
             if restaurantData.masjidarray.isEmpty{
                 milihapa = 1
                 restaurantData.ubah(myView: self, tipe: 1,sudahAda: false)

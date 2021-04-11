@@ -9,6 +9,7 @@ import UIKit
 
 class FloatMapViewController: UIViewController {
 
+    @IBOutlet var directButton: UIButton!
     @IBOutlet var gambar: UIImageView!
     @IBOutlet var alamatResto: UILabel!
     @IBOutlet var ratingResto: UILabel!
@@ -21,7 +22,9 @@ class FloatMapViewController: UIViewController {
     var mapvew:MapViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        gambar.layer.cornerRadius = 10.0
+        directButton.layer.cornerRadius = 10.0
+        
         // Do any additional setup after loading the view.
     }
    
