@@ -237,7 +237,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         print(userLocation.coordinate.latitude)
         // ini kotake
-        region = MKCoordinateRegion(center: center, latitudinalMeters: 100000, longitudinalMeters: 100000)
+        region = MKCoordinateRegion(center: center, latitudinalMeters: 10000, longitudinalMeters: 10000)
         map.setRegion(region, animated: true)
         
         let lat = String(userLocation.coordinate.latitude)

@@ -6,7 +6,8 @@
 //
 
 import UIKit
-class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIActivityItemSource {
+ 
     
     
    
@@ -91,7 +92,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
                         }
                     }}
         }
-            yangDiShare = String("Mosaveer want to share you halal place you can click the link to get direction to \(nama)    http://maps.apple.com/?daddr=\(lokasiuser),+CA&saddr=\(String(describing: lokasi!))")
+            yangDiShare = String("Mosaveer want to share you halal place you can click the link to get direction to \(nama!)    http://maps.apple.com/?daddr=\(lokasiuser),+CA&saddr=\(String(describing: lokasi!))")
         
           
         
@@ -154,8 +155,21 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         
     }
     
+    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+        return yangDiShare
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+        return yangDiShare
+    }
+    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+        return "Mosaveer want to share you a location"
+    }
+    
+    
     @IBAction func shareAction(_ sender: UIButton) {
-        let share = UIActivityViewController(activityItems: [yangDiShare], applicationActivities: [])
+        let items = [self]
+        let share = UIActivityViewController(activityItems: items, applicationActivities: [])
         present(share, animated: true)
     }
   

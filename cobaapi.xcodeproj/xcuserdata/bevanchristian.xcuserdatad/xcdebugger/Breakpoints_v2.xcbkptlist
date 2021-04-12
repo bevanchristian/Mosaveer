@@ -17,7 +17,7 @@
             startingLineNumber = "178"
             endingLineNumber = "178"
             landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -33,7 +33,7 @@
             startingLineNumber = "260"
             endingLineNumber = "260"
             landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -49,7 +49,7 @@
             startingLineNumber = "264"
             endingLineNumber = "264"
             landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -65,7 +65,7 @@
             startingLineNumber = "179"
             endingLineNumber = "179"
             landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,8 +78,8 @@
             filePath = "cobaapi/RestaurantData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "parse(json:mainView:mytipe:)"
             landmarkType = "7">
          </BreakpointContent>
