@@ -12,6 +12,7 @@
 		5004F00C261AC3CC001239F3 /* MapSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004F00B261AC3CC001239F3 /* MapSettingViewController.swift */; };
 		5004F017261C1788001239F3 /* imagedetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004F016261C1788001239F3 /* imagedetailCollectionViewCell.swift */; };
 		5004F040261D9312001239F3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004F03F261D9312001239F3 /* OnboardingViewController.swift */; };
+		50231E7F2627133A0097C391 /* PetunjukJalanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50231E7E2627133A0097C391 /* PetunjukJalanViewController.swift */; };
 		5026B170260DC83500E41A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B16F260DC83500E41A4B /* AppDelegate.swift */; };
 		5026B172260DC83500E41A4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B171260DC83500E41A4B /* SceneDelegate.swift */; };
 		5026B174260DC83500E41A4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026B173260DC83500E41A4B /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 		5004F00B261AC3CC001239F3 /* MapSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSettingViewController.swift; sourceTree = "<group>"; };
 		5004F016261C1788001239F3 /* imagedetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagedetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		5004F03F261D9312001239F3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		50231E7E2627133A0097C391 /* PetunjukJalanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetunjukJalanViewController.swift; sourceTree = "<group>"; };
 		5026B16C260DC83500E41A4B /* cobaapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cobaapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5026B16F260DC83500E41A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5026B171260DC83500E41A4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				5004F016261C1788001239F3 /* imagedetailCollectionViewCell.swift */,
 				5004F03F261D9312001239F3 /* OnboardingViewController.swift */,
 				DF8EB499261DB3FC00D567DB /* reviewDetailCollectionViewCell.swift */,
+				50231E7E2627133A0097C391 /* PetunjukJalanViewController.swift */,
 			);
 			path = cobaapi;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				5068C3C62614789800F72EE4 /* FilterViewController.swift in Sources */,
 				5026B172260DC83500E41A4B /* SceneDelegate.swift in Sources */,
 				5004F017261C1788001239F3 /* imagedetailCollectionViewCell.swift in Sources */,
+				50231E7F2627133A0097C391 /* PetunjukJalanViewController.swift in Sources */,
 				5083CFE726133E98003AF518 /* RestaurantData.swift in Sources */,
 				5068C3CA2615CAAA00F72EE4 /* anotate.swift in Sources */,
 				5026B19B260F13ED00E41A4B /* foursquareDetail.swift in Sources */,

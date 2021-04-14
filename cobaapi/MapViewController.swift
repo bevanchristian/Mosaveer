@@ -41,20 +41,33 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     var dataresto = [restaurant]()
     var datamasjid = [restaurant]()
     
+    var distancePetunjuk:Double!
+    var waktuPetunjuk:TimeInterval!
+    var stepPetunjuk = [String]()
+    
+    
+    var sementara:MKOverlay?
+
+    
+    
     
     
  
     var fpc:FloatingPanelController!
     var fpc2:FloatingPanelController!
+    var fpcmap:FloatingPanelController!
     override func viewDidLoad() {
         super.viewDidLoad()
         // inisiasi floating panel
        
         title = "Map"
        // addTopAndBottomBorders(cell: CenterButton2)
+        
         addTopAndBottomBorders(cell: buttonAtas)
         fpc = FloatingPanelController()
         fpc2 = FloatingPanelController()
+        fpcmap = FloatingPanelController()
+        
         // delegate
         fpc.delegate = self
         map.delegate = self
@@ -63,6 +76,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
             return
         }
         simpan = contentVC
+        simpan.ngisi(view: self)
         // di set sebeagai konten nya floating panel
         fpc.set(contentViewController: contentVC)
         
@@ -154,6 +168,12 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         UIView.animate(withDuration: 0.25) { [self] in
             fpc.move(to: .hidden, animated: true)
         }
+        if fpcmap != nil{
+            UIView.animate(withDuration: 0.25) { [self] in
+                fpcmap.move(to: .hidden, animated: true)
+            }
+        }
+       
         if fpc2 != nil{
             UIView.animate(withDuration: 0.25) { [self] in
                 fpc2.move(to: .half, animated: true)
@@ -180,6 +200,33 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         guard let a = center else {return}
         map.setCenter(center, animated: true)
     }
+    
+    func hideFloatmap(){
+        UIView.animate(withDuration: 0.25) {
+            self.fpc.move(to: .hidden, animated: true)
+        }
+        if fpcmap != nil{
+            UIView.animate(withDuration: 0.25) { [self] in
+                fpcmap.move(to: .half, animated: true)
+            }
+        }
+        guard let petunjuk = storyboard?.instantiateViewController(identifier: "mapJalan") as? PetunjukJalanViewController else{
+            return
+        }
+        fpcmap.delegate = self
+        fpcmap.set(contentViewController: petunjuk)
+        fpcmap.contentMode = .fitToBounds
+        fpcmap.addPanel(toParent: self)
+        petunjuk.distanceLabel.text = String(distancePetunjuk) + "Km"
+        petunjuk.waktuLabel.text = String(waktuPetunjuk) + "Min"
+        petunjuk.petunjuk = stepPetunjuk
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+           let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+            renderer.strokeColor = UIColor.blue
+           return renderer
+       }
   
     
 
@@ -297,8 +344,14 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
             }
         
         }
+        if fpcmap != nil {
+            UIView.animate(withDuration: 0.25) { [self] in
+                fpcmap!.move(to: .hidden, animated: true)
+            }
+        
+        }
        // fpc.panGestureRecognizer.isEnabled = false
-      
+        simpan.ngisi(view: self)
         guard let capital = view.annotation as? Anotate else {return}
         // diambil judul dan simpenann
          nama = capital.title

@@ -41,7 +41,8 @@ class FilterViewController: UIViewController {
     
     @IBAction func distanceAction(_ sender: UISlider) {
         distanceapi = Int(sender.value)
-        jarakInfo.text = "\(distanceapi) M"
+        let float = distanceapi/1000
+        jarakInfo.text = "\(float) Km"
     }
     
     @IBAction func openAction(_ sender: UISegmentedControl) {

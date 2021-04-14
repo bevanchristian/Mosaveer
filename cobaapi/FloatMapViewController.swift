@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MapKit
 
-class FloatMapViewController: UIViewController {
+class FloatMapViewController: UIViewController,MKMapViewDelegate {
 
     @IBOutlet var directButton: UIButton!
     @IBOutlet var gambar: UIImageView!
@@ -20,10 +21,14 @@ class FloatMapViewController: UIViewController {
     var deskripsi:String!
     var gambarkoleksi:[String]!
     var mapvew:MapViewController!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gambar.layer.cornerRadius = 10.0
         directButton.layer.cornerRadius = 10.0
+       
+        
         
         // Do any additional setup after loading the view.
     }
@@ -42,9 +47,11 @@ class FloatMapViewController: UIViewController {
         if lokasiuser == nil{
             lokasiuser = "35.702069,139.775327"
         }
+       
         
+      
         
-        if let detail = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController{
+      if let detail = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController{
           
                 detail.nama = namaResto.text
             detail.alamat1 = alamatResto.text
@@ -55,10 +62,12 @@ class FloatMapViewController: UIViewController {
             detail.gambarslide = gambarkoleksi
             detail.lokasiuser = lokasiuser
             detail.lokasi = lokasi
+        detail.isimap(mapvew)
+            
             self.navigationController!.pushViewController(detail, animated: true)
             
 
-    }
+        }
         DispatchQueue.main.async { [self] in
              let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser!),+CA&saddr=\(String(describing: lokasi!))")!
            /* if UIApplication.shared.canOpenURL(targetURL as URL) != nil{

@@ -122,7 +122,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Restaurant"/>
-                                    <segment title="Mousque"/>
+                                    <segment title="Mosque"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.3379122913" green="0.47947007419999998" blue="0.415679574" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
@@ -490,7 +490,7 @@
                                     <constraint firstAttribute="width" constant="39" id="yKy-b4-Dnd"/>
                                 </constraints>
                                 <color key="tintColor" red="0.2243872881" green="0.38937044139999999" blue="0.3176390529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="paperplane.fill" catalog="system">
+                                <state key="normal" image="location.fill" catalog="system">
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
@@ -563,7 +563,7 @@
                                 <color key="backgroundColor" red="0.3379122913" green="0.47947007419999998" blue="0.415679574" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                <state key="normal" title="Get Dirrection">
+                                <state key="normal" title="Detail Information">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -642,6 +642,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYt-YC-y8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2753.8461538461538" y="1535.5450236966824"/>
+        </scene>
+        <!--Petunjuk Jalan View Controller-->
+        <scene sceneID="biw-qJ-B13">
+            <objects>
+                <viewController storyboardIdentifier="mapJalan" id="LgJ-07-DY8" customClass="PetunjukJalanViewController" customModule="cobaapi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7NE-8m-bon">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7g-0q-Jnm">
+                                <rect key="frame" x="20" y="86" width="92" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHF-UG-1Rl">
+                                <rect key="frame" x="20" y="127" width="88" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5i-CQ-fMr">
+                                <rect key="frame" x="345" y="86" width="63" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ftl-3d-oS6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PHF-UG-1Rl" firstAttribute="top" secondItem="T7g-0q-Jnm" secondAttribute="bottom" constant="5" id="7qp-kp-Sev"/>
+                            <constraint firstItem="T7g-0q-Jnm" firstAttribute="leading" secondItem="ftl-3d-oS6" secondAttribute="leading" constant="20" id="FSy-YC-Ced"/>
+                            <constraint firstItem="ftl-3d-oS6" firstAttribute="trailing" secondItem="B5i-CQ-fMr" secondAttribute="trailing" constant="20" id="Zja-vP-1ah"/>
+                            <constraint firstItem="B5i-CQ-fMr" firstAttribute="top" secondItem="7NE-8m-bon" secondAttribute="topMargin" constant="42" id="aEr-8O-T27"/>
+                            <constraint firstItem="PHF-UG-1Rl" firstAttribute="leading" secondItem="ftl-3d-oS6" secondAttribute="leading" constant="20" id="lXx-eN-Jm9"/>
+                            <constraint firstItem="T7g-0q-Jnm" firstAttribute="top" secondItem="7NE-8m-bon" secondAttribute="topMargin" constant="42" id="yND-vp-vQa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="distanceLabel" destination="B5i-CQ-fMr" id="QBA-ft-kpe"/>
+                        <outlet property="petunjukLabel" destination="PHF-UG-1Rl" id="dWZ-aL-LP2"/>
+                        <outlet property="waktuLabel" destination="T7g-0q-Jnm" id="Igl-0N-V7r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gny-85-Nbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3648" y="1535"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="wfl-5t-Gb5">
@@ -935,8 +983,8 @@
         <image name="HADILAU" width="235" height="214"/>
         <image name="Onboarding Mosafeer-1" width="390" height="844"/>
         <image name="binoculars.fill" catalog="system" width="128" height="90"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="map" catalog="system" width="128" height="110"/>
-        <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">

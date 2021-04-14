@@ -103,6 +103,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,SkeletonCollecti
             self.fpc.move(to: .half, animated: true)
         }
         
+        
     }
     
     

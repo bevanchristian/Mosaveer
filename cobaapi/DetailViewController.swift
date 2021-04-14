@@ -6,7 +6,9 @@
 //
 
 import UIKit
-class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIActivityItemSource {
+import MapKit
+
+class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIActivityItemSource,MKMapViewDelegate {
  
     
     
@@ -33,6 +35,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     var lokasi:String!
     var review1:[String] = []
     var yangDiShare = ""
+    var mapvew:MapViewController!
+    var sementara:MKOverlay?
     
     @IBOutlet var namaRestoran: UILabel!
     
@@ -131,6 +135,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
       
     }
+    
+    func isimap(_ view:MapViewController){
+        mapvew = view
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -141,16 +149,58 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         if lokasiuser == nil{
             lokasiuser = "35.702069,139.775327"
         }
+        if mapvew != nil{
+        let latandlot = lokasiuser.components(separatedBy: ",")
+        let destinasi = lokasi.components(separatedBy: ",")
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(latandlot[0])!, longitude: Double(latandlot[1])!), addressDictionary: nil))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(destinasi[0])!, longitude: Double(destinasi[1])!)))
+        request.requestsAlternateRoutes = true
+        request.transportType = .walking
         
-        DispatchQueue.main.async { [self] in
-            let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser),+CA&saddr=\(String(describing: lokasi!))")!
-               
-             if UIApplication.shared.canOpenURL(targetURL as URL) != nil{
-
-                 UIApplication.shared.openURL(targetURL as URL)
-             }
-            
+        let directions = MKDirections(request: request)
+        
+        directions.calculate { [unowned self] response, error in
+            guard let unwrappedResponse = response else {return}
+            for route in unwrappedResponse.routes{
+                if let a = mapvew.sementara{
+                    self.mapvew.map.removeOverlay(a)
+                }
+                self.mapvew.map.addOverlay(route.polyline)
+                self.mapvew.map.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                mapvew.sementara = route.polyline
+                for step in route.steps {
+                    mapvew.stepPetunjuk.append(step.instructions)
+                }
+                mapvew.waktuPetunjuk = route.expectedTravelTime/60
+                mapvew.distancePetunjuk = route.distance/1000
+                
+            }
+            mapvew.hideFloatmap()
+            navigationController?.popViewController(animated: true)
         }
+    
+ 
+    
+           
+        }else{
+            DispatchQueue.main.async { [self] in
+                  let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser),+CA&saddr=\(String(describing: lokasi!))")!
+                     
+                   if UIApplication.shared.canOpenURL(targetURL as URL) != nil{
+
+                       UIApplication.shared.openURL(targetURL as URL)
+                   }
+                  
+              }
+        }
+     
+    
+    
+        
+     
+        
+
        
         
     }
@@ -196,7 +246,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
             if review1.count != 0{
                 cell.reviewplace.text = review1[indexPath.item]
             }else{
-                cell.reviewplace.text = "Kosong"
+                cell.reviewplace.text = "No Review"
             }
            // diisi review
            return cell
