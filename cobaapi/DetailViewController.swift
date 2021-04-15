@@ -184,7 +184,48 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
            
         }else{
-            DispatchQueue.main.async { [self] in
+            
+            if let detailmap = storyboard?.instantiateViewController(identifier: "Mapview") as? MapViewController{
+                
+                let latandlot = lokasiuser.components(separatedBy: ",")
+                let destinasi = lokasi.components(separatedBy: ",")
+                let request = MKDirections.Request()
+                request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(latandlot[0])!, longitude: Double(latandlot[1])!), addressDictionary: nil))
+                request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(destinasi[0])!, longitude: Double(destinasi[1])!)))
+                request.requestsAlternateRoutes = true
+                request.transportType = .walking
+                
+                let directions = MKDirections(request: request)
+                
+                directions.calculate { [unowned self] response, error in
+                    guard let unwrappedResponse = response else {return}
+                    for route in unwrappedResponse.routes{
+                        if let a = detailmap.sementara{
+                         detailmap.map.removeOverlay(a)
+                        }
+                       detailmap.map.addOverlay(route.polyline)
+                       detailmap.map.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                        detailmap.sementara = route.polyline
+                        for step in route.steps {
+                            detailmap.stepPetunjuk.append(step.instructions)
+                        }
+                        detailmap.waktuPetunjuk = route.expectedTravelTime/60
+                        detailmap.distancePetunjuk = route.distance/1000
+                        
+                    }
+                    detailmap.hideFloatmap()
+                    //navigationController?.popViewController(animated: true)
+                }
+               
+                  
+                
+                
+                
+                  self.navigationController!.pushViewController(detailmap, animated: true)
+                  
+
+              }
+          /*  DispatchQueue.main.async { [self] in
                   let targetURL = NSURL(string: "http://maps.apple.com/?daddr=\(lokasiuser),+CA&saddr=\(String(describing: lokasi!))")!
                      
                    if UIApplication.shared.canOpenURL(targetURL as URL) != nil{
@@ -192,7 +233,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
                        UIApplication.shared.openURL(targetURL as URL)
                    }
                   
-              }
+              }*/
         }
      
     

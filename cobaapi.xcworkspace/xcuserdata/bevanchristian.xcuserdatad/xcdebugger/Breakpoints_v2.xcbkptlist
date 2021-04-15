@@ -16,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
             endingLineNumber = "139"
-            landmarkName = "loaddata()"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,10 +110,10 @@
             filePath = "cobaapi/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
-            landmarkName = "hideFloatmap()"
-            landmarkType = "7">
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "MapViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,9 +126,9 @@
             filePath = "cobaapi/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "hideFloatmap()"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "mapView(_:rendererFor:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

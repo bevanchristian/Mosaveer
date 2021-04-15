@@ -53,16 +53,16 @@ class FloatMapViewController: UIViewController,MKMapViewDelegate {
         
       if let detail = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController{
           
-                detail.nama = namaResto.text
+            detail.nama = namaResto.text
             detail.alamat1 = alamatResto.text
-                detail.bukajam1 = status
+            detail.bukajam1 = status
             detail.rating1 = Double(ratingResto.text!)
-                detail.fotodetail = gambar.image
-                detail.deskripsi1 = deskripsi
+            detail.fotodetail = gambar.image
+            detail.deskripsi1 = deskripsi
             detail.gambarslide = gambarkoleksi
             detail.lokasiuser = lokasiuser
             detail.lokasi = lokasi
-        detail.isimap(mapvew)
+            detail.isimap(mapvew)
             
             self.navigationController!.pushViewController(detail, animated: true)
             

@@ -25,9 +25,10 @@ class PetunjukJalanViewController: UIViewController {
         waktuLabel.text = waktulabel + "min"
         if petunjuk.count != 0 {
             for x in 0...petunjuk.count-1{
-                simpan.append(petunjuk[x])
-                petunjukLabel.text = simpan
+                simpan += petunjuk[x]
+    
             }
+            petunjukLabel.text = simpan
         }
      
         // Do any additional setup after loading the view.

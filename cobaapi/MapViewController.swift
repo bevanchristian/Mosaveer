@@ -165,6 +165,9 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     }
     
     @IBAction func settingAction(_ sender: Any) {
+        if sementara != nil{
+            map.removeOverlay(sementara!)
+        }
         UIView.animate(withDuration: 0.25) { [self] in
             fpc.move(to: .hidden, animated: true)
         }
@@ -197,6 +200,14 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     
     
     @IBAction func recenterAction(_ sender: Any) {
+        if sementara != nil{
+            UIView.animate(withDuration: 0.5) { [self] in
+                map.removeOverlay(sementara!)
+            }
+     
+        }
+
+
         guard let a = center else {return}
         map.setCenter(center, animated: true)
     }
@@ -224,7 +235,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
            let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
-            renderer.strokeColor = UIColor.blue
+           renderer.strokeColor = UIColor.blue
            return renderer
        }
   
@@ -333,7 +344,14 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
     
     // jadi method ini ngasih tau anotate maan yang ditekan kepada view
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
         // di typecast ke customanotate kita supaya kalo anotate bawaan ga kedetect
+        if sementara != nil{
+            UIView.animate(withDuration: 0.5) { [self] in
+                map.removeOverlay(sementara!)
+            }
+     
+        }
         UIView.animate(withDuration: 0.25) { [self] in
             fpc.move(to: .half, animated: true)
         }
