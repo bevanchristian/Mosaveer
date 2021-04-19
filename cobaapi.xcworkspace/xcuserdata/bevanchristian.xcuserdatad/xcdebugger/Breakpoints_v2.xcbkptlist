@@ -110,10 +110,10 @@
             filePath = "cobaapi/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
-            landmarkName = "MapViewController"
-            landmarkType = "3">
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "hideFloatmap()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,9 +126,104 @@
             filePath = "cobaapi/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
-            landmarkName = "mapView(_:rendererFor:)"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "hideFloatmap()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71F24016-F76B-4E62-8F4B-DCFE70F3B57A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cobaapi/RestaurantData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "ubahfilter(myView:tipe:sudahAda:distance:bukak:rating:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF822440-28C2-448D-B867-08BB4F142304"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cobaapi/RestaurantData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "ubahfilter(myView:tipe:sudahAda:distance:bukak:rating:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CF822440-28C2-448D-B867-08BB4F142304 - c39c3a3636d349dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cobaapi.RestaurantData.ubahfilter(myView: cobaapi.ViewController, tipe: Swift.Int, sudahAda: Swift.Bool, distance: Swift.Int, bukak: Swift.Int, rating: Swift.Int) -&gt; ()"
+                  moduleName = "cobaapi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bevanchristian/Downloads/cobaapi2malam/cobaapi/RestaurantData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "1269">
+               </Location>
+               <Location
+                  uuid = "CF822440-28C2-448D-B867-08BB4F142304 - c39c3a3636d349dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cobaapi.RestaurantData.ubahfilter(myView: cobaapi.ViewController, tipe: Swift.Int, sudahAda: Swift.Bool, distance: Swift.Int, bukak: Swift.Int, rating: Swift.Int) -&gt; ()"
+                  moduleName = "cobaapi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bevanchristian/Downloads/cobaapi2malam/cobaapi/RestaurantData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "1416">
+               </Location>
+               <Location
+                  uuid = "CF822440-28C2-448D-B867-08BB4F142304 - cf176ae28202a6d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in cobaapi.RestaurantData.ubahfilter(myView: cobaapi.ViewController, tipe: Swift.Int, sudahAda: Swift.Bool, distance: Swift.Int, bukak: Swift.Int, rating: Swift.Int) -&gt; ()"
+                  moduleName = "cobaapi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bevanchristian/Downloads/cobaapi2malam/cobaapi/RestaurantData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "306">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E6C7237-A8AE-478B-A91B-80904C9E87A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cobaapi/RestaurantData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "ubahfilter(myView:tipe:sudahAda:distance:bukak:rating:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

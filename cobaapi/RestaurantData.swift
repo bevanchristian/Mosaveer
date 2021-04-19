@@ -29,7 +29,7 @@ class RestaurantData:Thread {
     var count = 0
     let map = MapViewController()
   
-    var restofix = ["Asakusa Culture Tourist Information Center","Gyumon","Soleil","Luxe Burgers","Soup Stock Tokyo","Yildiz Tarkish Restaurant & Bar","Ninja Cafe & Bar Asakusa","Habibi Restaurant","Samrat 自由が丘店","Kaenzan","Nirvanam","Nirvanam","Pizzeria Santa-Fe","Siam Orchid","NAWAB","Annam Indian Restaurant","Gonpachi","Gyu-Kaku","The Kebab Factory Asakusa","鶏そば Ayam-Ya","Oskar Kebab","Moses Kebab","Yakiniku Panga","Sojibou DiverCity Tokyo Plaza","Mrs Istanbul","Ko-so Cafe Biorise","Al Mina","Morocco Tajinya","Uskudar Restaurant","Japanese Restaurant Sakura","Himalaya Curry Shiroganedai Store","Lukla Village Kitasando","Lukla Himalaya Sangu-bashi","Marhaba","Halal Mentai Naritaya Asakusa","Himalaya Curry Sangu-Bashi Store","Himalaya Curry Kitasando Store","Tokyo Muslim Hanten","Harima Kebab Biryani","SilkRoad Tarim Uyghur Restaurant","Restaurant&Bar BolBol","Siddique Shinjyukunishiguc","Siddique Akebonobashiten","Siddique Shinjyukuhyakuninnchoten","Siddique nihonbashihamamatuchou","Siddique Jinbochou","Siddique","Siddique Hanzomon","Siddique Suitengumae","Konya","Palmyra","Torukoazu","Pamukkale","Vege Herb Saga","Samrat Shinjuku","Khana","Malaychan satu","Nasco Food Court","Kaenzan (蘭州拉麺 火焔山)","Halal Wagyu Yakiniku PANGA (ハラール和牛焼肉ぱんが)","halal wagyu yakiniku panga (ハラール和牛焼肉ぱんが)","kaenzan (蘭州拉麺 火焔山)","halima kebab biryani (ハリマ ケバブ ビリヤニ)","nasco food court","palmyra (パルミラ)","chicken man (チキンマン)","khazana (カザーナ)","üsküdar (ウスキュダル)","restaurant aladdin (イランアラブ料理 アラジン)","delhi dining (デリー ダイニング)","marhaba (マルハバ)","bharati (バーラティ)","annam indian restaurant (アナム)","karachi restaurant (カラチの空)","siam orchid supreme (サイアムオーキッド supreme)","falafel brothers","star kebab (スターケバブ アキバテラス)","gyumon (牛門)","sultan (スルターン 秋葉原店)","the kebab factory","malaychan (マレーチャン)","kineya mugimaru (杵屋麦丸)","アラブ地中海料理 神田 al mina","MALAY ASIAN CUISINE 横浜元町店","LUNA HALA (ルナハラ 築地)","Habibi Restaurant (ハビビ レストラン)"]
+    var restofix = ["Asakusa Culture Tourist Information Center","Gyumon","Soleil","Luxe Burgers","Soup Stock Tokyo","Yildiz Tarkish Restaurant & Bar","Ninja Cafe & Bar Asakusa","Habibi Restaurant","Samrat 自由が丘店","Kaenzan","Nirvanam","Nirvanam","Pizzeria Santa-Fe","Siam Orchid","NAWAB","Annam Indian Restaurant","Gonpachi","Gyu-Kaku","The Kebab Factory Asakusa","鶏そば Ayam-Ya","Oskar Kebab","Moses Kebab","Yakiniku Panga","Sojibou DiverCity Tokyo Plaza","Mrs Istanbul","Ko-so Cafe Biorise","Al Mina","Morocco Tajinya","Uskudar Restaurant","Japanese Restaurant Sakura","Himalaya Curry Shiroganedai Store","Lukla Village Kitasando","Lukla Himalaya Sangu-bashi","Marhaba","Halal Mentai Naritaya Asakusa","Himalaya Curry Sangu-Bashi Store","Himalaya Curry Kitasando Store","Tokyo Muslim Hanten","Harima Kebab Biryani","SilkRoad Tarim Uyghur Restaurant","Restaurant&Bar BolBol","Siddique Shinjyukunishiguc","Siddique Akebonobashiten","Siddique Shinjyukuhyakuninnchoten","Siddique nihonbashihamamatuchou","Siddique Jinbochou","Siddique","Siddique Hanzomon","Siddique Suitengumae","Konya","Palmyra","Torukoazu","Pamukkale","Vege Herb Saga","Samrat Shinjuku","Khana","Malaychan satu","Nasco Food Court","Kaenzan (蘭州拉麺 火焔山)","Halal Wagyu Yakiniku PANGA (ハラール和牛焼肉ぱんが)","halal wagyu yakiniku panga (ハラール和牛焼肉ぱんが)","kaenzan (蘭州拉麺 火焔山)","halima kebab biryani (ハリマ ケバブ ビリヤニ)","nasco food court","palmyra (パルミラ)","chicken man (チキンマン)","khazana (カザーナ)","üsküdar (ウスキュダル)","restaurant aladdin (イランアラブ料理 アラジン)","delhi dining (デリー ダイニング)","marhaba (マルハバ)","bharati (バーラティ)","annam indian restaurant (アナム)","karachi restaurant (カラチの空)","siam orchid supreme (サイアムオーキッド supreme)","falafel brothers","star kebab (スターケバブ アキバテラス)","gyumon (牛門)","sultan (スルターン 秋葉原店)","the kebab factory","malaychan (マレーチャン)","kineya mugimaru (杵屋麦丸)","アラブ地中海料理 神田 al mina","MALAY ASIAN CUISINE 横浜元町店","LUNA HALA (ルナハラ 築地)","Habibi Restaurant (ハビビ レストラン)","Mrs. Istanbul (ミセス イスタンブール)","Tokyo Chinese Muslim Restaurant (東京ムスリム飯店)","SEKAI CAFE OSHIAGE","HALALラーメン 浅草成田屋","Solti Khaja Ghar (ソルティカージャガル)]","ALLADIN Indo Restaurant","Restaurant Pokok Pisang","Malaychan (マレーチャン)","MOTI","Annam Indian Restaurant (アナム)"]
     
     
     
@@ -41,7 +41,7 @@ class RestaurantData:Thread {
     
     func ubah(myView: ViewController,tipe:Int,sudahAda:Bool){
         if tipe == 0 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=120000&limit=10"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=120000&limit=10"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -55,7 +55,7 @@ class RestaurantData:Thread {
               
             }
         }else if tipe == 1 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.7348,139.7077&categoryId=4bf58dd8d48988d138941735&radius=100000&limit=3"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=4bf58dd8d48988d138941735&radius=100000&limit=3"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -92,9 +92,9 @@ class RestaurantData:Thread {
     
     func ubahfilter(myView: ViewController,tipe:Int,sudahAda:Bool,distance:Int,bukak:Int,rating:Int){
     
-      
+      // catatan kalo belom bukak ato dibawah jam 8 akan muncul sedikit
         if tipe == 0 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=\(distance)&limit=30&openNow=\(bukak)&price=\(rating)"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=52e81612bcbc57f1066b79ff&radius=120000&limit=30&openNow=\(bukak)&price=\(rating)"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -109,7 +109,7 @@ class RestaurantData:Thread {
             }
             
         }else if tipe == 1 && sudahAda == false{
-            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210324&ll=35.7348,139.7077&categoryId=4bf58dd8d48988d138941735&radius=\(distance)&limit=2&openNow=\(bukak)"
+            let urlString = "https://api.foursquare.com/v2/venues/explore?client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210324&ll=35.7348,139.7077&categoryId=4bf58dd8d48988d138941735&radius=\(distance)&limit=2&openNow=\(bukak)"
             // diubah jadi url dari string
             if let url = URL(string: urlString) {
                 // diparsing
@@ -166,7 +166,7 @@ class RestaurantData:Thread {
             let nested = jsonDecoder.response.groups
             // di ambil karena kan hasile nested
             print("ini data luar")
-            //print(nested)
+            print(nested)
             
       
                  
@@ -182,6 +182,7 @@ class RestaurantData:Thread {
                     let idIsi = resto.id
                     resto.nama = nested[x].items[y].venue.name
                     
+                    print(resto.nama)
                     let arraylow = restofix.map { $0.lowercased()}
                     if mytipe == 0{
                         let index = find(value:  resto.nama.lowercased(), in: arraylow)
@@ -211,7 +212,7 @@ class RestaurantData:Thread {
                     print("")
                    // print(resto.statusOpen)
                     // setiap sudah selesai ambil id dan nama maka load data detailnya dan dimasukan kedalam objek yang sama
-                    let urlcoba = "https://api.foursquare.com/v2/venues/\(resto.id)?&client_id=KOBFVFCVY1BQZGA30X5ODFA0JKFMZWB0VLF0FCOBE31FUNA1&client_secret=I5BAWA55L23NZC04E1EX3BAS5VXOHNKMKUT5CUVDP4DLX1GD&v=20210325"
+                    let urlcoba = "https://api.foursquare.com/v2/venues/\(resto.id)?&client_id=A5RPK0BZD2GN3QK2S5C4MSWWQ2SRYYRZ5EJTLI02MFUSUQYL&client_secret=PVP3IWV0Q3V5IDGLDEZPZGRC3AC1U1IIOHJQTMZOX0TQS0ZZ&v=20210325"
                     let url = URL(string: urlcoba)
                     if let data4 = try? Data(contentsOf: url!){
                         if let jsonDecoder = try? decoder.decode(detailinfo.self, from: data4){
@@ -313,7 +314,10 @@ class RestaurantData:Thread {
                 }// items count
                 }else{
                     print("kosong")
-                   mainView.kosong.text = "No Data Found...."
+                    DispatchQueue.main.async {
+                        mainView.kosong.text = "No Data Found...."
+                    }
+                  
                 }
             }//nested count
             // setiap sudah selesai load maka manggil function loaddata untuk reload collectionview
@@ -343,7 +347,6 @@ class RestaurantData:Thread {
                     default:
                         mainView.kosong.text = ""
                     }
-                    
                     
                     /*if mainView.restaurantData.restoranarray.count == nil {
                         mainView.kosong.text = "No Data Found...."

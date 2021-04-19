@@ -206,6 +206,11 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
             }
      
         }
+        if fpcmap != nil{
+            UIView.animate(withDuration: 0.25) { [self] in
+                fpcmap.move(to: .hidden, animated: true)
+            }
+        }
 
 
         guard let a = center else {return}
@@ -324,8 +329,8 @@ class MapViewController: UIViewController ,MKMapViewDelegate,CLLocationManagerDe
         
         if CLLocationManager.locationServicesEnabled(){
             // method ini untuk mulai nyuruh oke start update location
-            locationManager.startUpdatingLocation()
-            Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(selesailacak), userInfo: nil, repeats: false)
+        locationManager.startUpdatingLocation()
+            //Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(selesailacak), userInfo: nil, repeats: false)
         
         }
     }

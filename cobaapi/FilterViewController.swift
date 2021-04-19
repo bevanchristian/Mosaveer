@@ -67,8 +67,7 @@ class FilterViewController: UIViewController {
     
     @objc func manggilData(){
         myview.restaurantData.restoranarray.removeAll()
-      
-       
+        //myview.restaurantData.ubahfilter(myView: myview, tipe: 0, sudahAda: false, distance: distanceapi, bukak: open, rating: harga)
     }
    
 
